@@ -1,5 +1,7 @@
 @import "./Variables.scss";
 
+// Start Resets Mxinis
+
 @mixin reset-list {
 	margin: 0;
 	padding: 0;
@@ -9,6 +11,9 @@
 @mixin reset-link {
 	text-decoration: none;
 }
+
+// End Resets Mxinis
+// Start Fonts Mixins
 
 @mixin first-header {
 	font-weight: 700;
@@ -24,3 +29,5 @@
 	font-weight: 400;
 	color: $thirdColor;
 }
+
+// End Fonts Mixins

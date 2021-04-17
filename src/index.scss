@@ -1,3 +1,5 @@
+@import './Sass/Variables.scss';
+
 *,
 *::before,
 *::after {
@@ -8,4 +10,23 @@
 
 body {
 	font-family: "Raleway", sans-serif;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 1rem;
+	padding-left: 1rem;
+
+	@media (max-width: $minXXLargeScreens) {
+		width: 1370px;
+	}
+
+	@media (max-width: $maxXLargeScreens) {
+		width: 1170px;
+	}
+
+	@media (max-width: $maxLargeScreens) {
+		width: 100%;
+	}
 }
