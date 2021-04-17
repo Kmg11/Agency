@@ -1,0 +1,26 @@
+@import "./Variables.scss";
+
+@mixin reset-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@mixin reset-link {
+	text-decoration: none;
+}
+
+@mixin first-header {
+	font-weight: 700;
+	color: $thirdColor;
+}
+
+@mixin second-header {
+	font-weight: 600;
+	color: $thirdColor;
+}
+
+@mixin body-text {
+	font-weight: 400;
+	color: $thirdColor;
+}
