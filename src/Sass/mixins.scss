@@ -12,6 +12,13 @@
 	text-decoration: none;
 }
 
+@mixin reset-btn {
+	background: none;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+}
+
 // End Resets Mxinis
 // Start Fonts Mixins
 
