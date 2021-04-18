@@ -6,7 +6,7 @@ import Logo from "./../../Images/Main/logo.png";
 class Navbar extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { navbarOpen: false };
+		this.state = { navbarOpen: false, navbarScroll: false };
 
 		// Refs
 		this.navbar = React.createRef();
@@ -15,6 +15,7 @@ class Navbar extends Component {
 		this.openCloseNavbar = this.openCloseNavbar.bind(this);
 		this.handleResize = this.handleResize.bind(this);
 		this.closeNavbar = this.closeNavbar.bind(this);
+		this.handleScrolling = this.handleScrolling.bind(this);
 	}
 
 	// Handle [Open & Close] Navbar
@@ -47,16 +48,28 @@ class Navbar extends Component {
 		e.stopPropagation();
 	}
 
+	// Handle Scrolling Function
+	handleScrolling() {
+		window.addEventListener("scroll", () => {
+			if (window.pageYOffset > 50) {
+				this.setState({ navbarScroll: true });
+			} else {
+				this.setState({ navbarScroll: false });
+			}
+		});
+	}
+
 	// Trigger Functions
 	componentDidMount() {
 		this.handleResize();
 		this.closeNavbar();
+		this.handleScrolling();
 	}
 
 	render() {
 		return (
 			<nav
-				className={this.state.navbarOpen ? "navbar open" : "navbar"}
+				className={`navbar${this.state.navbarOpen ? " open" : ""}${this.state.navbarScroll ? " scroll" : ""}`}
 				ref={this.navbar}
 				onClick={this.handleNavbarClicking}
 			>
