@@ -38,3 +38,23 @@
 }
 
 // End Fonts Mixins
+// Start Components
+
+@mixin main-btn($btnFontSize, $btnPadding) {
+	font-size: $btnFontSize;
+	font-weight: 600;
+	padding: $btnPadding;
+	background-color: $mainColor;
+	color: #fff;
+	border-radius: 30px;
+	box-shadow: 0 8px 15px rgba(#000, 0.1);
+	transition: all 0.3s linear;
+
+	&:hover {
+		box-shadow: 0 15px 20px rgba($mainColor, 0.4);
+		background-color: #fff;
+		color: $mainColor;
+	}
+}
+
+// End Components
