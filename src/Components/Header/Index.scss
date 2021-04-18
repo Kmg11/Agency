@@ -1,0 +1,93 @@
+@import "./../../Sass/Variables";
+@import "./../../Sass/mixins";
+
+.main-header {
+	background-color: $backgroundColor;
+
+	// Header Inner Used For Grid
+	.header-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 550px;
+
+		@media (min-width: $minLargeScreens) {
+			height: calc(100vh - 83px);
+			max-height: 700px;
+		}
+
+		@media (max-width: $maxMediumScreens) {
+			height: calc(100vh - 81px);
+		}
+
+		@media (max-width: $maxSmallScreens) {
+			display: block;
+			height: auto;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+
+		.header-desc {
+			flex: 1;
+
+			@media (max-width: $maxSmallScreens) {
+				text-align: center;
+			}
+
+			.header-title {
+				color: $thirdColor;
+				font-size: 3.5rem;
+				font-weight: normal;
+
+				@media (max-width: $maxLargeScreens) {
+					font-size: 2.7rem;
+				}
+
+				@media (max-width: $maxXSmallScreens) {
+					font-size: 2.3rem;
+				}
+
+				span {
+					color: $mainColor;
+					font-weight: bold;
+				}
+			}
+
+			.header-paragraph {
+				@include body-text;
+
+				font-size: 1.2rem;
+				line-height: 1.6;
+				margin-top: 40px;
+				margin-bottom: 30px;
+
+				@media (max-width: $maxLargeScreens) {
+					font-size: 1.1rem;
+				}
+			}
+
+			.header-btn {
+				@include reset-btn;
+				@include main-btn(1rem, 15px 40px);
+
+				&:hover {
+					transform: translateX(7px);
+				}
+			}
+		}
+
+		.header-image {
+			flex: 1;
+
+			img {
+				display: block;
+				width: 100%;
+
+				@media (max-width: $maxSmallScreens) {
+					width: 70%;
+					margin: auto;
+				}
+			}
+		}
+	}
+}
