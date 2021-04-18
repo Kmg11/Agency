@@ -1,4 +1,4 @@
-@import './Sass/Variables.scss';
+@import "./Sass/Variables.scss";
 
 *,
 *::before,
@@ -13,12 +13,13 @@ body {
 }
 
 .container {
+	position: relative;
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 1rem;
 	padding-left: 1rem;
 
-	@media (max-width: $minXXLargeScreens) {
+	@media (min-width: $minXXLargeScreens) {
 		width: 1370px;
 	}
 
