@@ -12,6 +12,7 @@ body {
 	font-family: "Raleway", sans-serif;
 	background-color: #000;
 	padding-top: 83px;
+	min-height: 4000px;
 	
 	@media (max-width: $maxMediumScreens) {
 		padding-top: 81px;
