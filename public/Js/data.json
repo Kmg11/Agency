@@ -1,0 +1,34 @@
+{
+	"services": {
+		"header": {
+			"title": "Our Services",
+			"body": "Learn how we helped our several clients grow in online business. It will give you an idea of our capabilities."
+		},
+		"services_container": [
+			{
+				"id": 1,
+				"title": "App Development",
+				"image": "./Images/Services/img-1.svg",
+				"body": "We design and build iOS, Android or hybrid apps using react native and flutter or cordova"
+			},
+			{
+				"id": 2,
+				"title": "Web Design",
+				"image": "./Images/Services/img-2.svg",
+				"body": "We design and build iOS, Android or hybrid apps using react native and flutter or cordova"
+			},
+			{
+				"id": 3,
+				"title": "Social Media",
+				"image": "./Images/Services/img-3.svg",
+				"body": "How you present your brand is important. We make that process easy for you"
+			},
+			{
+				"id": 4,
+				"title": "Logo & Branding",
+				"image": "./Images/Services/img-4.svg",
+				"body": "We craft exquisite brand identities that convey your product and service well to your clients"
+			}
+		]
+	}
+}
