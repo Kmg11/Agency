@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Index.scss";
-import Logo from "./../../Images/Main/logo.png";
 
 class Navbar extends Component {
 	constructor(props) {
@@ -89,7 +88,7 @@ class Navbar extends Component {
 const NavbarLogo = () => {
 	return (
 		<NavLink exact to="/" className="logo">
-			<img src={Logo} alt="Logo" draggable="false" className="logo-image" />
+			<img src="./Images/Main/logo.svg" alt="Logo" draggable="false" className="logo-image" />
 			<span className="logo-text">Agency</span>
 		</NavLink>
 	);

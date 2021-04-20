@@ -1,5 +1,4 @@
 import "./Index.scss";
-import HeaderImage from "./../../Images/Header/header-Illustration.png";
 
 const Header = (props) => {
 	return (
@@ -20,7 +19,7 @@ const Header = (props) => {
 
 					<section className="header-image">
 						<img
-							src={HeaderImage}
+							src="./Images/Header/header-Illustration.svg"
 							alt="header-Illustration"
 							draggable="false"
 						/>
