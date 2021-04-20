@@ -1,6 +1,6 @@
 import './Index.scss';
+import { Fragment } from 'react'
 
-import Navbar from './../Navbar/Index';
 import Header from './../Header/Index';
 import Services from './../Services/Index';
 import About from './../About/Index';
@@ -12,8 +12,7 @@ import Footer from './../Footer/Index';
 
 const Index = (props) => {
 	return (
-		<div>
-			<Navbar />
+		<Fragment>
 			<Header />
 			<Services />
 			<About />
@@ -22,7 +21,7 @@ const Index = (props) => {
 			<Newsletter />
 			<Contact />
 			<Footer />
-		</div>
+		</Fragment>
 	)
 }
 
