@@ -2,16 +2,19 @@
 
 // Start Resets Mxinis
 
+// Reset List Mixin
 @mixin reset-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
+// Reset Link Mixin
 @mixin reset-link {
 	text-decoration: none;
 }
 
+// Reset Btn Mixin
 @mixin reset-btn {
 	background: none;
 	border: 0;
@@ -22,16 +25,19 @@
 // End Resets Mxinis
 // Start Fonts Mixins
 
+// First Header Mixin
 @mixin first-header {
 	font-weight: 700;
 	color: $thirdColor;
 }
 
+// Second Header Mixin
 @mixin second-header {
 	font-weight: 600;
 	color: $thirdColor;
 }
 
+// Body Text Mixin
 @mixin body-text {
 	font-weight: 400;
 	color: $thirdColor;
@@ -40,6 +46,7 @@
 // End Fonts Mixins
 // Start Components
 
+// Main Btn Mixin
 @mixin main-btn($btnFontSize, $btnPadding) {
 	font-size: $btnFontSize;
 	font-weight: 600;
@@ -54,6 +61,35 @@
 		box-shadow: 0 15px 20px rgba($mainColor, 0.4);
 		background-color: #fff;
 		color: $mainColor;
+	}
+}
+
+// Section Title Mixin
+@mixin section-title {
+	@include first-header;
+	font-size: 3rem;
+	margin-bottom: 30px;
+
+	@media (max-width: $maxXSmallScreens) {
+		font-size: 2.5rem;
+	}
+}
+
+// Section Paragraph Mixin
+@mixin section-paragraph {
+	@include body-text;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	width: 650px;
+	margin: auto;
+
+	@media (max-width: $maxSmallScreens) {
+		width: 100%;
+		font-size: 1.5rem;
+	}
+
+	@media (max-width: $maxXSmallScreens) {
+		font-size: 1.3rem;
 	}
 }
 
