@@ -68,10 +68,13 @@
 // Section Title Mixin
 @mixin section-title {
 	@include first-header;
+	text-align: center;
 	font-size: 3rem;
 	margin-bottom: 30px;
+	color: $thirdColor;
 
 	@media (max-width: $maxXSmallScreens) {
+		text-align: center;
 		font-size: 2.5rem;
 	}
 }
@@ -79,10 +82,12 @@
 // Section Paragraph Mixin
 @mixin section-paragraph {
 	@include body-text;
+	text-align: center;
 	font-size: 1.6rem;
 	line-height: 1.5;
 	width: 650px;
 	margin: auto;
+	color: $thirdColor;
 
 	@media (max-width: $maxSmallScreens) {
 		width: 100%;

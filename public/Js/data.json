@@ -52,5 +52,125 @@
 
 			"paragraph_2_more": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."
 		}
+	},
+
+	"portfolio": {
+		"header": {
+			"title": "Portfolio",
+			"body": "Checkout the work we’ve done for our other clients. Our portfolio includes case studies for work done for design, development and social"
+		},
+
+		"nav": ["All Work", "Website", "Branding", "App", "Social Media"],
+
+		"projects": [
+			{
+				"id": 1,
+				"image": "./Images/Portfolio/img-1.svg",
+				"type": "App",
+				"caption": "Weather And News App"
+			},
+			{
+				"id": 2,
+				"image": "./Images/Portfolio/img-2.svg",
+				"type": "App",
+				"caption": "Weather And News App"
+			},
+			{
+				"id": 3,
+				"image": "./Images/Portfolio/img-3.svg",
+				"type": "Branding",
+				"caption": "Weather And News App"
+			},
+			{
+				"id": 4,
+				"image": "./Images/Portfolio/img-4.svg",
+				"type": "Branding",
+				"caption": "Coco Oil"
+			},
+			{
+				"id": 5,
+				"image": "./Images/Portfolio/img-5.svg",
+				"type": "App",
+				"caption": "Think Tank"
+			},
+			{
+				"id": 6,
+				"image": "./Images/Portfolio/img-6.svg",
+				"type": "App",
+				"caption": "Media Inc."
+			},
+			{
+				"id": 7,
+				"image": "./Images/Portfolio/img-7.svg",
+				"type": "App",
+				"caption": "Crypto App"
+			},
+			{
+				"id": 8,
+				"image": "./Images/Portfolio/img-8.svg",
+				"type": "Social Media",
+				"caption": "Aspire"
+			},
+			{
+				"id": 9,
+				"image": "./Images/Portfolio/img-9.svg",
+				"type": "Website",
+				"caption": "Some Company"
+			},
+			{
+				"id": 10,
+				"image": "./Images/Portfolio/img-1.svg",
+				"type": "App",
+				"caption": "Weather And News App"
+			},
+			{
+				"id": 11,
+				"image": "./Images/Portfolio/img-2.svg",
+				"type": "App",
+				"caption": "Weather And News App"
+			},
+			{
+				"id": 12,
+				"image": "./Images/Portfolio/img-3.svg",
+				"type": "Branding",
+				"caption": "Weather And News App"
+			},
+			{
+				"id": 13,
+				"image": "./Images/Portfolio/img-4.svg",
+				"type": "Branding",
+				"caption": "Coco Oil"
+			},
+			{
+				"id": 14,
+				"image": "./Images/Portfolio/img-5.svg",
+				"type": "App",
+				"caption": "Think Tank"
+			},
+			{
+				"id": 15,
+				"image": "./Images/Portfolio/img-6.svg",
+				"type": "App",
+				"caption": "Media Inc."
+			},
+			{
+				"id": 16,
+				"image": "./Images/Portfolio/img-7.svg",
+				"type": "App",
+				"caption": "Crypto App"
+			},
+			{
+				"id": 17,
+				"image": "./Images/Portfolio/img-8.svg",
+				"type": "Social Media",
+				"caption": "Aspire"
+			},
+			{
+				"id": 18,
+				"image": "./Images/Portfolio/img-9.svg",
+				"type": "Website",
+				"caption": "Some Company"
+			}
+		]
 	}
 }

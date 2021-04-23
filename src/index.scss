@@ -8,6 +8,11 @@
 	box-sizing: border-box;
 }
 
+html,
+body {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: "Raleway", sans-serif;
 	background-color: #000;

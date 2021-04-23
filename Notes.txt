@@ -1,0 +1,15 @@
+- Header Section
+	- Explore Btn Scroll To Services Section
+
+- Change about_container to content
+
+- Portfolio Secion
+	- problem in portfoli getComputedStyle [ componentDidMount ] for resize & first load
+	- Change portfoli Animation And Hide element from space
+	- Try Center Last Element
+
+- Global
+	- problem in pages reload the page [ put condation for checking url ]
+
+- Search
+	- Search For Fieldset & Legend
