@@ -22,6 +22,11 @@
 	outline: none;
 }
 
+@mixin reset-input {
+	border: none;
+	outline: none;
+}
+
 // End Resets Mxinis
 // Start Fonts Mixins
 
@@ -83,7 +88,7 @@
 @mixin section-paragraph {
 	@include body-text;
 	text-align: center;
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 	line-height: 1.5;
 	width: 650px;
 	margin: auto;
