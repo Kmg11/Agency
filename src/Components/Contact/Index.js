@@ -1,11 +1,26 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "./Index.scss";
 
 const Contact = (props) => {
+	const [header, setHeader] = useState([]);
+	const [content, setContent] = useState([]);
+	const [social, setSocial] = useState([]);
+
+	useEffect(() => {
+		axios.get("./Js/data.json").then(({ data }) => {
+			const { header, social, content } = data.contact;
+			setHeader(header);
+			setContent(content);
+			setSocial(social);
+		});
+	}, []);
+
 	return (
 		<section className="contact">
 			<div className="container">
 				<div className="contact-inner">
-					<ContactInfo />
+					<ContactInfo header={header} social={social} content={content} />
 					<ContactForm />
 				</div>
 			</div>
@@ -13,98 +28,63 @@ const Contact = (props) => {
 	);
 };
 
-const ContactInfo = () => {
+const ContactInfo = (props) => {
+	const { header, social, content } = props;
+
 	return (
 		<section className="contact-info">
-			<ContactHeader />
-			<ContactDetails />
+			<ContactHeader header={header} social={social} />
+			<ContactDetails content={content} />
 		</section>
 	);
 };
 
-const ContactHeader = () => {
+const ContactHeader = (props) => {
+	const {
+		header: { title, body },
+		social,
+	} = props;
+
+	const socialList = social.map((item) => {
+		return (
+			<a key={item.id} href={item.link} target="_blank" rel="noreferrer">
+				<i className={`icon ${item.icon}`}></i>
+			</a>
+		);
+	});
+
 	return (
 		<header className="contact-header">
-			<h2 className="contact-title">Contact Us</h2>
-			<p className="contact-paragraph">
-				Have a project we can help with? Give us a call or reach out to us on
-				social media
-			</p>
-
-			<div className="social-links">
-				<a
-					href="https://www.facebook.com/KirolosMahfouz/"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<i className="icon fab fa-instagram"></i>
-				</a>
-				<a
-					href="https://www.instagram.com/kirolosmahfouz/"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<i className="icon fab fa-facebook-square"></i>
-				</a>
-				<a
-					href="https://twitter.com/KirolosMahfouz1"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<i className="icon fab fa-twitter"></i>
-				</a>
-			</div>
+			<h2 className="contact-title">{title}</h2>
+			<p className="contact-paragraph">{body}</p>
+			<div className="social-links">{socialList}</div>
 		</header>
 	);
 };
 
 const ContactDetails = (props) => {
+	const { content: details } = props;
+	const detailsList = details.map((item) => {
+		return (
+			<div key={item.id}>
+				<div className="left">
+					<i className={`icon ${item.icon} fa-fw`}></i>
+				</div>
+				<div className="right">
+					<h3 className="address-title">{item.title}</h3>
+					<div className="address-details">
+						<p>{item.text_1}</p>
+						{item.text_2 !== "" && <p>{item.text_2}</p>}
+						{item.text_3 !== "" && <p>{item.text_3}</p>}
+					</div>
+				</div>
+			</div>
+		);
+	});
+
 	return (
 		<address className="contact-details">
-			<div>
-				<div className="left">
-					<i className="icon fas fa-map-marker-alt fa-fw"></i>
-				</div>
-				<div className="right">
-					<h3 className="address-title">Address</h3>
-					<div className="address-details">
-						<p>3556 Hartford Way Vlg, Mount</p>
-						<p>Pleasant, SC,</p>
-						<p>29466, Australia.</p>
-					</div>
-				</div>
-			</div>
-
-			<div>
-				<div className="left">
-					<i className="icon fas fa-mobile-alt fa-fw"></i>
-				</div>
-				<div className="right">
-					<h3 className="address-title">Call for queries</h3>
-					<div className="address-details">
-						<p>
-							<a href="tel:734-697-2907">734-697-2907</a>
-						</p>
-						<p>
-							<a href="tel:843-971-1906">843-971-1906</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div>
-				<div className="left">
-					<i className="icon fas fa-envelope fa-fw"></i>
-				</div>
-				<div className="right">
-					<h3 className="address-title">Email Us</h3>
-					<div className="address-details">
-						<p>
-							<a href="mailto:hello@agency.com">hello@agency.com</a>
-						</p>
-					</div>
-				</div>
-			</div>
+			{detailsList}
 		</address>
 	);
 };

@@ -172,5 +172,57 @@
 				"caption": "Some Company"
 			}
 		]
+	},
+
+	"contact": {
+		"header": {
+			"title": "Contact Us",
+			"body": "Have a project we can help with? Give us a call or reach out to us on social media"
+		},
+
+		"social": [
+			{
+				"id": 1,
+				"link": "https://www.instagram.com/kirolosmahfouz/",
+				"icon": "fab fa-instagram"
+			},
+			{
+				"id": 2,
+				"link": "https://www.facebook.com/KirolosMahfouz/",
+				"icon": "fab fa-facebook-square"
+			},
+			{
+				"id": 3,
+				"link": "https://twitter.com/KirolosMahfouz1",
+				"icon": "fab fa-twitter"
+			}
+		],
+
+		"content": [
+			{
+				"id": 1,
+				"title": "Address",
+				"icon": "fas fa-map-marker-alt",
+				"text_1": "3556 Hartford Way Vlg, Mount",
+				"text_2": "Pleasant, SC,",
+				"text_3": "29466, Australia."
+			},
+			{
+				"id": 2,
+				"title": "Call for queries",
+				"icon": "fas fa-mobile-alt",
+				"text_1": "734-697-2907",
+				"text_2": "843-971-1906",
+				"text_3": ""
+			},
+			{
+				"id": 3,
+				"title": "Email Us",
+				"icon": "fas fa-envelope",
+				"text_1": "hello@agency.com",
+				"text_2": "",
+				"text_3": ""
+			}
+		]
 	}
 }
