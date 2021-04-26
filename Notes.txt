@@ -10,6 +10,10 @@
 
 - Global
 	- problem in pages reload the page [ put condation for checking url ]
+	- Handle Focus
+	- Block Images Selection [ Know By ctrl + a ]
+	- Centering Mixin
+	- Make Text Left In Small Screens
 
 - Search
 	- Search For Fieldset & Legend
