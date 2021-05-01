@@ -1,0 +1,197 @@
+@import "./../../Sass/Variables.scss";
+@import "./../../Sass/mixins.scss";
+
+.main-footer {
+	background-color: #1c1d30;
+	padding-top: 150px;
+	padding-bottom: 50px;
+
+	@media (max-width: $maxXSmallScreens) {
+		padding-top: 100px;
+	}
+
+	.footer-header {
+		margin-bottom: 120px;
+
+		@media (max-width: $maxSmallScreens) {
+			margin-bottom: 80px;
+		}
+
+		.footer-title {
+			text-align: center;
+			margin-bottom: 30px;
+			color: #fff;
+			font-size: 1.7rem;
+
+			@media (max-width: $maxXSmallScreens) {
+				font-size: 1.5rem;
+				line-height: 1.7;
+			}
+		}
+
+		.newsletter-form {
+			width: 700px;
+			margin: auto;
+			position: relative;
+
+			@media (max-width: $maxSmallScreens) {
+				width: 100%;
+			}
+
+			input {
+				@include reset-input;
+
+				&[type="text"] {
+					padding: 20px 170px 20px 30px;
+					border: 1px solid #707070;
+					border-radius: 22px;
+					display: block;
+					width: 100%;
+					font-size: 1.4rem;
+					color: $thirdColor;
+
+					@media (max-width: $maxXSmallScreens) {
+						padding: 15px 20px;
+						border-radius: 15px;
+					}
+				}
+
+				&[type="submit"] {
+					@include main-btn(1.3rem, 20px 50px);
+					position: absolute;
+					top: 1px;
+					bottom: 1px;
+					right: 1px;
+					cursor: pointer;
+					border-radius: 22px;
+
+					&,
+					&:hover {
+						box-shadow: none;
+					}
+
+					@media (max-width: $maxXSmallScreens) {
+						position: static;
+						width: 100%;
+						border-radius: 15px;
+						margin-top: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-links {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 50px;
+		margin-bottom: 120px;
+
+		@media (max-width: $maxMediumScreens) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (max-width: $maxSmallScreens) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: $maxXSmallScreens) {
+			grid-template-columns: repeat(1, 1fr);
+			margin-bottom: 70px;
+		}
+
+		.links {
+			.links-title {
+				color: #fff;
+				font-size: 1.7rem;
+				margin-bottom: 20px;
+				cursor: default;
+			}
+
+			.links-list {
+				.links-item {
+					line-height: 2.2;
+
+					.links-link {
+						@include reset-link;
+						color: #fff;
+						transition: all 0.2s linear;
+						display: inline-block;
+
+						&:hover {
+							font-weight: bold;
+							transform: translateX(5px);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer-footer {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		align-items: center;
+		gap: 70px;
+
+		@media (max-width: $maxSmallScreens) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 20px;
+		}
+
+		.logo {
+			@include reset-link;
+
+			@media (max-width: $maxSmallScreens) {
+				justify-self: center;
+			}
+
+			display: flex;
+
+			.logo-image {
+				display: block;
+				position: relative;
+				bottom: 4px;
+				margin-right: 2px;
+			}
+
+			.logo-text {
+				@include first-header;
+				font-size: 2rem;
+				color: #fff;
+
+				@media (max-width: $maxSmallScreens) {
+					font-size: 1.56rem;
+				}
+			}
+		}
+
+		.copy-right {
+			justify-self: center;
+			color: #fff;
+		}
+
+		.social-links {
+			justify-self: end;
+
+			@media (max-width: $maxSmallScreens) {
+				justify-self: center;
+			}
+
+			a {
+				@include reset-link;
+				color: $thirdColor;
+				display: inline-block;
+
+				&:not(:last-of-type) {
+					margin-right: 25px;
+				}
+
+				.icon {
+					font-size: 1.5rem;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

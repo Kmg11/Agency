@@ -1,6 +1,9 @@
 - Header Section
 	- Explore Btn Scroll To Services Section
 
+- Navbar
+	- Close Navbar When Change Page In Responsive
+
 - Change about_container to content
 
 - Portfolio Secion
@@ -14,6 +17,17 @@
 	- Block Images Selection [ Know By ctrl + a ]
 	- Centering Mixin
 	- Make Text Left In Small Screens
+	- Accessiblity
+	- Scroll To Top Button
+	- Try Fix Sass Background Images Src
+	- Review Forms
+	- Split Biggest Files
+	- Split JSon File
+	- Convert All Constructor to function
+	- Comment Component
+	- Lazy Load
+	- Contact Background Need Resize [ Increase Padding ]
+	- Textarea reszie
 
 - Search
 	- Search For Fieldset & Legend
