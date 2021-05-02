@@ -1,20 +1,27 @@
 import axios from "axios";
-import React, { Component, useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, useRef, useCallback, Fragment } from "react";
 import { Link } from "react-router-dom";
+
+// Main About Sass File
 import "./Index.scss";
 
+// Portfolio Background
 const PortfolioBg = {
 	backgroundImage: "url('./Images/Portfolio/background.svg')",
 };
 
+// Main Portfolio Component
 const Portfolio = () => {
+	// Data States
 	const [header, setHeader] = useState([]);
 	const [nav, setNav] = useState([]);
 	const [projects, setProjects] = useState([]);
 
+	// Initialize
 	useEffect(() => {
-		axios.get("./Js/data.json").then(({ data }) => {
-			const { header, nav, projects } = data.portfolio;
+		// Fetch Data From Api
+		axios.get("./Apis/portfolio.json").then(({ data }) => {
+			const { header, nav, projects } = data;
 			setHeader(header);
 			setNav(nav);
 			setProjects(projects);
@@ -24,15 +31,18 @@ const Portfolio = () => {
 	return (
 		<section className="portfolio" style={PortfolioBg}>
 			<div className="container">
-				<PortfolioHeader data={header} />
+				<PortfolioHeader header={header} />
 				<PortfolioBody nav={nav} projects={projects} />
 			</div>
 		</section>
 	);
 };
 
+// Portfolio Header Component
 const PortfolioHeader = (props) => {
-	const { title, body } = props.data;
+	const {
+		header: { title, body },
+	} = props;
 
 	return (
 		<header className="portfolio-header">
@@ -42,122 +52,109 @@ const PortfolioHeader = (props) => {
 	);
 };
 
+// Portfolio Body Component
 const PortfolioBody = (props) => {
 	const { nav, projects } = props;
 
+	// Type State
 	const [type, setType] = useState("All Work");
 
-	const changeType = (value) => {
+	// Chang Type Of Projects Viewed
+	const changeType = useCallback((value) => {
 		setType(value);
-	};
+	}, []);
 
 	return (
 		<section className="portfolio-body">
-			<PortfolioNav data={nav} changeType={changeType} />
-			<PortfolioProjects data={projects} type={type} />
+			<PortfolioNav nav={nav} changeType={changeType} />
+			<PortfolioProjects projects={projects} type={type} />
 		</section>
 	);
 };
 
-class PortfolioNav extends Component {
-	constructor(props) {
-		super(props);
+// Portfolio Nav Component
+const PortfolioNav = (props) => {
+	const { nav, changeType } = props;
 
-		// Refs
-		this.selected = React.createRef();
+	// States
+	const [lineStyle, setLineStyle] = useState({ left: "", width: "" });
+	const [activeItem, setActiveItem] = useState(1);
 
-		// Bind
-		this.handleLineResponsive = this.handleLineResponsive.bind(this);
-		this.handleSelected = this.handleSelected.bind(this);
-
-		this.state = {
-			lineStyle: { left: "", width: "" },
-			activeItem: 1,
-		};
-	}
-
-	// Handle Started Functions
-	componentDidMount() {
-		// setTimeout For Avoid null In this.selected
-		setTimeout(() => {
-			this.handleSelected();
-		}, 200);
-		this.handleLineResponsive();
-	}
+	// Refs
+	const selected = useRef(0);
 
 	// Handle Line Function When Click
-	handleLine(index, e) {
+	const handleLine = (index, e) => {
 		const elementStyle = getComputedStyle(e.target);
 
-		this.setState({
-			lineStyle: {
-				left: e.target.offsetLeft + 0.5 * parseFloat(elementStyle.paddingLeft),
-				width: e.target.offsetWidth - parseFloat(elementStyle.paddingLeft),
-			},
-			activeItem: index,
+		setLineStyle({
+			left: e.target.offsetLeft + 0.5 * parseFloat(elementStyle.paddingLeft),
+			width: e.target.offsetWidth - parseFloat(elementStyle.paddingLeft),
 		});
 
-		this.props.changeType(e.target.textContent);
-	}
+		setActiveItem(index);
+
+		changeType(e.target.textContent);
+	};
 
 	// Handle Selected Item
-	handleSelected() {
-		const elementStyle = getComputedStyle(this.selected.current);
+	useEffect(() => {
+		const handleSelected = () => {
+			const elementStyle = getComputedStyle(selected.current);
 
-		this.setState({
-			lineStyle: {
+			setLineStyle({
 				left:
-					this.selected.current.offsetLeft +
+					selected.current.offsetLeft +
 					0.5 * parseFloat(elementStyle.paddingLeft),
 				width:
-					this.selected.current.offsetWidth -
-					parseFloat(elementStyle.paddingLeft),
-			},
-		});
+					selected.current.offsetWidth - parseFloat(elementStyle.paddingLeft),
+			});
 
-		this.props.changeType(this.selected.current.textContent);
-	}
+			changeType(selected.current.textContent);
+		};
 
-	// Handle Selected Item [ Responsive ]
-	handleLineResponsive() {
+		setTimeout(() => {
+			handleSelected();
+		}, 200)
+
+		// Handle Selected Item [ Responsive ]
 		window.addEventListener("resize", () => {
-			this.handleSelected();
+			handleSelected();
 		});
-	}
+	}, [changeType]);
 
-	render() {
-		const nav = this.props.data;
-		const navList = nav.map((item, index) => {
-			return (
-				<li
-					key={index}
-					className={`${
-						this.state.activeItem === index + 1
-							? "portfolio-item active"
-							: "portfolio-item"
-					}`}
-					onClick={(e) => this.handleLine(index + 1, e)}
-					ref={this.state.activeItem === index + 1 ? this.selected : null}
-				>
-					{item}
-				</li>
-			);
-		});
-
+	// Get Nav List
+	const navList = nav.map((item, index) => {
 		return (
-			<div className="portfolio-nav">
-				<ul className="portfolio-list">{navList}</ul>
-
-				<div className="list-line" style={this.state.lineStyle}></div>
-			</div>
+			<li
+				key={index}
+				className={`${
+					activeItem === index + 1 ? "portfolio-item active" : "portfolio-item"
+				}`}
+				onClick={(e) => handleLine(index + 1, e)}
+				ref={activeItem === index + 1 ? selected : null}
+			>
+				{item}
+			</li>
 		);
-	}
-}
+	});
 
+	return (
+		<div className="portfolio-nav">
+			<ul className="portfolio-list">{navList}</ul>
+			<div className="list-line" style={lineStyle}></div>
+		</div>
+	);
+};
+
+// Portfolio Projects Component
 const PortfolioProjects = (props) => {
-	const { data: projects, type } = props;
+	const { projects, type } = props;
 
+	// Default Number Of Projects
 	const defaultNumber = 9;
+
+	// Number Of Projects State
 	const [numberOfProjects, setNumberOfProjects] = useState(defaultNumber);
 
 	const viewAllProjects = () => {
@@ -168,6 +165,7 @@ const PortfolioProjects = (props) => {
 		}
 	};
 
+	// Get Projects List
 	const projectsList = projects.map((project, index) => {
 		return index < numberOfProjects ? (
 			<div

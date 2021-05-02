@@ -1,35 +1,40 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+
+// Main About Sass File
 import "./Index.scss";
 
+// Main About Component
 const About = () => {
+	// Data States
 	const [header, setHeader] = useState([]);
-	const [info, setInfo] = useState([]);
+	const [content, setContent] = useState([]);
 
+	// Initialize
 	useEffect(() => {
-		getData();
-	}, []);
-
-	const getData = () => {
-		axios.get("./Js/data.json").then(({ data }) => {
-			const { header, about_container } = data.about;
+		// Fetch Data From Api
+		axios.get("./Apis/about.json").then(({ data }) => {
+			const { header, content } = data;
 			setHeader(header);
-			setInfo(about_container);
+			setContent(content);
 		});
-	};
+	}, []);
 
 	return (
 		<section className="about">
 			<div className="container">
-				<AboutHeader data={header} />
-				<AboutBody data={info} />
+				<AboutHeader header={header} />
+				<AboutBody content={content} />
 			</div>
 		</section>
 	);
 };
 
+// About Header Component
 const AboutHeader = (props) => {
-	const { title, body } = props.data;
+	const {
+		header: { title, body },
+	} = props;
 
 	return (
 		<header className="about-header">
@@ -39,9 +44,12 @@ const AboutHeader = (props) => {
 	);
 };
 
+// About Body Component
 const AboutBody = (props) => {
+	// Read More State
 	const [readMore, setReadMore] = useState(false);
 
+	// Handle Read More Function
 	const handleReading = (e) => {
 		e.target.parentElement.style.opacity = "0";
 
@@ -52,13 +60,15 @@ const AboutBody = (props) => {
 	};
 
 	const {
-		image,
-		title,
-		paragraph_1,
-		paragraph_1_more,
-		paragraph_2,
-		paragraph_2_more,
-	} = props.data;
+		content: {
+			image,
+			title,
+			paragraph_1,
+			paragraph_1_more,
+			paragraph_2,
+			paragraph_2_more,
+		},
+	} = props;
 
 	return (
 		<section className="about-body">

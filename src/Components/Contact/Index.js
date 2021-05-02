@@ -1,18 +1,24 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+
+// Main Contact Sass File
 import "./Index.scss";
 
-const Contact = (props) => {
+// Main Contact Component
+const Contact = () => {
+	// Data States
 	const [header, setHeader] = useState([]);
-	const [content, setContent] = useState([]);
 	const [social, setSocial] = useState([]);
+	const [content, setContent] = useState([]);
 
+	// Initialize
 	useEffect(() => {
-		axios.get("./Js/data.json").then(({ data }) => {
-			const { header, social, content } = data.contact;
+		// Fetch Data From Api
+		axios.get("./Apis/contact.json").then(({ data }) => {
+			const { header, social, content } = data;
 			setHeader(header);
-			setContent(content);
 			setSocial(social);
+			setContent(content);
 		});
 	}, []);
 
@@ -28,6 +34,7 @@ const Contact = (props) => {
 	);
 };
 
+// Contact Info Component
 const ContactInfo = (props) => {
 	const { header, social, content } = props;
 
@@ -39,12 +46,14 @@ const ContactInfo = (props) => {
 	);
 };
 
+// Contact Header Component
 const ContactHeader = (props) => {
 	const {
 		header: { title, body },
 		social,
 	} = props;
 
+	// Get Social Links List
 	const socialList = social.map((item) => {
 		return (
 			<a key={item.id} href={item.link} target="_blank" rel="noreferrer">
@@ -62,8 +71,11 @@ const ContactHeader = (props) => {
 	);
 };
 
+// Contact Details Component
 const ContactDetails = (props) => {
 	const { content: details } = props;
+
+	// Get Details List 
 	const detailsList = details.map((item) => {
 		return (
 			<div key={item.id}>
@@ -89,6 +101,7 @@ const ContactDetails = (props) => {
 	);
 };
 
+// Contact Form Component
 const ContactForm = () => {
 	return (
 		<div className="send-message">

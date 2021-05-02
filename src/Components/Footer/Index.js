@@ -1,9 +1,13 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+// Main Footer Sass File
 import "./Index.scss";
 
+// Main Footer Component
 const Footer = (props) => {
+	// Data States
 	const [header, setHeader] = useState([]);
 	const [about, setAbout] = useState([]);
 	const [contact, setContact] = useState([]);
@@ -11,16 +15,18 @@ const Footer = (props) => {
 	const [social, setSocial] = useState([]);
 	const [copyRight, setCopyRight] = useState("");
 
+	// Initialize
 	useEffect(() => {
-		axios.get("/Js/data.json").then(({ data }) => {
+		// Fetch Data From Api
+		axios.get("./Apis/footer.json").then(({ data }) => {
 			const {
 				header,
 				about_us_links,
 				contact_us_links,
 				videos_links,
 				social_media_links,
-				copy_right
-			} = data.footer;
+				copy_right,
+			} = data;
 
 			setHeader(header);
 			setAbout(about_us_links);
@@ -47,6 +53,7 @@ const Footer = (props) => {
 	);
 };
 
+// Footer Header Component
 const FooterHeader = (props) => {
 	const {
 		header: { title },
@@ -64,9 +71,11 @@ const FooterHeader = (props) => {
 	);
 };
 
+// Footer Links Component
 const FooterLinks = (props) => {
 	const { about, contact, videos, social } = props;
 
+	// Collect Data & Add Title
 	const links = [
 		{ id: 1, title: "About Us", links: about },
 		{ id: 2, title: "Contact Us", links: contact },
@@ -74,6 +83,7 @@ const FooterLinks = (props) => {
 		{ id: 4, title: "Social Media", links: social },
 	];
 
+	// Get Items List
 	const getItems = (index) => {
 		const linksItems = links[index].links.map((item) => {
 			return (
@@ -93,6 +103,7 @@ const FooterLinks = (props) => {
 		return linksItems;
 	};
 
+	// Get Links List
 	const linksList = links.map((link, index) => {
 		return (
 			<div key={link.id} className="links">
@@ -105,9 +116,11 @@ const FooterLinks = (props) => {
 	return <div className="footer-links">{linksList}</div>;
 };
 
+// Footer Footer Component
 const FooterFooter = (props) => {
 	const { social, copyRight } = props;
 
+	// Get Social List
 	const socialList = social.map((item) => {
 		return (
 			<a key={item.id} href={item.link} target="_blank" rel="noreferrer">

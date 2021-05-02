@@ -1,47 +1,61 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
+// Main Services Sass File
 import "./Index.scss";
 
+// Services Background
 const servicesBg = {
 	backgroundImage: "url(./../../Images/Services/background.svg)",
 };
 
-const Services = (props) => {
+// Main Services Component
+const Services = () => {
+	// Data States
 	const [header, setHeader] = useState([]);
-	const [services, setServices] = useState([]);
+	const [content, setContent] = useState([]);
 
+	// Initialize
 	useEffect(() => {
-		axios.get("./Js/data.json").then(({ data }) => {
-			const { header, services_container } = data.services;
+		// Fetch Data From Api
+		axios.get("./Apis/services.json").then(({ data }) => {
+			const { header, content } = data;
 			setHeader(header);
-			setServices(services_container);
+			setContent(content);
 		});
 	}, []);
 
 	return (
 		<section className="services" style={servicesBg}>
 			<div className="container">
-				<ServicesHeader data={header} />
-
-				<ServicesContainer data={services} />
+				<ServicesHeader header={header} />
+				<ServicesContainer content={content} />
 			</div>
 		</section>
 	);
 };
 
+// Services Header Component
 const ServicesHeader = (props) => {
+	const {
+		header: { title, body },
+	} = props;
+
 	return (
 		<header className="services-header">
-			<h2 className="services-title">{props.data.title}</h2>
-			<p className="services-paragraph">{props.data.body}</p>
+			<h2 className="services-title">{title}</h2>
+			<p className="services-paragraph">{body}</p>
 		</header>
 	);
 };
 
+// Services Container Component
 const ServicesContainer = (props) => {
-	const { data } = props;
-	const servicesList = data.map((serv) => {
+	const { content } = props;
+
+	// Get Services List
+	const servicesList = content.map((serv) => {
 		return (
 			<div key={serv.id} className="services-card">
 				<Link to="/services" className="services-link">

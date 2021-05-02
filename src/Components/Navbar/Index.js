@@ -1,94 +1,88 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+
+// Main Navbar Sass File
 import "./Index.scss";
 
-class Navbar extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { navbarOpen: false, navbarScroll: false };
+// Mani Navbar Component
+const Navbar = () => {
+	// States
+	const [navbarOpen, setNavbarOpen] = useState(false);
+	const [navbarScroll, setNavbarScroll] = useState(false);
 
-		// Refs
-		this.navbar = React.createRef();
-
-		// Binding Functions
-		this.openCloseNavbar = this.openCloseNavbar.bind(this);
-		this.handleResize = this.handleResize.bind(this);
-		this.closeNavbar = this.closeNavbar.bind(this);
-		this.handleScrolling = this.handleScrolling.bind(this);
-	}
+	// Refs
+	const navbar = useRef();
 
 	// Handle [Open & Close] Navbar
-	openCloseNavbar() {
-		this.setState((state) => ({ navbarOpen: !this.state.navbarOpen }));
-	}
+	const openCloseNavbar = () => {
+		setNavbarOpen((prevValue) => !prevValue);
+	};
+
+	// Stop Propagation For Navbar To Handle closeNavbar Function
+	const handleNavbarClicking = (e) => {
+		e.stopPropagation();
+	};
 
 	// Handle Resize Window
-	handleResize() {
+	useEffect(() => {
 		window.addEventListener("resize", () => {
-			if (this.state.navbarOpen) {
-				this.setState((state) => ({ navbarOpen: false }));
+			if (navbarOpen) {
+				setNavbarOpen(false);
 			}
 		});
-	}
+	}, [navbarOpen]);
 
 	// Handle Closing Navbar When Click Anywhere
-	closeNavbar() {
+	useEffect(() => {
 		document.addEventListener("click", (e) => {
-			if (this.state.navbarOpen) {
-				if (e.target !== this.navbar.current) {
-					this.setState((state) => ({ navbarOpen: false }));
+			if (navbarOpen) {
+				if (e.target !== navbar.current) {
+					setNavbarOpen(false);
 				}
 			}
 		});
-	}
-
-	// Stop Propagation For Navbar To Handle closeNavbar Function
-	handleNavbarClicking(e) {
-		e.stopPropagation();
-	}
+	}, [navbarOpen]);
 
 	// Handle Scrolling Function
-	handleScrolling() {
+	useEffect(() => {
 		window.addEventListener("scroll", () => {
 			if (window.pageYOffset > 50) {
-				this.setState({ navbarScroll: true });
+				setNavbarScroll(true);
 			} else {
-				this.setState({ navbarScroll: false });
+				setNavbarScroll(false);
 			}
 		});
-	}
+	}, [navbarScroll]);
 
-	// Trigger Functions
-	componentDidMount() {
-		this.handleResize();
-		this.closeNavbar();
-		this.handleScrolling();
-	}
-
-	render() {
-		return (
-			<nav
-				className={`navbar${this.state.navbarOpen ? " open" : ""}${this.state.navbarScroll ? " scroll" : ""}`}
-				ref={this.navbar}
-				onClick={this.handleNavbarClicking}
-			>
-				<div className="container">
-					<div className="navbar-inner">
-						<NavbarLogo />
-						<NavbarResponsiveBtn openCloseNavbar={this.openCloseNavbar} />
-						<NavbarList />
-					</div>
+	return (
+		<nav
+			className={`navbar${navbarOpen ? " open" : ""}${
+				navbarScroll ? " scroll" : ""
+			}`}
+			ref={navbar}
+			onClick={handleNavbarClicking}
+		>
+			<div className="container">
+				<div className="navbar-inner">
+					<NavbarLogo />
+					<NavbarResponsiveBtn openCloseNavbar={openCloseNavbar} />
+					<NavbarList />
 				</div>
-			</nav>
-		);
-	}
-}
+			</div>
+		</nav>
+	);
+};
 
 // Navbar Logo Component
 const NavbarLogo = () => {
 	return (
 		<NavLink exact to="/" className="logo">
-			<img src="./Images/Main/logo.svg" alt="Logo" draggable="false" className="logo-image" />
+			<img
+				src="./Images/Main/logo.svg"
+				alt="Logo"
+				draggable="false"
+				className="logo-image"
+			/>
 			<span className="logo-text">Agency</span>
 		</NavLink>
 	);
