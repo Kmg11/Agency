@@ -1,5 +1,4 @@
 @import "./../../Sass/Variables";
-@import "./../../Sass/mixins.scss";
 
 .navbar {
 	$navbarPadding: 20px;
@@ -15,10 +14,6 @@
 	z-index: 1000;
 	transition: box-shadow 0.3s linear;
 
-	&.scroll {
-		box-shadow: 0 8px 15px rgba(#000, 0.1);
-	}
-
 	// Navbar Inner Using For Grid System
 	.navbar-inner {
 		display: flex;
@@ -26,141 +21,8 @@
 		align-items: center;
 	}
 
-	// Logo
-	.logo {
-		@include reset-link;
-
-		display: flex;
-
-		.logo-image {
-			display: block;
-			position: relative;
-			bottom: 4px;
-			margin-right: 2px;
-		}
-
-		.logo-text {
-			@include first-header;
-			font-size: 2rem;
-
-			@media (max-width: $maxXSmallScreens) {
-				font-size: 1.56rem;
-			}
-		}
-	}
-
-	// Navbar Responsive Btn
-	.navbar-responsive-btn {
-		@include reset-btn;
-
-		@media (min-width: $minLargeScreens) {
-			display: none;
-		}
-
-		padding: 10px;
-		background-color: $mainColor;
-		border: 1px solid transparent;
-		border-radius: 10px;
+	&.scroll {
 		box-shadow: 0 8px 15px rgba(#000, 0.1);
-		transition: all 0.3s linear;
-
-		&:hover {
-			box-shadow: 0 15px 20px rgba(#000, 0.1);
-		}
-
-		.line {
-			width: 25px;
-			height: 3px;
-			background-color: #fff;
-			transition: all 0.3s linear;
-
-			&:not(:last-of-type) {
-				margin-bottom: 5px;
-			}
-		}
-	}
-
-	// Navbar List
-	.navbar-list {
-		@include reset-list;
-
-		@media (max-width: $maxMediumScreens) {
-			position: absolute;
-			top: 61px;
-			left: 0;
-			right: 0;
-			width: 100%;
-			background-color: $navbarBgColor;
-			border-radius: 0 0 20px 20px;
-			box-shadow: 0 8px 15px rgba(#000, 0.1);
-			overflow: hidden;
-			height: 0;
-			padding: 0;
-			transition: all 0.3s linear;
-		}
-
-		.navbar-item {
-			display: inline-block;
-
-			@media (max-width: $maxMediumScreens) {
-				display: block;
-				text-align: center;
-				padding-bottom: 15px;
-
-				&:not(:first-of-type) {
-					padding-top: 15px;
-				}
-			}
-
-			&:not(:first-of-type) {
-				margin-left: 30px;
-
-				@media (max-width: $maxMediumScreens) {
-					margin-left: 0;
-				}
-			}
-
-			&.navbar-btn {
-				@include reset-btn;
-
-				background-color: $mainColor;
-				border-radius: 30px;
-				box-shadow: 0 8px 15px rgba(#000, 0.1);
-				padding: 12px 40px;
-
-				.navbar-btn-icon {
-					position: relative;
-					right: 0;
-					margin-right: 15px;
-					color: #fff;
-					transition: all 0.3s ease;
-				}
-
-				&:hover {
-					.navbar-btn-icon {
-						right: -5px;
-					}
-				}
-
-				.navbar-btn-text {
-					display: inline-block;
-					color: #fff;
-					font-weight: bold;
-				}
-			}
-
-			.navbar-link {
-				@include reset-link;
-				font-size: 1rem;
-				color: $navbarLinkColor;
-				transition: color 0.3s linear;
-
-				&.active,
-				&:hover {
-					color: $mainColor;
-				}
-			}
-		}
 	}
 
 	// Handle Open Navbar In Responsive Mode

@@ -1,0 +1,32 @@
+@import "./../../../Sass/Variables";
+@import "./../../../Sass/mixins.scss";
+
+.navbar-responsive-btn {
+	@include reset-btn;
+
+	@media (min-width: $minLargeScreens) {
+		display: none;
+	}
+
+	padding: 10px;
+	background-color: $mainColor;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	box-shadow: 0 8px 15px rgba(#000, 0.1);
+	transition: all 0.3s linear;
+
+	&:hover {
+		box-shadow: 0 15px 20px rgba(#000, 0.1);
+	}
+
+	.line {
+		width: 25px;
+		height: 3px;
+		background-color: #fff;
+		transition: all 0.3s linear;
+
+		&:not(:last-of-type) {
+			margin-bottom: 5px;
+		}
+	}
+}

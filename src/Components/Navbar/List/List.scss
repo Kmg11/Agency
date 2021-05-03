@@ -1,0 +1,84 @@
+@import "./../../../Sass/Variables";
+@import "./../../../Sass/mixins.scss";
+
+.navbar-list {
+	@include reset-list;
+
+	@media (max-width: $maxMediumScreens) {
+		position: absolute;
+		top: 61px;
+		left: 0;
+		right: 0;
+		width: 100%;
+		background-color: $navbarBgColor;
+		border-radius: 0 0 20px 20px;
+		box-shadow: 0 8px 15px rgba(#000, 0.1);
+		overflow: hidden;
+		height: 0;
+		padding: 0;
+		transition: all 0.3s linear;
+	}
+
+	.navbar-item {
+		display: inline-block;
+
+		@media (max-width: $maxMediumScreens) {
+			display: block;
+			text-align: center;
+			padding-bottom: 15px;
+
+			&:not(:first-of-type) {
+				padding-top: 15px;
+			}
+		}
+
+		&:not(:first-of-type) {
+			margin-left: 30px;
+
+			@media (max-width: $maxMediumScreens) {
+				margin-left: 0;
+			}
+		}
+
+		&.navbar-btn {
+			@include reset-btn;
+
+			background-color: $mainColor;
+			border-radius: 30px;
+			box-shadow: 0 8px 15px rgba(#000, 0.1);
+			padding: 12px 40px;
+
+			.navbar-btn-icon {
+				position: relative;
+				right: 0;
+				margin-right: 15px;
+				color: #fff;
+				transition: all 0.3s ease;
+			}
+
+			&:hover {
+				.navbar-btn-icon {
+					right: -5px;
+				}
+			}
+
+			.navbar-btn-text {
+				display: inline-block;
+				color: #fff;
+				font-weight: bold;
+			}
+		}
+
+		.navbar-link {
+			@include reset-link;
+			font-size: 1rem;
+			color: $navbarLinkColor;
+			transition: color 0.3s linear;
+
+			&.active,
+			&:hover {
+				color: $mainColor;
+			}
+		}
+	}
+}

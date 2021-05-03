@@ -1,6 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
+// Import Components
+import FooterFooter from "./Footer/Footer";
+import FooterLinks from "./Links/Links";
+import FooterHeader from "./Header/Header";
 
 // Main Footer Sass File
 import "./Index.scss";
@@ -49,101 +53,6 @@ const Footer = (props) => {
 				/>
 				<FooterFooter social={social} copyRight={copyRight} />
 			</div>
-		</footer>
-	);
-};
-
-// Footer Header Component
-const FooterHeader = (props) => {
-	const {
-		header: { title },
-	} = props;
-
-	return (
-		<header className="footer-header">
-			<h2 className="footer-title">{title}</h2>
-
-			<form className="newsletter-form">
-				<input type="text" placeholder="Email" />
-				<input type="submit" value="JOIN" />
-			</form>
-		</header>
-	);
-};
-
-// Footer Links Component
-const FooterLinks = (props) => {
-	const { about, contact, videos, social } = props;
-
-	// Collect Data & Add Title
-	const links = [
-		{ id: 1, title: "About Us", links: about },
-		{ id: 2, title: "Contact Us", links: contact },
-		{ id: 3, title: "Videos", links: videos },
-		{ id: 4, title: "Social Media", links: social },
-	];
-
-	// Get Items List
-	const getItems = (index) => {
-		const linksItems = links[index].links.map((item) => {
-			return (
-				<li key={item.id} className="links-item">
-					<a
-						href={item.link}
-						target="_blank"
-						rel="noreferrer"
-						className="links-link"
-					>
-						{item.name}
-					</a>
-				</li>
-			);
-		});
-
-		return linksItems;
-	};
-
-	// Get Links List
-	const linksList = links.map((link, index) => {
-		return (
-			<div key={link.id} className="links">
-				<h3 className="links-title">{link.title}</h3>
-				<ul className="links-list">{getItems(index)}</ul>
-			</div>
-		);
-	});
-
-	return <div className="footer-links">{linksList}</div>;
-};
-
-// Footer Footer Component
-const FooterFooter = (props) => {
-	const { social, copyRight } = props;
-
-	// Get Social List
-	const socialList = social.map((item) => {
-		return (
-			<a key={item.id} href={item.link} target="_blank" rel="noreferrer">
-				<i className={`icon ${item.icon}`}></i>
-			</a>
-		);
-	});
-
-	return (
-		<footer className="footer-footer">
-			<Link to="/" className="logo">
-				<img
-					src="./Images/Main/logo.svg"
-					alt="Logo"
-					draggable="false"
-					className="logo-image"
-				/>
-				<span className="logo-text">Agency</span>
-			</Link>
-
-			<p className="copy-right">{copyRight}</p>
-
-			<div className="social-links">{socialList}</div>
 		</footer>
 	);
 };

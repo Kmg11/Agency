@@ -1,0 +1,24 @@
+@import "./../../../Sass/Variables";
+@import "./../../../Sass/mixins.scss";
+
+.logo {
+	@include reset-link;
+
+	display: flex;
+
+	.logo-image {
+		display: block;
+		position: relative;
+		bottom: 4px;
+		margin-right: 2px;
+	}
+
+	.logo-text {
+		@include first-header;
+		font-size: 2rem;
+
+		@media (max-width: $maxXSmallScreens) {
+			font-size: 1.56rem;
+		}
+	}
+}

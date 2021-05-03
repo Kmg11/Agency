@@ -1,0 +1,87 @@
+@import "./../../../Sass/Variables";
+@import "./../../../Sass/mixins";
+
+.send-message {
+	position: relative;
+
+	.background-image {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-55%, -50%) scale(0.69);
+		user-select: none;
+		z-index: 1;
+
+		@media (max-width: $maxMediumScreens) {
+			transform: translate(-50%, -50%) scale(0.57);
+		}
+
+		@media (max-width: $maxSmallScreens) {
+			transform: translate(-50%, -50%) scale(0.86);
+		}
+
+		@media (max-width: $maxXSmallScreens) {
+			transform: translate(-50%, -50%) scale(0.6);
+		}
+	}
+
+	.contact-form {
+		position: relative;
+		z-index: 2;
+		margin: auto;
+		width: 97%;
+
+		@media (max-width: $maxMediumScreens) {
+			width: 90%;
+		}
+
+		@media (max-width: $maxSmallScreens) {
+			width: 90%;
+		}
+
+		@media (max-width: $maxXSmallScreens) {
+			width: 100%;
+		}
+
+		label {
+			display: block;
+			color: #ffffff;
+			font-size: 1.5rem;
+			margin-left: 15px;
+			margin-bottom: 10px;
+		}
+
+		input,
+		textarea {
+			@include reset-input;
+			border-radius: 16px;
+			box-shadow: 6px 6px 9px #0000000d;
+			margin-bottom: 15px;
+			display: block;
+			font-size: 1.2rem;
+
+			&:not([type="submit"]) {
+				width: 100%;
+				padding: 15px 20px;
+			}
+
+			&::placeholder {
+				color: $thirdColor;
+			}
+		}
+
+		input {
+			&[type="submit"] {
+				background-color: $secondColor;
+				color: #fff;
+				padding: 10px 30px;
+				cursor: pointer;
+			}
+		}
+
+		textarea {
+			height: 200px;
+			resize: none;
+		}
+	}
+}

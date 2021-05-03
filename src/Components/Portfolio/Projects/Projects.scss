@@ -1,0 +1,144 @@
+@import "./../../../Sass/Variables";
+@import "./../../../Sass/mixins";
+
+.projects {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 50px;
+	justify-content: center;
+
+	@media (max-width: $maxMediumScreens) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: $maxSmallScreens) {
+		grid-template-columns: 0.8fr;
+		gap: 30px;
+	}
+
+	@media (max-width: $maxXSmallScreens) {
+		grid-template-columns: 1fr;
+	}
+
+	.project {
+		position: relative;
+		text-align: center;
+		transition: opacity 0.3s linear;
+
+		&.hidden {
+			opacity: 0.4;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			display: block;
+			background-color: #fff;
+			opacity: 0.5;
+			filter: brightness(15);
+			border-radius: 65px;
+
+			@supports (backdrop-filter: blur(30px)) {
+				-webkit-backdrop-filter: blur(30px);
+				backdrop-filter: blur(1000px);
+			}
+		}
+
+		.project-link {
+			@include reset-link;
+			color: $thirdColor;
+		}
+
+		figure {
+			.project-image {
+				position: relative;
+				border-radius: 65px;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					display: block;
+					transition: all 0.2s linear;
+				}
+
+				.type {
+					position: absolute;
+					bottom: 30px;
+					left: 30px;
+					color: #fff;
+					font-size: 0.875rem;
+					font-weight: bold;
+					background-color: $mainColor;
+					padding: 7px 25px;
+					border-radius: 30px;
+					transition: all 0.2s linear;
+
+					@media (max-width: $maxXSmallScreens) {
+						left: 25px;
+						bottom: 25px;
+						padding: 7px 20px;
+					}
+				}
+			}
+
+			figcaption {
+				color: $thirdColor;
+				font-size: 20px;
+				margin: 15px;
+				position: relative;
+				z-index: 2;
+
+				@media (max-width: $maxMediumScreens) {
+					font-size: 1rem;
+				}
+			}
+		}
+
+		&:hover {
+			figure {
+				.project-image {
+					img {
+						transform: scale(1.27);
+					}
+				}
+			}
+		}
+
+		&.hidden:hover {
+			figure {
+				cursor: not-allowed;
+				pointer-events: none;
+				user-select: none;
+
+				.project-image {
+					img {
+						transform: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.portfolio-link {
+	text-align: center;
+	margin-top: 70px;
+
+	@media (max-width: $maxXSmallScreens) {
+		margin-top: 30px;
+	}
+
+	a {
+		@include reset-link;
+		@include main-btn(1.25rem, 15px 50px);
+		display: inline-block;
+
+		@media (max-width: $maxXSmallScreens) {
+			@include main-btn(1.1rem, 12px 30px);
+		}
+	}
+}

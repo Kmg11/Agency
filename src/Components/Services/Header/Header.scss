@@ -1,0 +1,18 @@
+@import "../../../Sass/Variables";
+@import "../../../Sass/mixins";
+
+.services-header {
+	margin-bottom: 100px;
+
+	@media (max-width: $maxSmallScreens) {
+		margin-bottom: 70px;
+	}
+
+	.services-title {
+		@include section-title;
+	}
+
+	.services-paragraph {
+		@include section-paragraph;
+	}
+}

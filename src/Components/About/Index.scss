@@ -1,79 +1,7 @@
 @import "./../../Sass/Variables";
-@import "./../../Sass/mixins";
 
 .about {
 	background-color: $backgroundColor;
 	padding-top: 90px;
 	padding-bottom: 90px;
-
-	.about-header {
-		text-align: center;
-		margin-bottom: 80px;
-
-		.about-title {
-			@include section-title;
-		}
-
-		.about-paragraph {
-			@include section-paragraph;
-		}
-	}
-
-	.about-body {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		align-items: center;
-		justify-content: space-between;
-		gap: 20px;
-
-		@media (max-width: $maxSmallScreens) {
-			grid-template-columns: 1fr;
-			gap: 30px;
-		}
-
-		.about-image {
-			img {
-				width: 100%;
-			}
-		}
-
-		.about-desc {
-			transition: opacity 0.3s linear;
-
-			@media (max-width: $maxSmallScreens) {
-				text-align: center;
-			}
-
-			.desc-title {
-				@include second-header;
-				font-size: 1.5rem;
-				margin-bottom: 25px;
-
-				@media (max-width: $maxMediumScreens) {
-					margin-bottom: 20px;
-				}
-			}
-
-			.desc-paragraph {
-				@include body-text;
-				margin-bottom: 16px;
-				font-size: 1.2rem;
-
-				@media (max-width: $maxMediumScreens) {
-					font-size: 1rem;
-				}
-			}
-
-			.desc-btn {
-				@include reset-btn;
-				color: $mainColor;
-				font-weight: bold;
-				font-size: 1.1rem;
-
-				@media (max-width: $maxMediumScreens) {
-					font-size: 1rem;
-				}
-			}
-		}
-	}
 }

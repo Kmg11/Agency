@@ -1,4 +1,3 @@
-import './Index.scss';
 import { Fragment } from 'react'
 
 import Header from './../Header/Index';

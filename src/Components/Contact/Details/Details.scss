@@ -1,0 +1,43 @@
+@import "./../../../Sass/Variables";
+@import "./../../../Sass/mixins";
+
+.contact-details {
+	font-style: normal;
+
+	& > div {
+		display: flex;
+
+		&:not(:last-of-type) {
+			margin-bottom: 30px;
+		}
+
+		.left {
+			margin-right: 15px;
+
+			.icon {
+				font-size: 1.7rem;
+				color: $mainColor;
+			}
+		}
+
+		.right {
+			.address-title {
+				font-size: 1.5rem;
+				font-weight: 400;
+				margin-bottom: 15px;
+				color: $thirdColor;
+			}
+
+			.address-details {
+				p {
+					font-size: 1.2rem;
+
+					a {
+						@include reset-link;
+						color: $thirdColor;
+					}
+				}
+			}
+		}
+	}
+}

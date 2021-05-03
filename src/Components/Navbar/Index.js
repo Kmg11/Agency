@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+
+// Import Components
+import NavbarLogo from "./Logo/Logo";
+import NavbarResponsiveBtn from "./Button/Button";
+import NavbarList from "./List/List";
 
 // Main Navbar Sass File
 import "./Index.scss";
@@ -70,79 +74,6 @@ const Navbar = () => {
 				</div>
 			</div>
 		</nav>
-	);
-};
-
-// Navbar Logo Component
-const NavbarLogo = () => {
-	return (
-		<NavLink exact to="/" className="logo">
-			<img
-				src="./Images/Main/logo.svg"
-				alt="Logo"
-				draggable="false"
-				className="logo-image"
-			/>
-			<span className="logo-text">Agency</span>
-		</NavLink>
-	);
-};
-
-// Navbar Responsiv Btn Component
-const NavbarResponsiveBtn = (props) => {
-	return (
-		<button className="navbar-responsive-btn" onClick={props.openCloseNavbar}>
-			<div className="line"></div>
-			<div className="line"></div>
-			<div className="line"></div>
-		</button>
-	);
-};
-
-// Navbar List Component
-const NavbarList = () => {
-	return (
-		<ul className="navbar-list">
-			<li className="navbar-item">
-				<NavLink exact to="/" className="navbar-link">
-					Home
-				</NavLink>
-			</li>
-			<li className="navbar-item">
-				<NavLink to="/services" className="navbar-link">
-					Services
-				</NavLink>
-			</li>
-			<li className="navbar-item">
-				<NavLink to="/portfolio" className="navbar-link">
-					Portfolio
-				</NavLink>
-			</li>
-			<li className="navbar-item">
-				<NavLink to="/team" className="navbar-link">
-					Team
-				</NavLink>
-			</li>
-			<li className="navbar-item">
-				<NavLink to="/contact" className="navbar-link">
-					Contact
-				</NavLink>
-			</li>
-
-			<NavbarBtn />
-		</ul>
-	);
-};
-
-// Navbar Btn Component
-const NavbarBtn = () => {
-	return (
-		<li className="navbar-item navbar-btn">
-			<NavLink to="/quote" className="navbar-link">
-				<i className="navbar-btn-icon fas fa-arrow-right"></i>
-				<span className="navbar-btn-text">Get Quote</span>
-			</NavLink>
-		</li>
 	);
 };
 

@@ -23,18 +23,13 @@
 ---- Scroll To Top Button
 ---- Try Fix Sass Background Images Src
 ---- Review Forms
----- Split Biggest Files
+---- Split Biggest Files Component & Sass
 ---- Lazy Load
 ---- Contact Background Need Resize [ Increase Padding ]
 ---- Create Header & Navbar & Logo Json File
+---- Animation Portfolio When Read More About Section
+---- Hover On Social Links In Footer
 -------------------- Global --------------------
-
--------------------- Done --------------------
----- [ Done ] Split JSON File To Small Files
----- [ Done ] Convert All Class Based To Function
----- [ Done ] Change Class Based To Function
----- [ Done ] Add Components Comments
--------------------- Done --------------------
 
 -------------------- Search --------------------
 	- Search For Fieldset & Legend
@@ -44,5 +39,12 @@
 -------------------- Important Notes --------------------
 ---- Collect Same Data In One Json File
 ---- Remove Height & background From Body
----- Split Big Components In Small Files
 -------------------- Important Notes --------------------
+
+-------------------- Done --------------------
+---- [ Done ] Split JSON File To Small Files
+---- [ Done ] Convert All Class Based To Function
+---- [ Done ] Change Class Based To Function
+---- [ Done ] Add Components Comments
+---- [ Done ] Extract Big Component In Small Files
+-------------------- Done --------------------
