@@ -16,15 +16,12 @@
 	.about-image {
 		img {
 			width: 100%;
+			user-select: none;
 		}
 	}
 
 	.about-desc {
 		transition: opacity 0.3s linear;
-
-		@media (max-width: $maxSmallScreens) {
-			text-align: center;
-		}
 
 		.desc-title {
 			@include second-header;

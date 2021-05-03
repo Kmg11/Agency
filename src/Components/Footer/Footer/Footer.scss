@@ -26,12 +26,14 @@
 			position: relative;
 			bottom: 4px;
 			margin-right: 2px;
+			user-select: none;
 		}
 
 		.logo-text {
 			@include first-header;
 			font-size: 2rem;
 			color: #fff;
+			user-select: none;
 
 			@media (max-width: $maxSmallScreens) {
 				font-size: 1.56rem;

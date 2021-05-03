@@ -10,23 +10,15 @@
 -------------------- Portfolio Secion --------------------
 ---- problem in portfoli getComputedStyle [ componentDidMount ] for resize & first load [ Loop In The Parent ]
 ---- Change portfoli Animation And Hide element from space [ Try Using Height ]
----- Try Center Last Element
 -------------------- Portfolio Secion --------------------
 
 -------------------- Global --------------------
----- problem in pages reload the page [ put condation for checking url ]
 ---- Handle Focus
----- Block Images Selection [ Know By ctrl + a ]
----- Centering Mixin
----- Make Text Left In Small Screens
 ---- Accessiblity
----- Scroll To Top Button
 ---- Try Fix Sass Background Images Src
 ---- Review Forms
----- Split Biggest Files Component & Sass
 ---- Lazy Load
 ---- Contact Background Need Resize [ Increase Padding ]
----- Create Header & Navbar & Logo Json File
 ---- Animation Portfolio When Read More About Section
 ---- Hover On Social Links In Footer
 -------------------- Global --------------------
@@ -39,6 +31,10 @@
 -------------------- Important Notes --------------------
 ---- Collect Same Data In One Json File
 ---- Remove Height & background From Body
+---- problem in pages reload the page [ put condation for checking url ]
+---- Scroll To Top Button
+---- Create Header & Navbar & Logo Json File
+---- Conver Font Awesome To Images Or Use Specific Files Only
 -------------------- Important Notes --------------------
 
 -------------------- Done --------------------
@@ -47,4 +43,5 @@
 ---- [ Done ] Change Class Based To Function
 ---- [ Done ] Add Components Comments
 ---- [ Done ] Extract Big Component In Small Files
+---- [ Done ] Block Images Select By User
 -------------------- Done --------------------

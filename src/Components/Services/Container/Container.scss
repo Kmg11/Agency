@@ -53,6 +53,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			user-select: none;
 
 			@media (min-width: $minLargeScreens) and (max-width: $maxLargeScreens) {
 				height: 200px;

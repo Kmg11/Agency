@@ -82,6 +82,7 @@
 			img {
 				display: block;
 				width: 100%;
+				user-select: none;
 
 				@media (max-width: $maxSmallScreens) {
 					width: 90%;

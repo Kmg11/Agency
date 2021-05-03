@@ -11,11 +11,13 @@
 		position: relative;
 		bottom: 4px;
 		margin-right: 2px;
+		user-select: none;
 	}
 
 	.logo-text {
 		@include first-header;
 		font-size: 2rem;
+		user-select: none;
 
 		@media (max-width: $maxXSmallScreens) {
 			font-size: 1.56rem;
