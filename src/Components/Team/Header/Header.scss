@@ -1,0 +1,13 @@
+@import "./../../../Sass/mixins.scss";
+
+.team-header {
+	margin-bottom: 120px;
+
+	.team-title {
+		@include section-title;
+	}
+
+	.team-paragraph {
+		@include section-paragraph;
+	}
+}

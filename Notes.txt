@@ -12,15 +12,21 @@
 ---- Change portfoli Animation And Hide element from space [ Try Using Height ]
 -------------------- Portfolio Secion --------------------
 
+-------------------- Team --------------------
+---- Hover On Team Member [ Second Color ]
+---- Link Problem In Services & Team Add It By Position [ Take Care Of Child Links ]
+---- Problem In Team When Refresh
+---- Do Not Ad Inline Elements Parent Of Block Elements
+-------------------- Team --------------------
+
 -------------------- Global --------------------
 ---- Handle Focus
 ---- Accessiblity
----- Try Fix Sass Background Images Src
+---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 ---- Review Forms
 ---- Lazy Load
 ---- Contact Background Need Resize [ Increase Padding ]
 ---- Animation Portfolio When Read More About Section
----- Hover On Social Links In Footer
 -------------------- Global --------------------
 
 -------------------- Search --------------------
@@ -33,8 +39,11 @@
 ---- Remove Height & background From Body
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Scroll To Top Button
----- Create Header & Navbar & Logo Json File
+---- Create Header & Navbar & Logo & Socail Media Json File
+---- Mixin Logo Style
 ---- Conver Font Awesome To Images Or Use Specific Files Only
+---- Change Scrollbar Style
+---- Paralix Effect
 -------------------- Important Notes --------------------
 
 -------------------- Done --------------------

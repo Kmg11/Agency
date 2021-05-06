@@ -1,0 +1,139 @@
+@import "./../../../Sass/mixins.scss";
+@import "./../../../Sass/Variables.scss";
+
+.team-body {
+	position: relative;
+
+	&::before {
+		content: "";
+		background-color: $mainColor;
+		width: 100%;
+		height: 50%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.swiper-container {
+		height: 480px;
+
+		@media (max-width: $maxXSmallScreens) {
+			height: 380px;
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: absolute;
+			color: #fff;
+			bottom: 20px;
+			top: auto;
+
+			&::after {
+				font-size: 20px;
+				font-weight: bold;
+			}
+		}
+
+		.swiper-button-prev {
+			left: 50%;
+			transform: translateX(-150%);
+		}
+
+		.swiper-button-next {
+			right: 50%;
+			transform: translateX(150%);
+		}
+	}
+
+	.team-member {
+		background-color: #fff;
+		display: inline-block;
+		border-radius: 45px;
+		text-align: center;
+		box-shadow: 0 3px 6px rgba(#000000, 0.1);
+		width: 100%;
+
+		@media (max-width: $maxXSmallScreens) {
+			border-radius: 30px;
+		}
+
+		.member-link {
+			@include reset-link;
+			padding: 40px 20px;
+			display: block;
+			width: 100%;
+
+			@media (max-width: $maxXSmallScreens) {
+				padding: 20px;
+			}
+		}
+
+		.member-image {
+			width: 170px;
+			height: 180px;
+			border-radius: 50%;
+			margin: auto;
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 30px;
+
+			@media (max-width: $maxXSmallScreens) {
+				width: 120px;
+				height: 130px;
+			}
+
+			img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				user-select: none;
+			}
+		}
+
+		.member-name {
+			font-weight: 600;
+			font-size: 1.5rem;
+			color: #495254;
+			margin-bottom: 5px;
+
+			@media (max-width: $maxXSmallScreens) {
+				font-size: 1.2rem;
+			}
+		}
+
+		.member-role {
+			color: #262222;
+			margin-bottom: 20px;
+
+			@media (max-width: $maxXSmallScreens) {
+				font-size: 0.8rem;
+			}
+		}
+
+		.member-social-media {
+			display: grid;
+			grid-template-columns: repeat(3, 40px);
+			justify-content: center;
+			gap: 5px;
+
+			@media (max-width: $maxXSmallScreens) {
+				grid-template-columns: repeat(3, 30px);
+			}
+
+			.social-link {
+				@include reset-link;
+
+				.icon {
+					font-size: 1.7rem;
+					color: #495254;
+
+					@media (max-width: $maxXSmallScreens) {
+						font-size: 1.3rem;
+					}
+				}
+			}
+		}
+	}
+}
