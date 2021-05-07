@@ -1,28 +1,46 @@
+// Main Header Sass File
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "./Index.scss";
 
-const Header = (props) => {
+const Header = () => {
+	// Header Data
+	const [data, setdata] = useState({
+		title: {
+			before: "",
+			word: "",
+			after: "",
+		},
+	});
+
+	useEffect(() => {
+		// Fetch Header Data
+		axios.get("./Apis/Header.json").then(({ data }) => {
+			setdata(data);
+		});
+	}, []);
+
+	const {
+		title: { before, word, after },
+		body,
+		button,
+		image,
+	} = data;
+
 	return (
 		<header className="main-header">
 			<div className="container">
 				<div className="header-inner">
 					<section className="header-desc">
 						<h1 className="header-title">
-							Let’s <span>Build</span> Great Experiences Together
+							{before} <span>{word}</span> {after}
 						</h1>
-						<p className="header-paragraph">
-							Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch
-							Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
-							Zwölf Boxkämpfer jagen Viktor quer über
-						</p>
-						<button className="header-btn">Explore</button>
+						<p className="header-paragraph">{body}</p>
+						<button className="header-btn">{button}</button>
 					</section>
 
 					<section className="header-image">
-						<img
-							src="./Images/Header/header-Illustration.svg"
-							alt="header-Illustration"
-							draggable="false"
-						/>
+						<img src={image} alt="header-Illustration" draggable="false" />
 					</section>
 				</div>
 			</div>

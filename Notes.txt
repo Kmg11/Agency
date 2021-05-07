@@ -32,13 +32,13 @@
 -------------------- Search --------------------
 ---- Search For Fieldset & Legend
 ---- Check Refs & Portail
+---- React Context & Hooks
 -------------------- Search --------------------
 
 -------------------- Important Notes --------------------
----- Collect Same Data In One Json File
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Scroll To Top Button
----- Create Header & Navbar & Socail Media Json File
+---- Create Navbar Media Json File
 ---- Conver Font Awesome To Images Or Use Specific Files Only
 ---- Change Scrollbar Style
 ---- Paralix Effect
@@ -58,4 +58,5 @@
 ---- [ Done ] Separete Mixins File In Small FIles
 ---- [ Done ] Remove Height & background From Body
 ---- [ Done ] Create Social Json FIle
+---- [ Done ] Make Header Dynamic
 -------------------- Done --------------------
