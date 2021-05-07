@@ -13,7 +13,6 @@
 -------------------- Portfolio Secion --------------------
 
 -------------------- Team --------------------
----- Hover On Team Member [ Second Color ]
 ---- Link Problem In Services & Team Add It By Position [ Take Care Of Child Links ]
 ---- Problem In Team When Refresh
 ---- Do Not Ad Inline Elements Parent Of Block Elements
@@ -38,10 +37,10 @@
 -------------------- Important Notes --------------------
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Scroll To Top Button
----- Create Navbar Media Json File
 ---- Conver Font Awesome To Images Or Use Specific Files Only
 ---- Change Scrollbar Style
 ---- Paralix Effect
+---- Block Clicking On Logo When The User In Home Page
 -------------------- Important Notes --------------------
 
 -------------------- Done --------------------
@@ -59,4 +58,6 @@
 ---- [ Done ] Remove Height & background From Body
 ---- [ Done ] Create Social Json FIle
 ---- [ Done ] Make Header Dynamic
+---- [ Done ] Make Navbar Dynamic
+---- [ Done ] Change Navbar Shadow
 -------------------- Done --------------------

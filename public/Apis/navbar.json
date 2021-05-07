@@ -1,0 +1,34 @@
+{
+	"links": [
+		{
+			"id": 1,
+			"link": "/",
+			"text": "Home"
+		},
+		{
+			"id": 2,
+			"link": "/services",
+			"text": "Services"
+		},
+		{
+			"id": 3,
+			"link": "/portfolio",
+			"text": "Portfolio"
+		},
+		{
+			"id": 4,
+			"link": "/team",
+			"text": "Team"
+		},
+		{
+			"id": 5,
+			"link": "/contact",
+			"text": "Contact"
+		}
+	],
+
+	"button": {
+		"icon": "fas fa-arrow-right",
+		"text": "Get Quote"
+	}
+}
