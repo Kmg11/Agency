@@ -40,7 +40,6 @@
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Scroll To Top Button
 ---- Create Header & Navbar & Logo & Socail Media Json File
----- Mixin Logo Style
 ---- Conver Font Awesome To Images Or Use Specific Files Only
 ---- Change Scrollbar Style
 ---- Paralix Effect
@@ -53,4 +52,9 @@
 ---- [ Done ] Add Components Comments
 ---- [ Done ] Extract Big Component In Small Files
 ---- [ Done ] Block Images Select By User
+---- [ Done ] Decrease Padding In Our Team Section
+---- [ Done ] Fix Width Problem In Team Member In Extra Small Screens
+---- [ Done ] Create Logo Json File
+---- [ Done ] Mixin Logo Style
+---- [ Done ] Separete Mixins File In Small FIles
 -------------------- Done --------------------

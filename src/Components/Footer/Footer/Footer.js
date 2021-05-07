@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // Main Footer Footer Sass File
@@ -16,16 +18,30 @@ const FooterFooter = (props) => {
 		);
 	});
 
+	const [image, setImage] = useState([]);
+	const [text, setText] = useState([]);
+
+	useEffect(() => {
+		axios.get("./Apis/Logo.json").then(({ data }) => {
+			const { image, text } = data;
+			setImage(image);
+			setText(text);
+		});
+	}, []);
+
 	return (
 		<footer className="footer-footer">
 			<Link to="/" className="logo">
-				<img
-					src="./Images/Main/logo.svg"
-					alt="Logo"
-					draggable="false"
-					className="logo-image"
-				/>
-				<span className="logo-text">Agency</span>
+				{image && (
+					<img
+						src={image}
+						alt="Logo"
+						draggable="false"
+						className="logo-image"
+					/>
+				)}
+
+				{text && <span className="logo-text">{text}</span>}
 			</Link>
 
 			<p className="copy-right">{copyRight}</p>

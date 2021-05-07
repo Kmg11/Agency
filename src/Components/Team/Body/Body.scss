@@ -65,7 +65,7 @@
 			width: 100%;
 
 			@media (max-width: $maxXSmallScreens) {
-				padding: 20px;
+				padding: 20px 10px;
 			}
 		}
 
@@ -89,6 +89,10 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 				user-select: none;
+
+				@media (max-width: $maxXSmallScreens) {
+					transform: translate(-50%, -50%) scale(0.7);
+				}
 			}
 		}
 

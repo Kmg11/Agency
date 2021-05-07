@@ -2,25 +2,13 @@
 @import "./../../../Sass/mixins.scss";
 
 .logo {
-	@include reset-link;
-
-	display: flex;
+	@include logo;
 
 	.logo-image {
-		display: block;
-		position: relative;
-		bottom: 4px;
-		margin-right: 2px;
-		user-select: none;
+		@include logo-image;
 	}
 
 	.logo-text {
-		@include first-header;
-		font-size: 2rem;
-		user-select: none;
-
-		@media (max-width: $maxXSmallScreens) {
-			font-size: 1.56rem;
-		}
+		@include logo-text;
 	}
 }

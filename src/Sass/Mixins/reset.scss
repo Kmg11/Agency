@@ -1,0 +1,24 @@
+// Reset List Mixin
+@mixin reset-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Reset Link Mixin
+@mixin reset-link {
+	text-decoration: none;
+}
+
+// Reset Btn Mixin
+@mixin reset-btn {
+	background: none;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+}
+
+@mixin reset-input {
+	border: none;
+	outline: none;
+}
