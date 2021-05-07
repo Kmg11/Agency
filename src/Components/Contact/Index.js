@@ -13,16 +13,14 @@ import "./Index.scss";
 const Contact = () => {
 	// Data States
 	const [header, setHeader] = useState([]);
-	const [social, setSocial] = useState([]);
 	const [content, setContent] = useState([]);
 
 	// Initialize
 	useEffect(() => {
 		// Fetch Data From Api
 		axios.get("./Apis/contact.json").then(({ data }) => {
-			const { header, social, content } = data;
+			const { header, content } = data;
 			setHeader(header);
-			setSocial(social);
 			setContent(content);
 		});
 	}, []);
@@ -32,10 +30,9 @@ const Contact = () => {
 			<div className="container">
 				<div className="contact-inner">
 					<section className="contact-info">
-						<ContactHeader header={header} social={social} />
+						<ContactHeader header={header} />
 						<ContactDetails content={content} />
 					</section>
-
 					<ContactForm />
 				</div>
 			</div>

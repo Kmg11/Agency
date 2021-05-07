@@ -77,26 +77,5 @@
 		}
 	],
 
-	"social_media_links": [
-		{
-			"id": 1,
-			"name": "Instagram",
-			"link": "https://www.instagram.com/kirolosmahfouz/",
-			"icon": "fab fa-instagram"
-		},
-		{
-			"id": 2,
-			"name": "Facebook",
-			"link": "/https://www.facebook.com/KirolosMahfouz/",
-			"icon": "fab fa-facebook-square"
-		},
-		{
-			"id": 3,
-			"name": "Twitter",
-			"link": "/https://twitter.com/KirolosMahfouz1",
-			"icon": "fab fa-twitter"
-		}
-	],
-
 	"copy_right": "© 2021 | designed by we3solutions.ca"
 }

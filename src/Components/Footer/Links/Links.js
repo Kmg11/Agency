@@ -1,9 +1,21 @@
 // Main Footer Links Sass File
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "./Links.scss";
 
 // Footer Links Component
 const FooterLinks = (props) => {
-	const { about, contact, videos, social } = props;
+	const { about, contact, videos } = props;
+
+	// Social
+	const [social, setSocail] = useState([]);
+
+	useEffect(() => {
+		// Fetch Social
+		axios.get("./Apis/social.json").then(({ data }) => {
+			setSocail(data);
+		});
+	}, []);
 
 	// Collect Data & Add Title
 	const links = [

@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"link": "https://www.instagram.com/kirolosmahfouz/",
+		"icon": "fab fa-instagram",
+		"name": "Instagram"
+	},
+	{
+		"id": 2,
+		"link": "https://www.facebook.com/KirolosMahfouz/",
+		"icon": "fab fa-facebook-square",
+		"name": "Facebook"
+	},
+	{
+		"id": 3,
+		"link": "https://twitter.com/KirolosMahfouz1",
+		"icon": "fab fa-twitter",
+		"name": "Twitter"
+	}
+]

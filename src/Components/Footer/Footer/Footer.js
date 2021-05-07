@@ -7,7 +7,30 @@ import "./Footer.scss";
 
 // Footer Footer Component
 const FooterFooter = (props) => {
-	const { social, copyRight } = props;
+	const { copyRight } = props;
+
+	// Logo Image & Text
+	const [image, setImage] = useState([]);
+	const [text, setText] = useState([]);
+
+	useEffect(() => {
+		// Fetch Logo Image & Text
+		axios.get("./Apis/Logo.json").then(({ data }) => {
+			const { image, text } = data;
+			setImage(image);
+			setText(text);
+		});
+	}, []);
+
+	// social
+	const [social, setSocial] = useState([]);
+
+	useEffect(() => {
+		// Fetch social
+		axios.get("./Apis/social.json").then(({ data }) => {
+			setSocial(data);
+		});
+	}, []);
 
 	// Get Social List
 	const socialList = social.map((item) => {
@@ -17,17 +40,6 @@ const FooterFooter = (props) => {
 			</a>
 		);
 	});
-
-	const [image, setImage] = useState([]);
-	const [text, setText] = useState([]);
-
-	useEffect(() => {
-		axios.get("./Apis/Logo.json").then(({ data }) => {
-			const { image, text } = data;
-			setImage(image);
-			setText(text);
-		});
-	}, []);
 
 	return (
 		<footer className="footer-footer">

@@ -30,16 +30,15 @@
 -------------------- Global --------------------
 
 -------------------- Search --------------------
-	- Search For Fieldset & Legend
-	- Check Refs & Portail
+---- Search For Fieldset & Legend
+---- Check Refs & Portail
 -------------------- Search --------------------
 
 -------------------- Important Notes --------------------
 ---- Collect Same Data In One Json File
----- Remove Height & background From Body
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Scroll To Top Button
----- Create Header & Navbar & Logo & Socail Media Json File
+---- Create Header & Navbar & Socail Media Json File
 ---- Conver Font Awesome To Images Or Use Specific Files Only
 ---- Change Scrollbar Style
 ---- Paralix Effect
@@ -57,4 +56,6 @@
 ---- [ Done ] Create Logo Json File
 ---- [ Done ] Mixin Logo Style
 ---- [ Done ] Separete Mixins File In Small FIles
+---- [ Done ] Remove Height & background From Body
+---- [ Done ] Create Social Json FIle
 -------------------- Done --------------------

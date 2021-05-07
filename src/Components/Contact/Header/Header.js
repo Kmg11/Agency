@@ -1,12 +1,21 @@
 // Main Contact Header Sass File
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "./Header.scss";
 
 // Contact Header Component
 const ContactHeader = (props) => {
 	const {
 		header: { title, body },
-		social,
 	} = props;
+
+	const [social, setSocial] = useState([]);
+
+	useEffect(() => {
+		axios.get("./Apis/social.json").then(({ data }) => {
+			setSocial(data);
+		});
+	}, []);
 
 	// Get Social Links List
 	const socialList = social.map((item) => {
