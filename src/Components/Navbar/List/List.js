@@ -6,7 +6,9 @@ import { NavLink } from "react-router-dom";
 import "./List.scss";
 
 // Navbar List Component
-const NavbarList = () => {
+const NavbarList = (props) => {
+	const { closeNavbar } = props;
+
 	const [links, setLinks] = useState([]);
 	const [button, setButton] = useState({});
 
@@ -22,7 +24,7 @@ const NavbarList = () => {
 	const linksList = links.map((link) => {
 		return (
 			<li key={link.id} className="navbar-item">
-				<NavLink exact to={link.link} className="navbar-link">
+				<NavLink exact to={link.link} className="navbar-link" onClick={closeNavbar}>
 					{link.text}
 				</NavLink>
 			</li>

@@ -3,8 +3,7 @@
 -------------------- Header Section --------------------
 
 -------------------- Navbar --------------------
----- Close Navbar When Change Page In Responsive
----- Change Navbar Color When Scrolling In diffrent sections like footer
+---- [ Done ] Close Navbar When Change Page In Responsive
 -------------------- Navbar --------------------
 
 -------------------- Portfolio Secion --------------------
@@ -22,16 +21,15 @@
 ---- Handle Focus
 ---- Accessiblity
 ---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
----- Review Forms
 ---- Lazy Load
 ---- Contact Background Need Resize [ Increase Padding ]
----- Animation Portfolio When Read More About Section
 -------------------- Global --------------------
 
 -------------------- Search --------------------
 ---- Search For Fieldset & Legend
 ---- Check Refs & Portail
 ---- React Context & Hooks
+---- Review Forms
 -------------------- Search --------------------
 
 -------------------- Important Notes --------------------

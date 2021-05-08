@@ -22,6 +22,13 @@ const Navbar = () => {
 		setNavbarOpen((prevValue) => !prevValue);
 	};
 
+	// Close Navbar When Click On Ant Link
+	const closeNavbar = () => {
+		if (navbarOpen) {
+			setNavbarOpen(false);
+		}
+	};
+
 	// Stop Propagation For Navbar To Handle closeNavbar Function
 	const handleNavbarClicking = (e) => {
 		e.stopPropagation();
@@ -70,7 +77,7 @@ const Navbar = () => {
 				<div className="navbar-inner">
 					<NavbarLogo />
 					<NavbarResponsiveBtn openCloseNavbar={openCloseNavbar} />
-					<NavbarList />
+					<NavbarList closeNavbar={closeNavbar} />
 				</div>
 			</div>
 		</nav>
