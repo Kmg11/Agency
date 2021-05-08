@@ -56,7 +56,7 @@
 ---- [ Done ] Make Navbar Dynamic
 ---- [ Done ] Change Navbar Shadow
 ---- [ Done ] Scroll To Top Button
----- Contact Background Need Resize [ Increase Padding ]
+---- [ Done ] Contact Background Need Resize [ Increase Padding ]
 ---- Change Scrollbar Style
 -------------------- Done --------------------
 

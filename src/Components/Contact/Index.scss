@@ -10,6 +10,10 @@
 		padding-top: 80px;
 	}
 
+	@media (min-width: $minSmallScreens) and (max-width: $maxSmallScreens) {
+		padding-bottom: 210px;
+	}
+
 	@media (max-width: $maxXSmallScreens) {
 		padding-top: 0;
 	}
