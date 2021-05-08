@@ -7,8 +7,9 @@
 -------------------- Navbar --------------------
 
 -------------------- Portfolio Secion --------------------
----- problem in portfoli getComputedStyle [ componentDidMount ] for resize & first load [ Loop In The Parent ]
----- Change portfoli Animation And Hide element from space [ Try Using Height ]
+---- problem in portfoli getComputedStyle [ componentDidMount ] for resize & first load [ Loop In The Parent ] [ Use Static Padding ]
+---- [ Done ] Change portfoli Animation And Hide element from space
+---- Background Problem When Change Type
 -------------------- Portfolio Secion --------------------
 
 -------------------- Team --------------------
@@ -36,6 +37,7 @@
 ---- Conver Font Awesome To Images Or Use Specific Files Only
 ---- Paralix Effect
 ---- Block Clicking On Logo When The User In Home Page
+---- Change Scrollbar Style
 -------------------- Important Notes --------------------
 
 -------------------- Done --------------------
@@ -57,7 +59,6 @@
 ---- [ Done ] Change Navbar Shadow
 ---- [ Done ] Scroll To Top Button
 ---- [ Done ] Contact Background Need Resize [ Increase Padding ]
----- Change Scrollbar Style
 -------------------- Done --------------------
 
 

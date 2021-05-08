@@ -20,13 +20,17 @@
 		grid-template-columns: 1fr;
 	}
 
+	&.change-type {
+		animation: change-type 0.7s ease;
+	}
+
 	.project {
 		position: relative;
 		text-align: center;
 		transition: opacity 0.3s linear;
 
 		&.hidden {
-			opacity: 0.4;
+			display: none;
 		}
 
 		&::before {
@@ -141,5 +145,23 @@
 		@media (max-width: $maxXSmallScreens) {
 			@include main-btn(1.1rem, 12px 30px);
 		}
+	}
+}
+
+@keyframes change-type {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(100%) scale(1.2);
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0) scale(1);
+		visibility: visible;
+		opacity: 1;
 	}
 }

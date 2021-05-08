@@ -6,7 +6,7 @@ import "./Projects.scss";
 
 // Portfolio Projects Component
 const PortfolioProjects = (props) => {
-	const { projects, type } = props;
+	const { projects, type, projectsContainer } = props;
 
 	// Default Number Of Projects
 	const defaultNumber = 9;
@@ -48,7 +48,9 @@ const PortfolioProjects = (props) => {
 
 	return (
 		<Fragment>
-			<div className="projects">{projectsList}</div>
+			<div className="projects" ref={projectsContainer}>
+				{projectsList}
+			</div>
 			<div className="portfolio-link">
 				<Link to="/portfolio" onClick={viewAllProjects}>
 					{numberOfProjects >= projects.length ? "View Less" : "View All"}

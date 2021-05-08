@@ -2,6 +2,8 @@
 
 .portfolio {
 	background: $backgroundColor no-repeat;
-	padding-top: 100px;
+	background-size: cover;
+	padding-top: 150px;
 	padding-bottom: 100px;
+	transition: all 0.5s ease;
 }
