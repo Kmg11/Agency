@@ -22,7 +22,6 @@
 ---- Accessiblity
 ---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 ---- Lazy Load
----- Contact Background Need Resize [ Increase Padding ]
 -------------------- Global --------------------
 
 -------------------- Search --------------------
@@ -34,9 +33,7 @@
 
 -------------------- Important Notes --------------------
 ---- problem in pages reload the page [ put condation for checking url ]
----- Scroll To Top Button
 ---- Conver Font Awesome To Images Or Use Specific Files Only
----- Change Scrollbar Style
 ---- Paralix Effect
 ---- Block Clicking On Logo When The User In Home Page
 -------------------- Important Notes --------------------
@@ -58,4 +55,14 @@
 ---- [ Done ] Make Header Dynamic
 ---- [ Done ] Make Navbar Dynamic
 ---- [ Done ] Change Navbar Shadow
+---- [ Done ] Scroll To Top Button
+---- Contact Background Need Resize [ Increase Padding ]
+---- Change Scrollbar Style
 -------------------- Done --------------------
+
+
+@media (prefers-color-scheme: dark) {
+	background-color: #121212;
+}	
+
+window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => (e.matches > enabke() : disable()))

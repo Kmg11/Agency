@@ -1,0 +1,47 @@
+@import "./../../Sass/Variables.scss";
+@import "./../../Sass/mixins.scss";
+
+.scroll-to-top {
+	@include reset-btn;
+
+	$wh: 50px;
+
+	width: $wh;
+	height: $wh;
+	border-radius: 50%;
+	background-color: $mainColor;
+	box-shadow: 0 3px 15px rgba($color: #fff, $alpha: 0.3);
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	z-index: 1000;
+	transition: all 0.3s ease;
+	visibility: hidden;
+	opacity: 0;
+
+	&.show {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	@media (max-width: $maxXSmallScreens) {
+		bottom: 20px;
+		right: 20px;
+	}
+
+	.icon {
+		font-size: 1.5rem;
+		color: #fff;
+		transition: all 0.3s ease;
+	}
+
+	&:hover {
+		transform: scale(1.2);
+		background-color: #fff;
+		box-shadow: 0 8px 15px rgba($thirdColor, 0.2);
+
+		.icon {
+			color: $thirdColor;
+		}
+	}
+}
