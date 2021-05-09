@@ -35,7 +35,13 @@ const FooterFooter = (props) => {
 	// Get Social List
 	const socialList = social.map((item) => {
 		return (
-			<a key={item.id} href={item.link} target="_blank" rel="noreferrer">
+			<a
+				key={item.id}
+				href={item.link}
+				target="_blank"
+				rel="noreferrer"
+				aria-label={item.name}
+			>
 				<i className={`icon ${item.icon}`}></i>
 			</a>
 		);

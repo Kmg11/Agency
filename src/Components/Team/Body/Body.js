@@ -14,8 +14,7 @@ import "./Body.scss";
 // install Swiper modules
 SwiperCore.use([Navigation, Autoplay]);
 
-const TeamBody = (props) => {
-	const { content: members } = props;
+const TeamBody = ({ content: members }) => {
 	const membersList = members.map((member) => {
 		return (
 			<SwiperSlide key={member.id}>
@@ -36,6 +35,7 @@ const TeamBody = (props) => {
 										target="_blank"
 										rel="noreferrer"
 										className="social-link"
+										aria-label={link.name}
 									>
 										<i className={`icon ${link.icon}`}></i>
 									</a>

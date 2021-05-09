@@ -25,12 +25,12 @@ const ScrollToTop = () => {
 	};
 
 	return (
-		<button
+		<butto aria-label="Scroll To Top"n
 			className={`scroll-to-top ${showButton ? "show" : ""}`}
 			onClick={scrollToTop}
 		>
 			<i className="icon fas fa-angle-up"></i>
-		</button>
+		</butto>
 	);
 };
 

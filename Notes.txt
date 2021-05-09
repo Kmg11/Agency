@@ -59,6 +59,7 @@
 ---- [ Done ] Change Navbar Shadow
 ---- [ Done ] Scroll To Top Button
 ---- [ Done ] Contact Background Need Resize [ Increase Padding ]
+---- [ Done ] Fix Some Accessiblity Problems
 -------------------- Done --------------------
 
 

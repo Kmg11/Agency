@@ -4,9 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Nav.scss";
 
 // Portfolio Nav Component
-const PortfolioNav = (props) => {
-	const { nav, changeType } = props;
-
+const PortfolioNav = ({ nav, changeType }) => {
 	// States
 	const [lineStyle, setLineStyle] = useState({ left: "", width: "" });
 	const [activeItem, setActiveItem] = useState(1);

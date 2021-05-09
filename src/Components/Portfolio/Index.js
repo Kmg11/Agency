@@ -60,11 +60,11 @@ const PortfolioBody = (props) => {
 
 				setTimeout(() => {
 					projectsContainer.current.classList.remove("change-type");
-				}, 600);
+				}, 500);
 
 				setTimeout(() => {
 					setType(value);
-				}, 200);
+				}, 300);
 			}
 		},
 		[type]
