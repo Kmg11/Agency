@@ -2,11 +2,7 @@
 import "./Header.scss";
 
 // Footer Header Component
-const FooterHeader = (props) => {
-	const {
-		header: { title },
-	} = props;
-
+const FooterHeader = ({ header: { title } }) => {
 	return (
 		<header className="footer-header">
 			<h2 className="footer-title">{title}</h2>

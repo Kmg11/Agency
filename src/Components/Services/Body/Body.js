@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import "./Body.scss";
 
 // Services Container Component
-const ServicesContainer = (props) => {
-	const { content } = props;
-
+const ServicesContainer = ({ content }) => {
 	// Get Services List
 	const servicesList = content.map((serv) => {
 		return (

@@ -2,9 +2,7 @@
 import "./Details.scss";
 
 // Contact Details Component
-const ContactDetails = (props) => {
-	const { content: details } = props;
-
+const ContactDetails = ({ content: details }) => {
 	// Get Details List
 	const detailsList = details.map((item) => {
 		return (

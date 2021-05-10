@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 // Footer Footer Component
-const FooterFooter = (props) => {
-	const { copyRight } = props;
-
+const FooterFooter = ({ copyRight }) => {
 	// Logo Image & Text
 	const [image, setImage] = useState([]);
 	const [text, setText] = useState([]);
@@ -20,6 +18,12 @@ const FooterFooter = (props) => {
 			setImage(image);
 			setText(text);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setImage([]);
+			setText([]);
+		};
 	}, []);
 
 	// social
@@ -30,6 +34,11 @@ const FooterFooter = (props) => {
 		axios.get("./Apis/social.json").then(({ data }) => {
 			setSocial(data);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setSocial([]);
+		};
 	}, []);
 
 	// Get Social List

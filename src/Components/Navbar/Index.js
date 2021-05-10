@@ -10,7 +10,6 @@ import "./Index.scss";
 
 // Mani Navbar Component
 const Navbar = () => {
-	// States
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	const [navbarScroll, setNavbarScroll] = useState(false);
 

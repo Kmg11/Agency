@@ -8,17 +8,23 @@ import TeamBody from "./Body/Body";
 // Main Team Sass File
 import "./Index.scss";
 
-const Team = (props) => {
+const Team = () => {
 	const [header, setHeader] = useState([]);
 	const [content, setContent] = useState([]);
 
 	useEffect(() => {
+		// Fetch Data
 		axios.get("./Apis/team.json").then(({ data }) => {
 			const { header, content } = data;
-
 			setHeader(header);
 			setContent(content);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setHeader([]);
+			setContent([]);
+		};
 	}, []);
 
 	return (

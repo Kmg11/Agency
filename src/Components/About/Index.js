@@ -22,6 +22,12 @@ const About = () => {
 			setHeader(header);
 			setContent(content);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setHeader([]);
+			setContent([]);
+		};
 	}, []);
 
 	return (

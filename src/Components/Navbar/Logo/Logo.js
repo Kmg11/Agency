@@ -16,6 +16,12 @@ const NavbarLogo = () => {
 			setImage(image);
 			setText(text);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setImage([]);
+			setText([]);
+		};
 	}, []);
 
 	return (

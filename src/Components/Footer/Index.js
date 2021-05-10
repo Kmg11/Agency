@@ -36,6 +36,15 @@ const Footer = () => {
 			setVideos(videos_links);
 			setCopyRight(copy_right);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setHeader([]);
+			setAbout([]);
+			setContact([]);
+			setVideos([]);
+			setCopyRight("");
+		};
 	}, []);
 
 	return (

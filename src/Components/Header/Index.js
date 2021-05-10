@@ -1,6 +1,7 @@
-// Main Header Sass File
 import axios from "axios";
 import { useEffect, useState } from "react";
+
+// Main Header Sass File
 import "./Index.scss";
 
 const Header = ({ exploreFn }) => {
@@ -18,6 +19,17 @@ const Header = ({ exploreFn }) => {
 		axios.get("./Apis/Header.json").then(({ data }) => {
 			setdata(data);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setdata({
+				title: {
+					before: "",
+					word: "",
+					after: "",
+				},
+			});
+		};
 	}, []);
 
 	const {

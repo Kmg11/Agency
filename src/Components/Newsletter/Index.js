@@ -1,6 +1,6 @@
 import "./Index.scss";
 
-const Newsletter = (props) => {
+const Newsletter = () => {
 	return (
 		<section className="newsletter">
 			<div className="container">

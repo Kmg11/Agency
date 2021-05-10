@@ -23,15 +23,7 @@
 ---- Accessiblity
 ---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 ---- Lazy Load
----- Error In Console When Change Page
 -------------------- Global --------------------
-
--------------------- Search --------------------
----- [ Done ] Search For Fieldset & Legend
----- Check Refs & Portail
----- React Context & Hooks
----- Review Forms
--------------------- Search --------------------
 
 -------------------- Important Notes --------------------
 ---- problem in pages reload the page [ put condation for checking url ]
@@ -39,6 +31,9 @@
 ---- Block Clicking On Logo When The User In Home Page
 ---- Paralix Effect
 ---- Change Scrollbar Style
+---- Add Dark Mode
+---- Colors Controll Room
+---- Imporve Preformance By Using [ useMemo, useCallback ]
 -------------------- Important Notes --------------------
 
 -------------------- Done --------------------
@@ -63,8 +58,17 @@
 ---- [ Done ] Fix Some Accessiblity Problems
 ---- [ Done ] Fix Scroll To TOp Button Errors
 ---- [ Done ] Fix Link Problem In [ Services - Portfolio - Team ] Sections
+---- [ Done ] Fix Unmounted Component To Avoid Lake Memory
+---- [ Done ] Destructuring Small Props
+---- [ Done ] Error In Console When Change Page
 -------------------- Done --------------------
 
+-------------------- Search --------------------
+---- [ Done ] Search For Fieldset & Legend
+---- Check Refs & Portail
+---- React Context & Hooks
+---- Review Forms
+-------------------- Search --------------------
 
 @media (prefers-color-scheme: dark) {
 	background-color: #121212;

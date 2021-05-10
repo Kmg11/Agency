@@ -2,11 +2,7 @@
 import "./Header.scss";
 
 // About Header Component
-const AboutHeader = (props) => {
-	const {
-		header: { title, body },
-	} = props;
-
+const AboutHeader = ({ header: { title, body } }) => {
 	return (
 		<header className="about-header">
 			<h2 className="about-title">{title}</h2>

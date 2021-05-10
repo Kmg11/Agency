@@ -14,6 +14,11 @@ const ScrollToTop = () => {
 				setShowButton(false);
 			}
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setShowButton(false);
+		};
 	}, []);
 
 	// Scroll To Top Function
@@ -25,7 +30,8 @@ const ScrollToTop = () => {
 	};
 
 	return (
-		<button aria-label="Scroll To Top"
+		<button
+			aria-label="Scroll To Top"
 			className={`scroll-to-top ${showButton ? "show" : ""}`}
 			onClick={scrollToTop}
 		>

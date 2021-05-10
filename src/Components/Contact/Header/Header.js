@@ -4,17 +4,19 @@ import { useEffect, useState } from "react";
 import "./Header.scss";
 
 // Contact Header Component
-const ContactHeader = (props) => {
-	const {
-		header: { title, body },
-	} = props;
-
+const ContactHeader = ({ header: { title, body } }) => {
 	const [social, setSocial] = useState([]);
 
 	useEffect(() => {
+		// Fetch Social Links
 		axios.get("./Apis/social.json").then(({ data }) => {
 			setSocial(data);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setSocial([]);
+		};
 	}, []);
 
 	// Get Social Links List

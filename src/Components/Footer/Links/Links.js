@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import "./Links.scss";
 
 // Footer Links Component
-const FooterLinks = (props) => {
-	const { about, contact, videos } = props;
-
+const FooterLinks = ({ about, contact, videos }) => {
 	// Social
 	const [social, setSocail] = useState([]);
 
@@ -15,6 +13,11 @@ const FooterLinks = (props) => {
 		axios.get("./Apis/social.json").then(({ data }) => {
 			setSocail(data);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setSocail([]);
+		};
 	}, []);
 
 	// Collect Data & Add Title

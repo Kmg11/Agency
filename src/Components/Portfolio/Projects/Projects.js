@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 import "./Projects.scss";
 
 // Portfolio Projects Component
-const PortfolioProjects = (props) => {
-	const { projects, type, projectsContainer } = props;
-
+const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 	// Default Number Of Projects
 	const defaultNumber = 9;
 

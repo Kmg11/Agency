@@ -30,6 +30,13 @@ const Portfolio = () => {
 			setNav(nav);
 			setProjects(projects);
 		});
+
+		// Reset States When Component Unmounted
+		return () => {
+			setHeader([]);
+			setNav([]);
+			setProjects([]);
+		};
 	}, []);
 
 	return (
@@ -43,9 +50,7 @@ const Portfolio = () => {
 };
 
 // Portfolio Body Component
-const PortfolioBody = (props) => {
-	const { nav, projects } = props;
-
+const PortfolioBody = ({ nav, projects }) => {
 	// Refs
 	const projectsContainer = useRef();
 

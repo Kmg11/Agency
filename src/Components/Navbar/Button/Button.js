@@ -2,11 +2,11 @@
 import "./Button.scss";
 
 // Navbar Responsiv Btn Component
-const NavbarResponsiveBtn = (props) => {
+const NavbarResponsiveBtn = ({ openCloseNavbar }) => {
 	return (
 		<button
 			className="navbar-responsive-btn"
-			onClick={props.openCloseNavbar}
+			onClick={openCloseNavbar}
 			aria-label="Menu"
 		>
 			<div className="line"></div>

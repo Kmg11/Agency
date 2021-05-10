@@ -1,11 +1,7 @@
 // Maon Team Header Sass File
 import "./Header.scss";
 
-const TeamHeader = (props) => {
-	const {
-		header: { title, body },
-	} = props;
-
+const TeamHeader = ({ header: { title, body } }) => {
 	return (
 		<header className="team-header">
 			<h2 className="team-title">{title}</h2>

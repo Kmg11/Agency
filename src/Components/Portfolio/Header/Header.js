@@ -2,11 +2,7 @@
 import "./Header.scss";
 
 // Portfolio Header Component
-const PortfolioHeader = (props) => {
-	const {
-		header: { title, body },
-	} = props;
-
+const PortfolioHeader = ({ header: { title, body } }) => {
 	return (
 		<header className="portfolio-header">
 			<h2 className="portfolio-title">{title}</h2>
