@@ -96,7 +96,7 @@
 		.member-name {
 			font-weight: 600;
 			font-size: 1.5rem;
-			color: #495254;
+			color: $fourthColor;
 			margin-bottom: 5px;
 
 			@media (max-width: $maxXSmallScreens) {
@@ -105,7 +105,7 @@
 		}
 
 		.member-role {
-			color: #262222;
+			color: $thirdColor;
 			margin-bottom: 20px;
 
 			@media (max-width: $maxXSmallScreens) {
@@ -129,7 +129,7 @@
 
 				.icon {
 					font-size: 1.7rem;
-					color: #495254;
+					color: $fourthColor;
 
 					@media (max-width: $maxXSmallScreens) {
 						font-size: 1.3rem;

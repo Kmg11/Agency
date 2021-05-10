@@ -7,7 +7,9 @@
 -------------------- Navbar --------------------
 
 -------------------- Portfolio Secion --------------------
----- problem in portfoli getComputedStyle [ componentDidMount ] for resize & first load [ Loop In The Parent ] [ Use Static Padding ]
+---- problem in portfoli getComputedStyle [ componentDidMount ] for resize & first load
+				---- [ Loop In The Parent ]
+				---- [ Use Static Padding ]
 ---- [ Done ] Change portfoli Animation And Hide element from space
 ---- Background Problem When Change Type
 ---- [ Done ] Fix Project Link
@@ -61,6 +63,7 @@
 ---- [ Done ] Fix Unmounted Component To Avoid Lake Memory
 ---- [ Done ] Destructuring Small Props
 ---- [ Done ] Error In Console When Change Page
+---- [ Done ] Change Some Settings To Change Start Create Controll Room For Colors
 -------------------- Done --------------------
 
 -------------------- Search --------------------

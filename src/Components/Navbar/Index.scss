@@ -1,9 +1,9 @@
-@import "./../../Sass/Variables";
+@import "./../../Sass/variables";
 
 .navbar {
 	$navbarPadding: 20px;
 
-	background-color: $navbarBgColor;
+	background-color: $backgroundColor;
 	padding-top: $navbarPadding;
 	padding-bottom: $navbarPadding;
 	position: fixed;

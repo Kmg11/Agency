@@ -39,7 +39,6 @@
 		.card-title {
 			@include second-header;
 			font-size: 1.3rem;
-			color: #000000;
 			transition: color 0.3s linear;
 
 			@media (min-width: $minLargeScreens) and (max-width: $maxLargeScreens) {
@@ -77,9 +76,8 @@
 		}
 
 		.card-paragraph {
-			color: #000000;
+			@include body-text;
 			font-size: 1.1rem;
-			line-height: 1.5;
 			transition: color 0.3s linear;
 
 			@media (min-width: $minLargeScreens) and (max-width: $maxLargeScreens) {
