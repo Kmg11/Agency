@@ -1,5 +1,5 @@
 -------------------- Header Section --------------------
----- Explore Btn Scroll To Services Section
+---- [ Done ] Explore Btn Scroll To Services Section
 -------------------- Header Section --------------------
 
 -------------------- Navbar --------------------
@@ -35,8 +35,8 @@
 -------------------- Important Notes --------------------
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Conver Font Awesome To Images Or Use Specific Files Only
----- Paralix Effect
 ---- Block Clicking On Logo When The User In Home Page
+---- Paralix Effect
 ---- Change Scrollbar Style
 -------------------- Important Notes --------------------
 
@@ -60,6 +60,7 @@
 ---- [ Done ] Scroll To Top Button
 ---- [ Done ] Contact Background Need Resize [ Increase Padding ]
 ---- [ Done ] Fix Some Accessiblity Problems
+---- [ Done ] Fix Scroll To TOp Button Errors
 -------------------- Done --------------------
 
 

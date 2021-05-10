@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Index.scss";
 
-const Header = () => {
+const Header = ({ exploreFn }) => {
 	// Header Data
 	const [data, setdata] = useState({
 		title: {
@@ -36,7 +36,9 @@ const Header = () => {
 							{before} <span>{word}</span> {after}
 						</h1>
 						<p className="header-paragraph">{body}</p>
-						<button className="header-btn">{button}</button>
+						<button className="header-btn" onClick={exploreFn}>
+							{button}
+						</button>
 					</section>
 
 					<section className="header-image">

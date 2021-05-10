@@ -14,7 +14,7 @@ const servicesBg = {
 };
 
 // Main Services Component
-const Services = () => {
+const Services = ({ services }) => {
 	// Data States
 	const [header, setHeader] = useState([]);
 	const [content, setContent] = useState([]);
@@ -30,7 +30,7 @@ const Services = () => {
 	}, []);
 
 	return (
-		<section className="services" style={servicesBg}>
+		<section className="services" ref={services} style={servicesBg}>
 			<div className="container">
 				<ServicesHeader header={header} />
 				<ServicesContainer content={content} />
