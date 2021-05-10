@@ -10,12 +10,12 @@
 ---- problem in portfoli getComputedStyle [ componentDidMount ] for resize & first load [ Loop In The Parent ] [ Use Static Padding ]
 ---- [ Done ] Change portfoli Animation And Hide element from space
 ---- Background Problem When Change Type
+---- [ Done ] Fix Project Link
 -------------------- Portfolio Secion --------------------
 
 -------------------- Team --------------------
----- Link Problem In Services & Team Add It By Position [ Take Care Of Child Links ]
 ---- Problem In Team When Refresh
----- Do Not Ad Inline Elements Parent Of Block Elements
+---- [ Done ] Fix Member Link
 -------------------- Team --------------------
 
 -------------------- Global --------------------
@@ -23,10 +23,11 @@
 ---- Accessiblity
 ---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 ---- Lazy Load
+---- Error In Console When Change Page
 -------------------- Global --------------------
 
 -------------------- Search --------------------
----- Search For Fieldset & Legend
+---- [ Done ] Search For Fieldset & Legend
 ---- Check Refs & Portail
 ---- React Context & Hooks
 ---- Review Forms
@@ -61,6 +62,7 @@
 ---- [ Done ] Contact Background Need Resize [ Increase Padding ]
 ---- [ Done ] Fix Some Accessiblity Problems
 ---- [ Done ] Fix Scroll To TOp Button Errors
+---- [ Done ] Fix Link Problem In [ Services - Portfolio - Team ] Sections
 -------------------- Done --------------------
 
 

@@ -19,30 +19,30 @@ const TeamBody = ({ content: members }) => {
 		return (
 			<SwiperSlide key={member.id}>
 				<div className="team-member">
-					<Link to="/team" className="member-link">
-						<div className="member-image">
-							<img src={member.image} alt={member.name} draggable="false" />
-						</div>
-						<p className="member-name">{member.name}</p>
-						<p className="member-role">{member.role}</p>
+					<Link to="/team" className="member-link"></Link>
 
-						<div className="member-social-media">
-							{member.social.map((link) => {
-								return (
-									<a
-										key={link.id}
-										href={link.link}
-										target="_blank"
-										rel="noreferrer"
-										className="social-link"
-										aria-label={link.name}
-									>
-										<i className={`icon ${link.icon}`}></i>
-									</a>
-								);
-							})}
-						</div>
-					</Link>
+					<div className="member-image">
+						<img src={member.image} alt={member.name} draggable="false" />
+					</div>
+					<p className="member-name">{member.name}</p>
+					<p className="member-role">{member.role}</p>
+
+					<div className="member-social-media">
+						{member.social.map((link) => {
+							return (
+								<a
+									key={link.id}
+									href={link.link}
+									target="_blank"
+									rel="noreferrer"
+									className="social-link"
+									aria-label={link.name}
+								>
+									<i className={`icon ${link.icon}`}></i>
+								</a>
+							);
+						})}
+					</div>
 				</div>
 			</SwiperSlide>
 		);

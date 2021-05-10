@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // Import Components
-import ServicesContainer from "./Container/Container";
+import ServicesContainer from "./Body/Body";
 import ServicesHeader from "./Header/Header";
 
 // Main Services Sass File

@@ -53,8 +53,7 @@
 		}
 
 		.project-link {
-			@include reset-link;
-			color: $thirdColor;
+			@include overlay-link;
 		}
 
 		figure {

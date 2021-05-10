@@ -33,15 +33,15 @@ const PortfolioProjects = (props) => {
 						: "project hidden"
 				}`}
 			>
-				<Link to="/portfolio" className="project-link">
-					<figure>
-						<div className="project-image">
-							<img src={project.image} alt={project.caption} />
-							<span className="type">{project.type}</span>
-						</div>
-						<figcaption>{project.caption}</figcaption>
-					</figure>
-				</Link>
+				<Link to="/portfolio" className="project-link"></Link>
+
+				<figure>
+					<div className="project-image">
+						<img src={project.image} alt={project.caption} />
+						<span className="type">{project.type}</span>
+					</div>
+					<figcaption>{project.caption}</figcaption>
+				</figure>
 			</div>
 		) : null;
 	});

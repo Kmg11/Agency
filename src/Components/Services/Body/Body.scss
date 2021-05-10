@@ -15,11 +15,13 @@
 	}
 
 	.services-card {
+		position: relative;
 		background-color: #fff;
 		padding: 30px;
 		border-radius: 30px;
 		box-shadow: 4px 4px 12px #00000021;
 		transition: background-color 0.3s linear;
+		overflow: hidden;
 
 		@media (max-width: $maxSmallScreens) {
 			width: 400px;
@@ -31,7 +33,7 @@
 		}
 
 		.services-link {
-			@include reset-link;
+			@include overlay-link;
 		}
 
 		.card-title {

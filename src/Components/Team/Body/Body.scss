@@ -47,26 +47,23 @@
 	}
 
 	.team-member {
+		position: relative;
 		background-color: #fff;
 		display: inline-block;
 		border-radius: 45px;
 		text-align: center;
 		box-shadow: 0 3px 6px rgba(#000000, 0.1);
 		width: 100%;
+		padding: 40px 20px;
+		overflow: hidden;
 
 		@media (max-width: $maxXSmallScreens) {
+			padding: 20px 10px;
 			border-radius: 30px;
 		}
 
 		.member-link {
-			@include reset-link;
-			padding: 40px 20px;
-			display: block;
-			width: 100%;
-
-			@media (max-width: $maxXSmallScreens) {
-				padding: 20px 10px;
-			}
+			@include overlay-link;
 		}
 
 		.member-image {
@@ -128,6 +125,7 @@
 
 			.social-link {
 				@include reset-link;
+				position: relative;
 
 				.icon {
 					font-size: 1.7rem;
