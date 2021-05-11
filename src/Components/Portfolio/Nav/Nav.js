@@ -29,22 +29,25 @@ const PortfolioNav = ({ nav, changeType }) => {
 	// Handle Selected Item
 	useEffect(() => {
 		const handleSelected = () => {
-			const elementStyle = getComputedStyle(selected.current);
+			if (selected.current) {
+				const elementStyle = getComputedStyle(selected.current);
 
-			setLineStyle({
-				left:
-					selected.current.offsetLeft +
-					0.5 * parseFloat(elementStyle.paddingLeft),
-				width:
-					selected.current.offsetWidth - parseFloat(elementStyle.paddingLeft),
-			});
+				setLineStyle({
+					left:
+						selected.current.offsetLeft +
+						0.5 * parseFloat(elementStyle.paddingLeft),
+					width:
+						selected.current.offsetWidth - parseFloat(elementStyle.paddingLeft),
+				});
 
-			changeType(selected.current.textContent);
+				changeType(selected.current.textContent);
+			} else {
+				changeType(selected.current.textContent);
+			}
 		};
 
-		setTimeout(() => {
-			handleSelected();
-		}, 200);
+		// Trigger Function
+		handleSelected();
 
 		// Handle Selected Item [ Responsive ]
 		window.addEventListener("resize", () => {

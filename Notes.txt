@@ -7,9 +7,7 @@
 -------------------- Navbar --------------------
 
 -------------------- Portfolio Secion --------------------
----- problem in portfoli getComputedStyle [ componentDidMount ] for resize & first load
-				---- [ Loop In The Parent ]
-				---- [ Use Static Padding ]
+---- [ Done ] Problem In portfoli getComputedStyle [ useEffect ] for resize & first load
 ---- [ Done ] Change portfoli Animation And Hide element from space
 ---- Background Problem When Change Type
 ---- [ Done ] Fix Project Link

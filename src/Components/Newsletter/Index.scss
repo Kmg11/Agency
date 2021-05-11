@@ -1,5 +1,5 @@
-@import '../../Sass/Variables';
-@import '../../Sass/mixins';
+@import "../../Sass/Variables";
+@import "../../Sass/mixins";
 
 .newsletter {
 	background-color: $backgroundColor;
@@ -49,7 +49,7 @@
 					padding: 15px 20px;
 					border-radius: 15px;
 				}
-			}	
+			}
 
 			&[type="submit"] {
 				@include main-btn(1.3rem, 20px 50px);
