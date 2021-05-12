@@ -69,8 +69,10 @@
 ---- [ Done ] Increas Gap Between About Text & Image
 ---- Collect Newslatter In One Scss Component
 ---- [ Done ] Create Option Buttons Component To Collect All Options Component In The Same Place
+---- [ Done ] Create Local Storage Custome Hook
 ---- [ Done ] Add Dark Mode
 ---- [ Done ] Create Dark Mode Hook & Add Local Storage In App Component
+---- [ Done ] Check User Preformance & Enable Dark Mode
 ---- Handle Images In Dark Mode
 ---- Dark Mode Btn Break When CLick A Lot
 ---- Buttons Dark Mode Problem
@@ -78,6 +80,9 @@
 ---- Save Form Value In Local Storage
 ---- Imporve Fetch Data By Using Catch Error
 ---- Set Body Padding Dynamic Depend On Navbar Height
+---- Use useLayoutEffect Insted Of useEffect In Portfolio To Avoid Errors
+---- Use useContext To Apply Dark Mode On Images & Button Icon
+---- [ Done ] Change Class Name Or Animate Dark Mode Btn From [ rotate ] To [ animate ]
 -------------------- Done --------------------
 
 -------------------- Search --------------------
@@ -92,15 +97,3 @@
 }	
 
 window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => (e.matches > enabke() : disable()))
-
-	// Enable Dark Mode Function
-	const enableDarkMode = useCallback(() => {
-		document.body.classList.add("dark-mode");
-		setLocalStorage(true);
-	}, [setLocalStorage]);
-
-	// Disable Dark Mode Function
-	const disableDarkMode = useCallback(() => {
-		document.body.classList.remove("dark-mode");
-		setLocalStorage(false);
-	}, [setLocalStorage]);

@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Import Custome Hooks
-import useLocalStorage from "./CustomeHooks/useLocalStorage/useLocalStorage";
 import useDarkMode from "./CustomeHooks/useDarkMode//useDarkMode";
 
 // Import Components
@@ -15,15 +14,21 @@ import Contact from "./Components/Contact/Index";
 import Buttons from "./Components/Buttons/Index";
 
 function App() {
-	const [localStorage] = useLocalStorage("dark-mode", false);
-	const { enableDarkMode, disableDarkMode } = useDarkMode();
+	const { enableDarkMode, disableDarkMode, localStorage } = useDarkMode();
 
 	// Enable Or Disable Dark Mode Depend On Local Storage
 	useEffect(() => {
-		if (localStorage) {
-			enableDarkMode();
-		} else {
-			disableDarkMode();
+		if (localStorage !== null) {
+			if (localStorage) {
+				enableDarkMode();
+			} else {
+				disableDarkMode();
+			}
+		}
+
+		if (localStorage === null) {
+			const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			prefers ? enableDarkMode() : disableDarkMode();
 		}
 	}, [localStorage, enableDarkMode, disableDarkMode]);
 

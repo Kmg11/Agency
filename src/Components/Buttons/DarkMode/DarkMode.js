@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 
 // Import Custom Hook
-import useLocalStorage from "./../../../CustomeHooks/useLocalStorage/useLocalStorage";
 import useDarkMode from "./../../../CustomeHooks/useDarkMode/useDarkMode";
 
 // Main Dark Mode Sass File
 import "./DarkMode.scss";
 
 const DarkMode = () => {
-	const { enableDarkMode, disableDarkMode } = useDarkMode();
-	const [localStorage] = useLocalStorage("dark-mode", false);
+	const { enableDarkMode, disableDarkMode, localStorage } = useDarkMode();
 	const [darkMode, setDarkMode] = useState(localStorage);
-	const [rotate, setRotate] = useState(false);
+	const [animate, setAnimate] = useState(false);
 
 	// Change Theme Function
 	const changeTheme = (e) => {
@@ -28,9 +26,9 @@ const DarkMode = () => {
 		}, 150);
 
 		// Handle Change Button Icon
-		setRotate(true);
+		setAnimate(true);
 		setTimeout(() => {
-			setRotate(false);
+			setAnimate(false);
 		}, 310);
 	};
 
@@ -42,7 +40,7 @@ const DarkMode = () => {
 		>
 			<i
 				className={`icon fas ${darkMode ? "fa-sun" : "fa-moon"} ${
-					rotate ? "rotate" : ""
+					animate ? "animate" : ""
 				}`}
 			></i>
 		</button>

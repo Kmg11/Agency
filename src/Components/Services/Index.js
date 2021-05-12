@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// Import Custome Hooks
-import useDarkMode from "./../../CustomeHooks/useDarkMode/useDarkMode";
-
 // Import Components
 import ServicesContainer from "./Body/Body";
 import ServicesHeader from "./Header/Header";
@@ -16,14 +13,8 @@ const servicesBg = {
 	backgroundImage: "url(./../../Images/Services/background.svg)",
 };
 
-// Services Background Dark
-const servicesBgDark = {
-	backgroundImage: "url(./../../Images/Services/background-dark.svg)",
-};
-
 // Main Services Component
 const Services = ({ services }) => {
-	const { localStorage } = useDarkMode();
 	const [header, setHeader] = useState([]);
 	const [content, setContent] = useState([]);
 
@@ -44,11 +35,7 @@ const Services = ({ services }) => {
 	}, []);
 
 	return (
-		<section
-			className="services"
-			style={localStorage ? servicesBgDark : servicesBg}
-			ref={services}
-		>
+		<section className="services" style={servicesBg} ref={services}>
 			<div className="container">
 				<ServicesHeader header={header} />
 				<ServicesContainer content={content} />

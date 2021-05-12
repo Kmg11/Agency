@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import useLocalStorage from "../useLocalStorage/useLocalStorage";
 
 const useDarkMode = () => {
-	const [localStorage, setLocalStorage] = useLocalStorage("dark-mode", false);
+	const [localStorage, setLocalStorage] = useLocalStorage("dark-mode", null);
 
 	const enableDarkMode = useCallback(() => {
 		document.body.classList.add("dark-mode");
