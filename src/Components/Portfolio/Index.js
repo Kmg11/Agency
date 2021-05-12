@@ -60,7 +60,7 @@ const PortfolioBody = ({ nav, projects }) => {
 	// Chang Type Of Projects Viewed
 	const changeType = useCallback(
 		(value) => {
-			if (value !== type) {
+			if (value !== type && projectsContainer) {
 				projectsContainer.current.classList.add("change-type");
 
 				setTimeout(() => {

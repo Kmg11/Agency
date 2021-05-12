@@ -42,7 +42,7 @@ const PortfolioNav = ({ nav, changeType }) => {
 
 				changeType(selected.current.textContent);
 			} else {
-				changeType(selected.current.textContent);
+				changeType("All Work");
 			}
 		};
 
