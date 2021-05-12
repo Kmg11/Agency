@@ -15,7 +15,7 @@
 
 	&:hover {
 		box-shadow: 0 15px 20px rgba($mainColor, 0.4);
-		background-color: #fff;
+		background-color: $upperBackgroundColor;
 		color: $mainColor;
 	}
 }
@@ -92,4 +92,37 @@
 	width: 100%;
 	height: 100%;
 	z-index: 3;
+}
+
+// Option Button Mixin
+@mixin option-button {
+	@include reset-btn;
+	$wh: 50px;
+	width: $wh;
+	height: $wh;
+	display: block;
+	border-radius: 50%;
+	background-color: $mainColor;
+	box-shadow: 0 3px 15px rgba($color: #fff, $alpha: 0.3);
+	transition: all 0.3s linear;
+
+	&:not(:last-of-type) {
+		margin-bottom: 20px;
+	}
+
+	.icon {
+		font-size: 1.5rem;
+		color: #fff;
+		transition: all 0.3s ease;
+	}
+
+	&:hover {
+		transform: scale(1.2);
+		background-color: $upperBackgroundColor;
+		box-shadow: 0 8px 15px rgba($thirdColor, 0.2);
+
+		.icon {
+			color: $mainColor;
+		}
+	}
 }

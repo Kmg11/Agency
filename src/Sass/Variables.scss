@@ -1,9 +1,31 @@
 // Main Colors
-$mainColor: #47aee1;
-$secondColor: #47e1ae;
-$thirdColor: #262222;
-$fourthColor: #495254;
-$backgroundColor: #fff;
+:root {
+	--main-color: #47aee1;
+	--second-color: #47e1ae;
+	--third-color: #262222;
+	--fourth-color: #495254;
+	--background-color: #fff;
+	--upper-background-color: #fff;
+	--box-shadow-color: #fff;
+}
+
+.dark-mode {
+	--main-color: #3b92bd;
+	--second-color: #4cb390;
+	--third-color: #fff;
+	--fourth-color: #fff;
+	--background-color: #121212;
+	--upper-background-color: #121212;
+	--box-shadow-color: #fff;
+}
+
+$mainColor: var(--main-color);
+$secondColor: var(--second-color);
+$thirdColor: var(--third-color);
+$fourthColor: var(--fourth-color);
+$backgroundColor: var(--background-color);
+$upperBackgroundColor: var(--upper-background-color);
+$boxShadowColor: var(--box-shadow-color);
 
 // Media Querys
 $minXXLargeScreens: 1400px;

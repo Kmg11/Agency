@@ -1,6 +1,6 @@
 // Main Scroll To Top Button Sass File
 import { useEffect, useState } from "react";
-import "./Index.scss";
+import "./ScrollToTop.scss";
 
 const ScrollToTop = () => {
 	const [showButton, setShowButton] = useState(false);
@@ -31,8 +31,8 @@ const ScrollToTop = () => {
 
 	return (
 		<button
-			aria-label="Scroll To Top"
 			className={`scroll-to-top ${showButton ? "show" : ""}`}
+			aria-label="Scroll To Top Button"
 			onClick={scrollToTop}
 		>
 			<i className="icon fas fa-angle-up"></i>

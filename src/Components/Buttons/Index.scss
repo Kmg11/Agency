@@ -1,0 +1,13 @@
+@import "./../../Sass/variables.scss";
+
+.option-buttons {
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	z-index: 1000;
+
+	@media (max-width: $maxXSmallScreens) {
+		bottom: 20px;
+		right: 20px;
+	}
+}

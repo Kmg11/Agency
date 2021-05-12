@@ -54,6 +54,7 @@
 		input,
 		textarea {
 			@include reset-input;
+			background-color: $upperBackgroundColor;
 			border-radius: 16px;
 			box-shadow: 6px 6px 9px #0000000d;
 			margin-bottom: 15px;

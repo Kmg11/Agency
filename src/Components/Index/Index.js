@@ -8,7 +8,6 @@ import Team from "./../Team/Index";
 import Newsletter from "./../Newsletter/Index";
 import Contact from "./../Contact/Index";
 import Footer from "./../Footer/Index";
-import ScrollToTop from "../ScrollToTop/Index";
 
 const Index = () => {
 	const services = useRef();
@@ -30,7 +29,6 @@ const Index = () => {
 			<Newsletter />
 			<Contact />
 			<Footer />
-			<ScrollToTop />
 		</Fragment>
 	);
 };

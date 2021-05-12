@@ -1,0 +1,13 @@
+@import "./../../../Sass/mixins.scss";
+
+.dark-mode-btn {
+	@include option-button;
+
+	.icon {
+		transition: all 0.3s ease-out;
+
+		&.rotate {
+			transform: scale(0.2);
+		}
+	}
+}

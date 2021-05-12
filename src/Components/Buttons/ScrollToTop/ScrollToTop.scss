@@ -1,0 +1,13 @@
+@import "./../../../Sass/Variables.scss";
+@import "./../../../Sass/mixins.scss";
+
+.scroll-to-top {
+	@include option-button;
+	visibility: hidden;
+	opacity: 0;
+
+	&.show {
+		visibility: visible;
+		opacity: 1;
+	}
+}

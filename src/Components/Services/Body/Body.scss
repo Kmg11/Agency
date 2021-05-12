@@ -16,7 +16,7 @@
 
 	.services-card {
 		position: relative;
-		background-color: #fff;
+		background-color: $upperBackgroundColor;
 		padding: 30px;
 		border-radius: 30px;
 		box-shadow: 4px 4px 12px #00000021;
@@ -86,23 +86,10 @@
 		}
 
 		&:hover {
+			background-color: $mainColor;
 			.card-title,
 			.card-paragraph {
 				color: #fff;
-			}
-		}
-
-		&:first-of-type,
-		&:nth-child(3) {
-			&:hover {
-				background-color: $mainColor;
-			}
-		}
-
-		&:nth-of-type(2),
-		&:last-of-type {
-			&:hover {
-				background-color: $secondColor;
 			}
 		}
 	}
