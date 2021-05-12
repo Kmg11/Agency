@@ -6,7 +6,7 @@
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
 	justify-content: space-between;
-	gap: 20px;
+	gap: 50px;
 
 	@media (max-width: $maxSmallScreens) {
 		grid-template-columns: 1fr;
