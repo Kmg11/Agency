@@ -85,7 +85,7 @@
 ---- [ Done ] Change Class Name Or Animate Dark Mode Btn From [ rotate ] To [ animate ]
 ---- Create Small Images For Mobile
 ---- Shadow Color
----- Portfolio Error Again
+---- [ Done ] Portfolio Error [ Fix Resize Problem & Remove Resize Function When Unmount Component ]
 ---- [ Done ] Create Newslatter Api
 -------------------- Done --------------------
 

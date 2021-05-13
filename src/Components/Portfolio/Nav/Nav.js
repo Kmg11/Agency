@@ -31,18 +31,22 @@ const PortfolioNav = ({ nav, changeType }) => {
 
 	// Handle Selected Item
 	useEffect(() => {
-		// Trigger Function
+		const handleLineResize = () => handleLine(activeItem, selected.current);
+
 		if (selected.current) {
-			handleLine(0, selected.current);
+			// Trigger Function
+			handleLine(activeItem, selected.current);
+
+			// Handle Selected Item [ Responsive ]
+			window.addEventListener("resize", handleLineResize);
 		} else {
 			changeType("All Work");
 		}
 
-		// Handle Selected Item [ Responsive ]
-		window.addEventListener("resize", () => {
-			handleLine(0, selected.current);
-		});
-	}, [changeType, handleLine]);
+		return () => {
+			window.removeEventListener("resize", handleLineResize);
+		};
+	}, [changeType, handleLine, activeItem]);
 
 	// Get Nav List
 	const navList = nav.map((item, index) => {
