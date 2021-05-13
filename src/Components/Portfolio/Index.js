@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // Import Components
 import PortfolioProjects from "./Projects/Projects";
@@ -58,22 +58,19 @@ const PortfolioBody = ({ nav, projects }) => {
 	const [type, setType] = useState("All Work");
 
 	// Chang Type Of Projects Viewed
-	const changeType = useCallback(
-		(value) => {
-			if (value !== type && projectsContainer) {
-				projectsContainer.current.classList.add("change-type");
+	const changeType = (value) => {
+		if (value !== type && projectsContainer) {
+			projectsContainer.current.classList.add("change-type");
 
-				setTimeout(() => {
-					projectsContainer.current.classList.remove("change-type");
-				}, 500);
+			setTimeout(() => {
+				projectsContainer.current.classList.remove("change-type");
+			}, 500);
 
-				setTimeout(() => {
-					setType(value);
-				}, 300);
-			}
-		},
-		[type]
-	);
+			setTimeout(() => {
+				setType(value);
+			}, 300);
+		}
+	};
 
 	return (
 		<section className="portfolio-body">

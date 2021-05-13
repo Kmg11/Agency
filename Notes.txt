@@ -80,9 +80,12 @@
 ---- Save Form Value In Local Storage
 ---- Imporve Fetch Data By Using Catch Error
 ---- Set Body Padding Dynamic Depend On Navbar Height
----- Use useLayoutEffect Insted Of useEffect In Portfolio To Avoid Errors
+---- [ Done ] Use useLayoutEffect Insted Of useEffect In Portfolio To Avoid Errors [ Not Working ]
+---- [ Done ] Maintance Some Code In Portfolio
 ---- Use useContext To Apply Dark Mode On Images & Button Icon
 ---- [ Done ] Change Class Name Or Animate Dark Mode Btn From [ rotate ] To [ animate ]
+---- Create Small Images For Mobile
+---- Shadow Color
 -------------------- Done --------------------
 
 -------------------- Search --------------------

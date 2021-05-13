@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 // Main Portfolio Nav Sass File
 import "./Nav.scss";
@@ -7,53 +7,42 @@ import "./Nav.scss";
 const PortfolioNav = ({ nav, changeType }) => {
 	// States
 	const [lineStyle, setLineStyle] = useState({ left: "", width: "" });
-	const [activeItem, setActiveItem] = useState(1);
+	const [activeItem, setActiveItem] = useState(0);
 
 	// Refs
 	const selected = useRef(0);
 
 	// Handle Line Function When Click
-	const handleLine = (index, e) => {
-		const elementStyle = getComputedStyle(e.target);
+	const handleLine = useCallback(
+		(index, target) => {
+			const elementStyle = getComputedStyle(target);
 
-		setLineStyle({
-			left: e.target.offsetLeft + 0.5 * parseFloat(elementStyle.paddingLeft),
-			width: e.target.offsetWidth - parseFloat(elementStyle.paddingLeft),
-		});
+			setLineStyle({
+				left: target.offsetLeft + 0.5 * parseFloat(elementStyle.paddingLeft),
+				width: target.offsetWidth - parseFloat(elementStyle.paddingLeft),
+			});
 
-		setActiveItem(index);
+			setActiveItem(index);
 
-		changeType(e.target.textContent);
-	};
+			changeType(target.textContent);
+		},
+		[changeType]
+	);
 
 	// Handle Selected Item
 	useEffect(() => {
-		const handleSelected = () => {
-			if (selected.current) {
-				const elementStyle = getComputedStyle(selected.current);
-
-				setLineStyle({
-					left:
-						selected.current.offsetLeft +
-						0.5 * parseFloat(elementStyle.paddingLeft),
-					width:
-						selected.current.offsetWidth - parseFloat(elementStyle.paddingLeft),
-				});
-
-				changeType(selected.current.textContent);
-			} else {
-				changeType("All Work");
-			}
-		};
-
 		// Trigger Function
-		handleSelected();
+		if (selected.current) {
+			handleLine(0, selected.current);
+		} else {
+			changeType("All Work");
+		}
 
 		// Handle Selected Item [ Responsive ]
 		window.addEventListener("resize", () => {
-			handleSelected();
+			handleLine(0, selected.current);
 		});
-	}, [changeType]);
+	}, [changeType, handleLine]);
 
 	// Get Nav List
 	const navList = nav.map((item, index) => {
@@ -63,8 +52,8 @@ const PortfolioNav = ({ nav, changeType }) => {
 				className={`${
 					activeItem === index + 1 ? "portfolio-item active" : "portfolio-item"
 				}`}
-				onClick={(e) => handleLine(index + 1, e)}
-				ref={activeItem === index + 1 ? selected : null}
+				onClick={(e) => handleLine(index, e.target)}
+				ref={activeItem === index ? selected : null}
 			>
 				{item}
 			</li>
