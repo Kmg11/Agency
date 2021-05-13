@@ -10,8 +10,8 @@ import Contact from "./../Contact/Index";
 import Footer from "./../Footer/Index";
 
 const Index = () => {
+	// Explore Button
 	const services = useRef();
-
 	const exploreFn = () => {
 		window.scrollTo({
 			top: services.current.offsetTop,

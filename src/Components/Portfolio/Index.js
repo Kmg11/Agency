@@ -1,5 +1,7 @@
-import axios from "axios";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
+
+// Import Custome Hooks
+import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 
 // Import Components
 import PortfolioProjects from "./Projects/Projects";
@@ -16,41 +18,11 @@ const PortfolioBg = {
 
 // Main Portfolio Component
 const Portfolio = () => {
-	// Data States
-	const [header, setHeader] = useState([]);
-	const [nav, setNav] = useState([]);
-	const [projects, setProjects] = useState([]);
+	// Fetch data
+	const {
+		data: { header = {}, nav = [], projects = [] },
+	} = useAxios("./Apis/portfolio.json", []);
 
-	// Initialize
-	useEffect(() => {
-		// Fetch Data From Api
-		axios.get("./Apis/portfolio.json").then(({ data }) => {
-			const { header, nav, projects } = data;
-			setHeader(header);
-			setNav(nav);
-			setProjects(projects);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setHeader([]);
-			setNav([]);
-			setProjects([]);
-		};
-	}, []);
-
-	return (
-		<section className="portfolio" style={PortfolioBg}>
-			<div className="container">
-				<PortfolioHeader header={header} />
-				<PortfolioBody nav={nav} projects={projects} />
-			</div>
-		</section>
-	);
-};
-
-// Portfolio Body Component
-const PortfolioBody = ({ nav, projects }) => {
 	// Refs
 	const projectsContainer = useRef();
 
@@ -73,13 +45,19 @@ const PortfolioBody = ({ nav, projects }) => {
 	};
 
 	return (
-		<section className="portfolio-body">
-			<PortfolioNav nav={nav} changeType={changeType} />
-			<PortfolioProjects
-				projects={projects}
-				type={type}
-				projectsContainer={projectsContainer}
-			/>
+		<section className="portfolio" style={PortfolioBg}>
+			<div className="container">
+				<PortfolioHeader header={header} />
+
+				<section className="portfolio-body">
+					<PortfolioNav nav={nav} changeType={changeType} />
+					<PortfolioProjects
+						projects={projects}
+						type={type}
+						projectsContainer={projectsContainer}
+					/>
+				</section>
+			</div>
 		</section>
 	);
 };

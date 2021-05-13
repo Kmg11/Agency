@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+// Import Custome Hooks
+import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 
 // Import Components
 import ServicesContainer from "./Body/Body";
@@ -15,24 +15,10 @@ const servicesBg = {
 
 // Main Services Component
 const Services = ({ services }) => {
-	const [header, setHeader] = useState([]);
-	const [content, setContent] = useState([]);
-
-	// Initialize
-	useEffect(() => {
-		// Fetch Data From Api
-		axios.get("./Apis/services.json").then(({ data }) => {
-			const { header, content } = data;
-			setHeader(header);
-			setContent(content);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setHeader([]);
-			setContent([]);
-		};
-	}, []);
+	// Fetch data
+	const {
+		data: { header = {}, content = [] },
+	} = useAxios("./Apis/services.json", []);
 
 	return (
 		<section className="services" style={servicesBg} ref={services}>

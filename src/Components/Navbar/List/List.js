@@ -1,29 +1,17 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+
+// Import Custome Hooks
+import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
 
 // Main Navbar List Sass File
 import "./List.scss";
 
 // Navbar List Component
 const NavbarList = ({ closeNavbar }) => {
-	const [links, setLinks] = useState([]);
-	const [button, setButton] = useState({});
-
-	useEffect(() => {
-		// Fetch Data
-		axios.get("./Apis/navbar.json").then(({ data }) => {
-			const { links, button } = data;
-			setLinks(links);
-			setButton(button);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setLinks([]);
-			setButton([]);
-		};
-	}, []);
+	// Fetch data
+	const {
+		data: { links = [], button = {} },
+	} = useAxios("./Apis/navbar.json", []);
 
 	const linksList = links.map((link) => {
 		return (

@@ -1,28 +1,17 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+// Import Custome Hooks
+import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
 
 // Main Navbar Logo Sass File
 import "./Logo.scss";
 
 // Navbar Logo Component
 const NavbarLogo = () => {
-	const [image, setImage] = useState([]);
-	const [text, setText] = useState([]);
-
-	useEffect(() => {
-		axios.get("./Apis/Logo.json").then(({ data }) => {
-			const { image, text } = data;
-			setImage(image);
-			setText(text);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setImage([]);
-			setText([]);
-		};
-	}, []);
+	// Fetch data
+	const {
+		data: { image = "", text = "" },
+	} = useAxios("./Apis/logo.json", []);
 
 	return (
 		<Link to="/" className="logo">

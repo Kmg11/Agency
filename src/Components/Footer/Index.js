@@ -1,5 +1,7 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+// Import Custome Hooks
+import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 
 // Import Components
 import FooterFooter from "./Footer/Footer";
@@ -11,41 +13,16 @@ import "./Index.scss";
 
 // Main Footer Component
 const Footer = () => {
-	// Data States
-	const [header, setHeader] = useState([]);
-	const [about, setAbout] = useState([]);
-	const [contact, setContact] = useState([]);
-	const [videos, setVideos] = useState([]);
-	const [copyRight, setCopyRight] = useState("");
-
-	// Initialize
-	useEffect(() => {
-		// Fetch Data From Api
-		axios.get("./Apis/footer.json").then(({ data }) => {
-			const {
-				header,
-				about_us_links,
-				contact_us_links,
-				videos_links,
-				copy_right,
-			} = data;
-
-			setHeader(header);
-			setAbout(about_us_links);
-			setContact(contact_us_links);
-			setVideos(videos_links);
-			setCopyRight(copy_right);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setHeader([]);
-			setAbout([]);
-			setContact([]);
-			setVideos([]);
-			setCopyRight("");
-		};
-	}, []);
+	// Fetch data
+	const {
+		data: {
+			header = {},
+			about_us_links: about = [],
+			contact_us_links: contact = [],
+			videos_links: videos = [],
+			copy_right: copyRight = [],
+		},
+	} = useAxios("./Apis/footer.json", []);
 
 	return (
 		<footer className="main-footer">

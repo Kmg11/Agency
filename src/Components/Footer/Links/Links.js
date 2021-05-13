@@ -1,24 +1,13 @@
+// Import Custome Hooks
+import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
+
 // Main Footer Links Sass File
-import axios from "axios";
-import { useEffect, useState } from "react";
 import "./Links.scss";
 
 // Footer Links Component
 const FooterLinks = ({ about, contact, videos }) => {
-	// Social
-	const [social, setSocail] = useState([]);
-
-	useEffect(() => {
-		// Fetch Social
-		axios.get("./Apis/social.json").then(({ data }) => {
-			setSocail(data);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setSocail([]);
-		};
-	}, []);
+	// Fetch data
+	const { data: social = [] } = useAxios("./Apis/social.json", []);
 
 	// Collect Data & Add Title
 	const links = [

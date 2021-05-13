@@ -1,45 +1,20 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+// Import Custome Hooks
+import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
 
 // Main Footer Footer Sass File
 import "./Footer.scss";
 
 // Footer Footer Component
 const FooterFooter = ({ copyRight }) => {
-	// Logo Image & Text
-	const [image, setImage] = useState([]);
-	const [text, setText] = useState([]);
+	// Fetch Logo
+	const {
+		data: { image = "", text = "" },
+	} = useAxios("./Apis/logo.json", []);
 
-	useEffect(() => {
-		// Fetch Logo Image & Text
-		axios.get("./Apis/Logo.json").then(({ data }) => {
-			const { image, text } = data;
-			setImage(image);
-			setText(text);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setImage([]);
-			setText([]);
-		};
-	}, []);
-
-	// social
-	const [social, setSocial] = useState([]);
-
-	useEffect(() => {
-		// Fetch social
-		axios.get("./Apis/social.json").then(({ data }) => {
-			setSocial(data);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setSocial([]);
-		};
-	}, []);
+	// Fetch Social
+	const { data: social = [] } = useAxios("./Apis/social.json", []);
 
 	// Get Social List
 	const socialList = social.map((item) => {

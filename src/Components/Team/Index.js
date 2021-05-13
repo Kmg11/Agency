@@ -1,5 +1,5 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+// Import Custome Hooks
+import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 
 // Import Components
 import TeamHeader from "./Header/Header";
@@ -9,23 +9,10 @@ import TeamBody from "./Body/Body";
 import "./Index.scss";
 
 const Team = () => {
-	const [header, setHeader] = useState([]);
-	const [content, setContent] = useState([]);
-
-	useEffect(() => {
-		// Fetch Data
-		axios.get("./Apis/team.json").then(({ data }) => {
-			const { header, content } = data;
-			setHeader(header);
-			setContent(content);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setHeader([]);
-			setContent([]);
-		};
-	}, []);
+	// Fetch data
+	const {
+		data: { header = {}, content = [] },
+	} = useAxios("./Apis/team.json", []);
 
 	return (
 		<section className="team">

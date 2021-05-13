@@ -1,5 +1,7 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+// Import Custome Hooks
+import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 
 // Import Components
 import AboutHeader from "./Header/Header";
@@ -10,25 +12,10 @@ import "./Index.scss";
 
 // Main About Component
 const About = () => {
-	// Data States
-	const [header, setHeader] = useState([]);
-	const [content, setContent] = useState([]);
-
-	// Initialize
-	useEffect(() => {
-		// Fetch Data From Api
-		axios.get("./Apis/about.json").then(({ data }) => {
-			const { header, content } = data;
-			setHeader(header);
-			setContent(content);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setHeader([]);
-			setContent([]);
-		};
-	}, []);
+	// Fetch data
+	const {
+		data: { header = {}, content = {} },
+	} = useAxios("./Apis/about.json", []);
 
 	return (
 		<section className="about">

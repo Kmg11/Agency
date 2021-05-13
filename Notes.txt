@@ -16,6 +16,7 @@
 -------------------- Team --------------------
 ---- Problem In Team When Refresh
 ---- [ Done ] Fix Member Link
+---- Hover With Shadow & Background Color
 -------------------- Team --------------------
 
 -------------------- Global --------------------
@@ -31,7 +32,6 @@
 ---- Block Clicking On Logo When The User In Home Page
 ---- Paralix Effect
 ---- Change Scrollbar Style
----- Add Dark Mode
 ---- Colors Controll Room
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
 -------------------- Important Notes --------------------
@@ -75,17 +75,18 @@
 ---- [ Done ] Check User Preformance & Enable Dark Mode
 ---- Handle Images In Dark Mode
 ---- Dark Mode Btn Break When CLick A Lot
----- Buttons Dark Mode Problem
----- Create Custome Hook For Social - Fetch Data & Repeated Functions
+---- Use useContext To Apply Dark Mode On Images & Button Icon
+---- [ Done ] Create Custome Hook useAxios
 ---- Save Form Value In Local Storage
 ---- Imporve Fetch Data By Using Catch Error
 ---- Set Body Padding Dynamic Depend On Navbar Height
 ---- [ Done ] Use useLayoutEffect Insted Of useEffect In Portfolio To Avoid Errors [ Not Working ]
 ---- [ Done ] Maintance Some Code In Portfolio
----- Use useContext To Apply Dark Mode On Images & Button Icon
 ---- [ Done ] Change Class Name Or Animate Dark Mode Btn From [ rotate ] To [ animate ]
 ---- Create Small Images For Mobile
 ---- Shadow Color
+---- Portfolio Error Again
+---- [ Done ] Create Newslatter Api
 -------------------- Done --------------------
 
 -------------------- Search --------------------

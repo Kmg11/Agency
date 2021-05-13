@@ -1,23 +1,13 @@
+// Import Custome Hooks
+import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
+
 // Main Contact Header Sass File
-import axios from "axios";
-import { useEffect, useState } from "react";
 import "./Header.scss";
 
 // Contact Header Component
 const ContactHeader = ({ header: { title, body } }) => {
-	const [social, setSocial] = useState([]);
-
-	useEffect(() => {
-		// Fetch Social Links
-		axios.get("./Apis/social.json").then(({ data }) => {
-			setSocial(data);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setSocial([]);
-		};
-	}, []);
+	// Fetch data
+	const { data: social = [] } = useAxios("./Apis/social.json", []);
 
 	// Get Social Links List
 	const socialList = social.map((item) => {

@@ -1,43 +1,21 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+// Import Custome Hooks
+import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 
 // Main Header Sass File
 import "./Index.scss";
 
 const Header = ({ exploreFn }) => {
-	// Header Data
-	const [data, setdata] = useState({
-		title: {
-			before: "",
-			word: "",
-			after: "",
-		},
-	});
-
-	useEffect(() => {
-		// Fetch Header Data
-		axios.get("./Apis/Header.json").then(({ data }) => {
-			setdata(data);
-		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setdata({
-				title: {
-					before: "",
-					word: "",
-					after: "",
-				},
-			});
-		};
-	}, []);
-
+	// Fetch data
 	const {
-		title: { before, word, after },
-		body,
-		button,
-		image,
-	} = data;
+		data: {
+			title = { before: "", word: "", after: "" },
+			body = "",
+			button = "",
+			image = "",
+		},
+	} = useAxios("./Apis/header.json", []);
+
+	const { before, word, after } = title;
 
 	return (
 		<header className="main-header">
