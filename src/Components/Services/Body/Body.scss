@@ -86,7 +86,8 @@
 		}
 
 		&:hover {
-			background-color: $mainColor;
+			background-color: $secondColor;
+
 			.card-title,
 			.card-paragraph {
 				color: #fff;

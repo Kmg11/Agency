@@ -53,7 +53,6 @@ const TeamBody = ({ content: members }) => {
 			<Swiper
 				slidesPerGroup={1}
 				centeredSlides={true}
-				loop={true}
 				autoplay={{
 					delay: 4000,
 					disableOnInteraction: false,

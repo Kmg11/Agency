@@ -16,10 +16,10 @@
 	}
 
 	.swiper-container {
-		height: 480px;
+		height: 530px;
 
 		@media (max-width: $maxXSmallScreens) {
-			height: 380px;
+			height: 430px;
 		}
 
 		.swiper-button-prev,
@@ -44,6 +44,11 @@
 			right: 50%;
 			transform: translateX(150%);
 		}
+
+		.swiper-wrapper {
+			position: relative;
+			top: 50px;
+		}
 	}
 
 	.team-member {
@@ -56,6 +61,7 @@
 		width: 100%;
 		padding: 40px 20px;
 		overflow: hidden;
+		transition: all 0.2s linear;
 
 		@media (max-width: $maxXSmallScreens) {
 			padding: 20px 10px;
@@ -98,6 +104,7 @@
 			font-size: 1.5rem;
 			color: $fourthColor;
 			margin-bottom: 5px;
+			transition: all 0.2s linear;
 
 			@media (max-width: $maxXSmallScreens) {
 				font-size: 1.2rem;
@@ -107,6 +114,7 @@
 		.member-role {
 			color: $thirdColor;
 			margin-bottom: 20px;
+			transition: all 0.2s linear;
 
 			@media (max-width: $maxXSmallScreens) {
 				font-size: 0.8rem;
@@ -130,11 +138,24 @@
 				.icon {
 					font-size: 1.7rem;
 					color: $fourthColor;
+					transition: all 0.2s linear;
 
 					@media (max-width: $maxXSmallScreens) {
 						font-size: 1.3rem;
 					}
 				}
+			}
+		}
+
+		&:hover {
+			background-color: $mainColor;
+			transform: translateY(-20px);
+			box-shadow: 0 8px 15px rgba(#000000, 0.2);
+
+			.member-name,
+			.member-role,
+			.member-social-media .social-link .icon {
+				color: #fff;
 			}
 		}
 	}

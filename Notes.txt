@@ -6,17 +6,21 @@
 ---- [ Done ] Close Navbar When Change Page In Responsive
 -------------------- Navbar --------------------
 
+-------------------- Services --------------------
+---- [ Done ] Change Hove Color
+-------------------- Services --------------------
+
 -------------------- Portfolio Secion --------------------
 ---- [ Done ] Problem In portfoli getComputedStyle [ useEffect ] for resize & first load
 ---- [ Done ] Change portfoli Animation And Hide element from space
----- Background Problem When Change Type [ Handle Height ]
 ---- [ Done ] Fix Project Link
+---- Background Problem When Change Type [ Handle Height ]
 -------------------- Portfolio Secion --------------------
 
 -------------------- Team --------------------
----- Problem In Team When Refresh
+---- [ Done ] Problem In Team When Refresh
 ---- [ Done ] Fix Member Link
----- Hover With Shadow & Background Color
+---- [ Done ] Hover With Shadow & Background Color
 -------------------- Team --------------------
 
 -------------------- Global --------------------
@@ -84,9 +88,10 @@
 ---- [ Done ] Maintance Some Code In Portfolio
 ---- [ Done ] Change Class Name Or Animate Dark Mode Btn From [ rotate ] To [ animate ]
 ---- Create Small Images For Mobile
----- Shadow Color
+---- Shadow Color [ Problem With Sass Should Use Sass Variable ]
 ---- [ Done ] Portfolio Error [ Fix Resize Problem & Remove Resize Function When Unmount Component ]
 ---- [ Done ] Create Newslatter Api
+---- Change Navbar Links Active Link Main Color In Default Mode In Dark Mode
 -------------------- Done --------------------
 
 -------------------- Search --------------------
