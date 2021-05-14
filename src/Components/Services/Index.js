@@ -1,8 +1,9 @@
 // Import Custome Hooks
 import useAxios from "./../../CustomeHooks/useAxios/useAxios";
+import { useDarkTheme } from "./../../CustomeHooks/useDarkTheme/useDarkTheme";
 
 // Import Components
-import ServicesContainer from "./Body/Body";
+import ServicesBody from "./Body/Body";
 import ServicesHeader from "./Header/Header";
 
 // Main Services Sass File
@@ -13,18 +14,28 @@ const servicesBg = {
 	backgroundImage: "url(./../../Images/Services/background.svg)",
 };
 
+const servicesBgDark = {
+	backgroundImage: "url(./../../Images/Services/background-dark.svg)",
+};
+
 // Main Services Component
 const Services = ({ services }) => {
+	const darkTheme = useDarkTheme();
+
 	// Fetch data
 	const {
 		data: { header = {}, content = [] },
 	} = useAxios("./Apis/services.json", []);
 
 	return (
-		<section className="services" style={servicesBg} ref={services}>
+		<section
+			className="services"
+			style={darkTheme ? servicesBgDark : servicesBg}
+			ref={services}
+		>
 			<div className="container">
 				<ServicesHeader header={header} />
-				<ServicesContainer content={content} />
+				<ServicesBody content={content} />
 			</div>
 		</section>
 	);

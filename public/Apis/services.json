@@ -9,24 +9,28 @@
 			"id": 1,
 			"title": "App Development",
 			"image": "./Images/Services/img-1.svg",
+			"image_dark": "./Images/Services/img-1-dark.svg",
 			"body": "We design and build iOS, Android or hybrid apps using react native and flutter or cordova"
 		},
 		{
 			"id": 2,
 			"title": "Web Design",
 			"image": "./Images/Services/img-2.svg",
+			"image_dark": "./Images/Services/img-2-dark.svg",
 			"body": "We design and build iOS, Android or hybrid apps using react native and flutter or cordova"
 		},
 		{
 			"id": 3,
 			"title": "Social Media",
 			"image": "./Images/Services/img-3.svg",
+			"image_dark": "./Images/Services/img-3-dark.svg",
 			"body": "How you present your brand is important. We make that process easy for you"
 		},
 		{
 			"id": 4,
 			"title": "Logo & Branding",
 			"image": "./Images/Services/img-4.svg",
+			"image_dark": "./Images/Services/img-4-dark.svg",
 			"body": "We craft exquisite brand identities that convey your product and service well to your clients"
 		}
 	]

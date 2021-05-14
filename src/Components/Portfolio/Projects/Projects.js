@@ -31,7 +31,11 @@ const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 						: "project hidden"
 				}`}
 			>
-				<Link to="/portfolio" className="project-link"></Link>
+				<Link
+					to="/portfolio"
+					className="project-link"
+					aria-label="Project Link"
+				></Link>
 
 				<figure>
 					<div className="project-image">

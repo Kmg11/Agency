@@ -1,10 +1,13 @@
 // Import Custome Hooks
 import useAxios from "./../../CustomeHooks/useAxios/useAxios";
+import { useDarkTheme } from "./../../CustomeHooks/useDarkTheme/useDarkTheme";
 
 // Main Header Sass File
 import "./Index.scss";
 
 const Header = ({ exploreFn }) => {
+	const darkTheme = useDarkTheme();
+
 	// Fetch data
 	const {
 		data: {
@@ -12,6 +15,7 @@ const Header = ({ exploreFn }) => {
 			body = "",
 			button = "",
 			image = "",
+			image_dark = "",
 		},
 	} = useAxios("./Apis/header.json", []);
 
@@ -32,7 +36,11 @@ const Header = ({ exploreFn }) => {
 					</section>
 
 					<section className="header-image">
-						<img src={image} alt="header-Illustration" draggable="false" />
+						<img
+							src={darkTheme ? image_dark : image}
+							alt="header-Illustration"
+							draggable="false"
+						/>
 					</section>
 				</div>
 			</div>

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 
 // Import Custome Hooks
 import useAxios from "./../../CustomeHooks/useAxios/useAxios";
+import { useDarkTheme } from "./../../CustomeHooks/useDarkTheme/useDarkTheme";
 
 // Import Components
 import PortfolioProjects from "./Projects/Projects";
@@ -16,8 +17,14 @@ const PortfolioBg = {
 	backgroundImage: "url('./Images/Portfolio/background.svg')",
 };
 
+const PortfolioBgDark = {
+	backgroundImage: "url('./Images/Portfolio/background-dark.svg')",
+};
+
 // Main Portfolio Component
 const Portfolio = () => {
+	const darkTheme = useDarkTheme();
+
 	// Fetch data
 	const {
 		data: { header = {}, nav = [], projects = [] },
@@ -45,7 +52,10 @@ const Portfolio = () => {
 	};
 
 	return (
-		<section className="portfolio" style={PortfolioBg}>
+		<section
+			className="portfolio"
+			style={darkTheme ? PortfolioBgDark : PortfolioBg}
+		>
 			<div className="container">
 				<PortfolioHeader header={header} />
 

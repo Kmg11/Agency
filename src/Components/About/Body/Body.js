@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
+// Import Custome Hooks
+import { useDarkTheme } from "./../../../CustomeHooks/useDarkTheme/useDarkTheme";
+
 // Main About Body Sass File
 import "./Body.scss";
 
 // About Body Component
 const AboutBody = (props) => {
-	// Read More State
+	const darkTheme = useDarkTheme();
 	const [readMore, setReadMore] = useState(false);
 
 	// Handle Read More Function
@@ -21,6 +24,7 @@ const AboutBody = (props) => {
 	const {
 		content: {
 			image,
+			image_dark,
 			title,
 			paragraph_1,
 			paragraph_1_more,
@@ -32,7 +36,11 @@ const AboutBody = (props) => {
 	return (
 		<section className="about-body">
 			<div className="about-image">
-				<img src={image} alt="About" />
+				<img
+					src={darkTheme ? image_dark : image}
+					alt="About"
+					draggable="false"
+				/>
 			</div>
 
 			<div className="about-desc">

@@ -19,7 +19,11 @@ const TeamBody = ({ content: members }) => {
 		return (
 			<SwiperSlide key={member.id}>
 				<div className="team-member">
-					<Link to="/team" className="member-link"></Link>
+					<Link
+						to="/team"
+						className="member-link"
+						aria-label="Team Member Link"
+					></Link>
 
 					<div className="member-image">
 						<img src={member.image} alt={member.name} draggable="false" />
@@ -36,7 +40,7 @@ const TeamBody = ({ content: members }) => {
 									target="_blank"
 									rel="noreferrer"
 									className="social-link"
-									aria-label={link.name}
+									aria-label="Social Media Link"
 								>
 									<i className={`icon ${link.icon}`}></i>
 								</a>

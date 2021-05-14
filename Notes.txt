@@ -4,6 +4,8 @@
 
 -------------------- Navbar --------------------
 ---- [ Done ] Close Navbar When Change Page In Responsive
+---- Change Navbar Links Active Link Main Color In Default theme In Dark theme
+---- Set Body Padding Dynamic Depend On Navbar Height
 -------------------- Navbar --------------------
 
 -------------------- Services --------------------
@@ -15,6 +17,7 @@
 ---- [ Done ] Change portfoli Animation And Hide element from space
 ---- [ Done ] Fix Project Link
 ---- Background Problem When Change Type [ Handle Height ]
+---- Portfolio Project Name Change In Dark Mode To Black
 -------------------- Portfolio Secion --------------------
 
 -------------------- Team --------------------
@@ -22,6 +25,15 @@
 ---- [ Done ] Fix Member Link
 ---- [ Done ] Hover With Shadow & Background Color
 -------------------- Team --------------------
+
+-------------------- Newslatter --------------------
+---- Collect Newslatter Style In One Scss Component
+-------------------- Newslatter --------------------
+
+-------------------- Contact --------------------
+---- Change Say Hi Color In Light theme & Handle Form Background Size
+---- Create Btn For Copy Contact Details
+-------------------- Contact --------------------
 
 -------------------- Global --------------------
 ---- Handle Focus
@@ -71,27 +83,28 @@
 ---- [ Done ] TypeError: Cannot read property 'classList' of null
 					---- [ Appear When Resize Page After Change Page ]
 ---- [ Done ] Increas Gap Between About Text & Image
----- Collect Newslatter In One Scss Component
 ---- [ Done ] Create Option Buttons Component To Collect All Options Component In The Same Place
 ---- [ Done ] Create Local Storage Custome Hook
----- [ Done ] Add Dark Mode
----- [ Done ] Create Dark Mode Hook & Add Local Storage In App Component
----- [ Done ] Check User Preformance & Enable Dark Mode
----- Handle Images In Dark Mode
----- Dark Mode Btn Break When CLick A Lot
----- Use useContext To Apply Dark Mode On Images & Button Icon
+---- [ Done ] Add Dark theme
+---- [ Done ] Create Dark theme Hook & Add Local Storage In App Component
+---- [ Done ] Check User Preformance & Enable Dark theme
+---- [ Done ] Handle Images In Dark theme
+---- [ Done ] Dark theme Btn Break When CLick A Lot
+---- [ Done ] Use useContext To Apply Dark theme On Images & Button Icon
 ---- [ Done ] Create Custome Hook useAxios
----- Save Form Value In Local Storage
----- Imporve Fetch Data By Using Catch Error
----- Set Body Padding Dynamic Depend On Navbar Height
 ---- [ Done ] Use useLayoutEffect Insted Of useEffect In Portfolio To Avoid Errors [ Not Working ]
 ---- [ Done ] Maintance Some Code In Portfolio
----- [ Done ] Change Class Name Or Animate Dark Mode Btn From [ rotate ] To [ animate ]
----- Create Small Images For Mobile
----- Shadow Color [ Problem With Sass Should Use Sass Variable ]
+---- [ Done ] Change Class Name Or Animate Dark theme Btn From [ rotate ] To [ animate ]
 ---- [ Done ] Portfolio Error [ Fix Resize Problem & Remove Resize Function When Unmount Component ]
 ---- [ Done ] Create Newslatter Api
----- Change Navbar Links Active Link Main Color In Default Mode In Dark Mode
+---- [ Done ] Change Dark Mode To Dark Theme & Custome Hook File Name
+---- [ Done ] Change Svg Images Colors In Dark theme
+---- [ Done ] Think About Change Portfolio Forground Color
+---- Save Form Value In Local Storage
+---- Imporve Fetch Data By Using Catch Error
+---- Shadow Color [ Problem With Sass Should Use Sass Variable ]
+---- Make Loading When Change Theme To Avoid Image Change Problem
+---- Resize Images For Handle Preformance & Create Small Images For Mobile
 -------------------- Done --------------------
 
 -------------------- Search --------------------
@@ -100,9 +113,3 @@
 ---- React Context & Hooks
 ---- Review Forms
 -------------------- Search --------------------
-
-@media (prefers-color-scheme: dark) {
-	background-color: #121212;
-}	
-
-window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => (e.matches > enabke() : disable()))

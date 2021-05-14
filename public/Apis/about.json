@@ -6,6 +6,7 @@
 
 	"content": {
 		"image": "./Images/About/about.svg",
+		"image_dark": "./Images/About/about-dark.svg",
 
 		"title": "Reasons for choosing",
 

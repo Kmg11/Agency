@@ -1,13 +1,18 @@
+// Import Custome Hooks
+import { useDarkTheme } from "./../../../CustomeHooks/useDarkTheme/useDarkTheme";
+
 // Main Contact Form Sass File
 import "./Form.scss";
 
 // Contact Form Component
 const ContactForm = () => {
+	const darkTheme = useDarkTheme();
+
 	return (
 		<div className="send-message">
 			<img
 				className="background-image"
-				src=".//Images/Contact/background.svg"
+				src={`./Images/Contact/background${darkTheme ? "-dark" : ""}.svg`}
 				alt="Background 2"
 				draggable="false"
 			/>
