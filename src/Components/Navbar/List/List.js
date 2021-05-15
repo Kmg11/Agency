@@ -41,7 +41,6 @@ const NavbarBtn = ({ button: { icon, text } }) => {
 	return (
 		<li className="navbar-item navbar-btn">
 			<NavLink to="/quote" className="navbar-link">
-				<i className={`navbar-btn-icon ${icon}`}></i>
 				<span className="navbar-btn-text">{text}</span>
 			</NavLink>
 		</li>

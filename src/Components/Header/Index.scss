@@ -2,7 +2,7 @@
 @import "./../../Sass/mixins";
 
 .main-header {
-	background-color: $backgroundColor;
+	background-color: $background-color;
 
 	// Header Inner Used For Grid
 	.header-inner {
@@ -35,7 +35,7 @@
 			}
 
 			.header-title {
-				color: $thirdColor;
+				color: $third-color;
 				font-size: 3.5rem;
 				font-weight: normal;
 
@@ -48,7 +48,7 @@
 				}
 
 				span {
-					color: $mainColor;
+					color: $main-color;
 					font-weight: bold;
 				}
 			}

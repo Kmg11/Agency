@@ -16,7 +16,7 @@
 
 	.services-card {
 		position: relative;
-		background-color: $upperBackgroundColor;
+		background-color: $upperBackground-color;
 		padding: 30px;
 		border-radius: 30px;
 		box-shadow: 4px 4px 12px #00000021;
@@ -48,7 +48,7 @@
 
 		.card-img {
 			width: 100%;
-			height: 320px;
+			height: 250px;
 			margin-top: 20px;
 			margin-bottom: 30px;
 			display: flex;
@@ -56,8 +56,8 @@
 			align-items: center;
 			user-select: none;
 
-			@media (min-width: $minLargeScreens) and (max-width: $maxLargeScreens) {
-				height: 200px;
+			@media (max-width: $maxMediumScreens) {
+				height: 350px;
 			}
 
 			@media (max-width: $maxSmallScreens) {
@@ -75,6 +75,22 @@
 			}
 		}
 
+		&:nth-of-type(2),
+		&:last-of-type {
+			.card-img {
+				position: relative;
+				left: 10px;
+
+				img {
+					width: 120%;
+
+					@media (max-width: $maxSmallScreens) {
+						width: 100%;
+					}
+				}
+			}
+		}
+
 		.card-paragraph {
 			@include body-text;
 			font-size: 1.1rem;
@@ -86,7 +102,7 @@
 		}
 
 		&:hover {
-			background-color: $secondColor;
+			background-color: $second-color;
 
 			.card-title,
 			.card-paragraph {

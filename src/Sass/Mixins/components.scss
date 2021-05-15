@@ -7,16 +7,16 @@
 	font-size: $btnFontSize;
 	font-weight: 600;
 	padding: $btnPadding;
-	background-color: $mainColor;
+	background-color: $main-color;
 	color: #fff;
 	border-radius: 30px;
-	box-shadow: 0 8px 15px rgba(#000, 0.1);
+	box-shadow: 0 8px 15px $box-shadow-third-color;
 	transition: all 0.3s linear;
 
 	&:hover {
-		box-shadow: 0 15px 20px rgba($mainColor, 0.4);
-		background-color: $upperBackgroundColor;
-		color: $mainColor;
+		box-shadow: 0 15px 20px $box-shadow-main-color;
+		background-color: $upperBackground-color;
+		color: $main-color;
 	}
 }
 
@@ -26,7 +26,7 @@
 	text-align: center;
 	font-size: 3rem;
 	margin-bottom: 30px;
-	color: $thirdColor;
+	color: $third-color;
 
 	@media (max-width: $maxXSmallScreens) {
 		font-size: 2.5rem;
@@ -41,7 +41,7 @@
 	line-height: 1.5;
 	width: 650px;
 	margin: auto;
-	color: $thirdColor;
+	color: $third-color;
 
 	@media (max-width: $maxSmallScreens) {
 		width: 100%;
@@ -63,8 +63,6 @@
 @mixin logo-image {
 	display: block;
 	position: relative;
-	bottom: 4px;
-	margin-right: 2px;
 	user-select: none;
 }
 
@@ -72,7 +70,7 @@
 @mixin logo-text {
 	@include first-header;
 	font-size: 2rem;
-	color: $thirdColor;
+	color: $third-color;
 	user-select: none;
 
 	@media (max-width: $maxXSmallScreens) {
@@ -102,8 +100,8 @@
 	height: $wh;
 	display: block;
 	border-radius: 50%;
-	background-color: $mainColor;
-	box-shadow: 0 3px 15px rgba($color: #fff, $alpha: 0.3);
+	background-color: $main-color;
+	box-shadow: 0 3px 15px $box-shadow-third-color;
 	transition: all 0.3s linear;
 
 	&:not(:last-of-type) {
@@ -118,11 +116,11 @@
 
 	&:hover {
 		transform: scale(1.2);
-		background-color: $upperBackgroundColor;
-		box-shadow: 0 8px 15px rgba($thirdColor, 0.2);
+		background-color: $upperBackground-color;
+		box-shadow: 0 5px 15px $box-shadow-third-color;
 
 		.icon {
-			color: $mainColor;
+			color: $main-color;
 		}
 	}
 }

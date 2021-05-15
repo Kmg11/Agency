@@ -2,7 +2,7 @@
 @import "../../Sass/mixins";
 
 .newsletter {
-	background-color: $backgroundColor;
+	background-color: $background-color;
 	padding-top: 120px;
 	padding-bottom: 120px;
 	text-align: center;
@@ -37,14 +37,14 @@
 			@include reset-input;
 
 			&[type="text"] {
-				background-color: $upperBackgroundColor;
+				background-color: $upperBackground-color;
 				padding: 20px 170px 20px 30px;
 				border: 1px solid #707070;
 				border-radius: 22px;
 				display: block;
 				width: 100%;
 				font-size: 1.4rem;
-				color: $thirdColor;
+				color: $third-color;
 
 				@media (max-width: $maxXSmallScreens) {
 					padding: 15px 20px;

@@ -1,7 +1,7 @@
 @import "./../../Sass/Variables.scss";
 
 .team {
-	background-color: $backgroundColor;
+	background-color: $background-color;
 	padding-top: 120px;
 
 	@media (max-width: $maxXSmallScreens) {

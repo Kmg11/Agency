@@ -15,7 +15,7 @@ body {
 
 body {
 	font-family: "Raleway", sans-serif;
-	background-color: $backgroundColor;
+	background-color: $background-color;
 	padding-top: 83px;
 
 	@media (max-width: $maxMediumScreens) {

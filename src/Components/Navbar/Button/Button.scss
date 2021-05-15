@@ -9,15 +9,10 @@
 	}
 
 	padding: 10px;
-	background-color: $mainColor;
+	background-color: $main-color;
 	border: 1px solid transparent;
 	border-radius: 10px;
-	box-shadow: 0 8px 15px rgba(#000, 0.1);
 	transition: all 0.3s linear;
-
-	&:hover {
-		box-shadow: 0 15px 20px rgba(#000, 0.1);
-	}
 
 	.line {
 		width: 25px;

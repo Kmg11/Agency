@@ -8,20 +8,16 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-55%, -50%) scale(0.69);
+		transform: translate(-52%, -50%) scale(0.66);
 		user-select: none;
 		z-index: 1;
 
 		@media (max-width: $maxMediumScreens) {
-			transform: translate(-50%, -50%) scale(0.57);
+			transform: translate(-53%, -50%) scale(0.5);
 		}
 
 		@media (max-width: $maxSmallScreens) {
-			transform: translate(-50%, -50%) scale(0.86);
-		}
-
-		@media (max-width: $maxXSmallScreens) {
-			transform: translate(-50%, -50%) scale(0.6);
+			transform: translate(-50%, -50%) scale(0.62);
 		}
 	}
 
@@ -45,7 +41,7 @@
 
 		label {
 			display: block;
-			color: #ffffff;
+			color: $third-color;
 			font-size: 1.5rem;
 			margin-left: 15px;
 			margin-bottom: 10px;
@@ -54,12 +50,13 @@
 		input,
 		textarea {
 			@include reset-input;
-			background-color: $upperBackgroundColor;
+			background-color: $upperBackground-color;
 			border-radius: 16px;
 			box-shadow: 6px 6px 9px #0000000d;
 			margin-bottom: 15px;
 			display: block;
 			font-size: 1.2rem;
+			color: $third-color;
 
 			&:not([type="submit"]) {
 				width: 100%;
@@ -67,13 +64,15 @@
 			}
 
 			&::placeholder {
-				color: $thirdColor;
+				color: $third-color;
+				opacity: 0.7;
+				font-size: 1rem;
 			}
 		}
 
 		input {
 			&[type="submit"] {
-				background-color: $secondColor;
+				background-color: $second-color;
 				color: #fff;
 				padding: 10px 30px;
 				cursor: pointer;

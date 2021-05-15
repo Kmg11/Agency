@@ -3,18 +3,18 @@
 // First Header Mixin
 @mixin first-header {
 	font-weight: 700;
-	color: $thirdColor;
+	color: $third-color;
 }
 
 // Second Header Mixin
 @mixin second-header {
 	font-weight: 600;
-	color: $thirdColor;
+	color: $third-color;
 }
 
 // Body Text Mixin
 @mixin body-text {
 	font-weight: 400;
-	color: $thirdColor;
+	color: $third-color;
 	line-height: 1.5;
 }

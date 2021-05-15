@@ -4,12 +4,14 @@
 
 -------------------- Navbar --------------------
 ---- [ Done ] Close Navbar When Change Page In Responsive
----- Change Navbar Links Active Link Main Color In Default theme In Dark theme
+---- [ Done ] Change Navbar Links Active Link Main Color In Default theme In Dark theme
 ---- Set Body Padding Dynamic Depend On Navbar Height
+---- Hide Navbar In Responsive With Display None For Accessiblity
 -------------------- Navbar --------------------
 
 -------------------- Services --------------------
 ---- [ Done ] Change Hove Color
+---- [ Done ] Resize Services Image
 -------------------- Services --------------------
 
 -------------------- Portfolio Secion --------------------
@@ -31,28 +33,17 @@
 -------------------- Newslatter --------------------
 
 -------------------- Contact --------------------
----- Change Say Hi Color In Light theme & Handle Form Background Size
+---- [ Done ] Resize Contact Form Background
+---- [ Done ] Change Say Hi Color In Light theme & Handle Form Background Size
+---- [ Done ] Make Form Fields Required
+---- [ Done ] Handle Submit Function
+---- [ Done ] Save Form Value In Local Storage
+---- Make Awesome Loading When Send Message
+---- Use JSON Server
 ---- Create Btn For Copy Contact Details
 -------------------- Contact --------------------
 
 -------------------- Global --------------------
----- Handle Focus
----- Accessiblity
----- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
----- Lazy Load
--------------------- Global --------------------
-
--------------------- Important Notes --------------------
----- problem in pages reload the page [ put condation for checking url ]
----- Conver Font Awesome To Images Or Use Specific Files Only
----- Block Clicking On Logo When The User In Home Page
----- Paralix Effect
----- Change Scrollbar Style
----- Colors Controll Room
----- Imporve Preformance By Using [ useMemo, useCallback ]
--------------------- Important Notes --------------------
-
--------------------- Done --------------------
 ---- [ Done ] Split JSON File To Small Files
 ---- [ Done ] Convert All Class Based To Function
 ---- [ Done ] Change Class Based To Function
@@ -100,16 +91,32 @@
 ---- [ Done ] Change Dark Mode To Dark Theme & Custome Hook File Name
 ---- [ Done ] Change Svg Images Colors In Dark theme
 ---- [ Done ] Think About Change Portfolio Forground Color
----- Save Form Value In Local Storage
----- Imporve Fetch Data By Using Catch Error
----- Shadow Color [ Problem With Sass Should Use Sass Variable ]
+---- [ Done ] Shadow Color [ Problem With Sass Should Use Sass Variable ]
+---- [ Done ] Some Ui Changes
+---- [ Done ] Accessiblity
+---- [ Done ] Change Sass Variables Syntax
+---- [ Done ] Split Variables Sass File In Small Files
+---- Imporve Fetch Data By Using Catch Error & Pending
 ---- Make Loading When Change Theme To Avoid Image Change Problem
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
--------------------- Done --------------------
+---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
+---- Lazy Load
+-------------------- Global --------------------
+
+-------------------- Important Notes --------------------
+---- problem in pages reload the page [ put condation for checking url ]
+---- Conver Font Awesome To Images Or Use Specific Files Only
+---- Block Clicking On Logo When The User In Home Page
+---- Paralix Effect
+---- Change Scrollbar Style
+---- Imporve Preformance By Using [ useMemo, useCallback ]
+---- Check Validation
+---- Check Preformance
+-------------------- Important Notes --------------------
 
 -------------------- Search --------------------
 ---- [ Done ] Search For Fieldset & Legend
+---- [ Done ] Review Forms
+---- [ Done ] React Context & Hooks
 ---- Check Refs & Portail
----- React Context & Hooks
----- Review Forms
 -------------------- Search --------------------

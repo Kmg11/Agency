@@ -23,7 +23,7 @@
 			transition: color 0.3s linear;
 
 			&:not(.active) {
-				color: $thirdColor;
+				color: $third-color;
 			}
 
 			&.active {

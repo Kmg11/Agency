@@ -10,9 +10,9 @@
 		left: 0;
 		right: 0;
 		width: 100%;
-		background-color: $backgroundColor;
+		background-color: $background-color;
 		border-radius: 0 0 20px 20px;
-		box-shadow: 0 8px 15px rgba(#000, 0.1);
+		box-shadow: 0 2px 15px $box-shadow-third-color;
 		overflow: hidden;
 		height: 0;
 		padding: 0;
@@ -43,9 +43,8 @@
 		&.navbar-btn {
 			@include reset-btn;
 
-			background-color: $mainColor;
+			background-color: $main-color;
 			border-radius: 30px;
-			box-shadow: 0 8px 15px rgba(#000, 0.1);
 			padding: 12px 40px;
 
 			.navbar-btn-icon {
@@ -72,12 +71,12 @@
 		.navbar-link {
 			@include reset-link;
 			font-size: 1rem;
-			color: $fourthColor;
+			color: $fourth-color;
 			transition: color 0.3s linear;
 
 			&.active,
 			&:hover {
-				color: $mainColor;
+				color: #47aee1; // Use Static Color For Not Change On Dark Theme
 			}
 		}
 	}

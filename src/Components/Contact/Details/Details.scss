@@ -16,7 +16,7 @@
 
 			.icon {
 				font-size: 1.7rem;
-				color: $mainColor;
+				color: $main-color;
 			}
 		}
 
@@ -25,17 +25,17 @@
 				font-size: 1.5rem;
 				font-weight: 400;
 				margin-bottom: 15px;
-				color: $thirdColor;
+				color: $third-color;
 			}
 
 			.address-details {
 				p {
 					font-size: 1.2rem;
-					color: $thirdColor;
+					color: $third-color;
 
 					a {
 						@include reset-link;
-						color: $thirdColor;
+						color: $third-color;
 					}
 				}
 			}

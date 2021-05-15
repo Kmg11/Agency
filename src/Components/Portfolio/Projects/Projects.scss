@@ -41,7 +41,7 @@
 			height: 100%;
 			width: 100%;
 			display: block;
-			background-color: $upperBackgroundColor;
+			background-color: $upperBackground-color;
 			opacity: 0.5;
 			filter: brightness(15);
 			border-radius: 65px;
@@ -76,7 +76,7 @@
 					color: #fff;
 					font-size: 0.875rem;
 					font-weight: bold;
-					background-color: $mainColor;
+					background-color: $main-color;
 					padding: 7px 25px;
 					border-radius: 30px;
 					transition: all 0.2s linear;
@@ -90,7 +90,7 @@
 			}
 
 			figcaption {
-				color: $thirdColor;
+				color: $third-color;
 				font-size: 20px;
 				margin: 15px;
 				position: relative;

@@ -43,7 +43,7 @@
 
 		a {
 			@include reset-link;
-			color: $thirdColor;
+			color: $third-color;
 			display: inline-block;
 
 			&:not(:last-of-type) {

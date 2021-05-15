@@ -3,7 +3,7 @@
 .navbar {
 	$navbarPadding: 20px;
 
-	background-color: $upperBackgroundColor;
+	background-color: $background-color;
 	padding-top: $navbarPadding;
 	padding-bottom: $navbarPadding;
 	position: fixed;
@@ -12,7 +12,7 @@
 	right: 0;
 	width: 100%;
 	z-index: 1000;
-	transition: box-shadow 0.3s linear;
+	transition: all 0.3s linear;
 
 	// Navbar Inner Using For Grid System
 	.navbar-inner {
@@ -22,7 +22,8 @@
 	}
 
 	&.scroll {
-		box-shadow: 0 2px 15px rgba(#000, 0.1);
+		background-color: $upperBackground-color;
+		box-shadow: 0 2px 15px $box-shadow-third-color;
 	}
 
 	// Handle Open Navbar In Responsive Mode
@@ -30,11 +31,11 @@
 		box-shadow: none;
 
 		.navbar-responsive-btn {
-			border: 1px solid $mainColor;
+			border: 1px solid $main-color;
 			background-color: transparent;
 
 			.line {
-				background-color: $mainColor;
+				background-color: $main-color;
 
 				&:first-of-type {
 					transform: translate(0, 8px) rotate(45deg);
