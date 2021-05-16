@@ -7,20 +7,20 @@ import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
 import "./List.scss";
 
 // Navbar List Component
-const NavbarList = ({ closeNavbar }) => {
+const NavbarList = ({ setNavbarOpen }) => {
 	// Fetch data
 	const {
 		data: { links = [], button = {} },
 	} = useAxios("./Apis/navbar.json", []);
 
-	const linksList = links.map((link) => {
+	const listItems = links.map((link) => {
 		return (
 			<li key={link.id} className="navbar-item">
 				<NavLink
 					exact
 					to={link.link}
 					className="navbar-link"
-					onClick={closeNavbar}
+					onClick={() => setNavbarOpen(false)}
 				>
 					{link.text}
 				</NavLink>
@@ -30,7 +30,7 @@ const NavbarList = ({ closeNavbar }) => {
 
 	return (
 		<ul className="navbar-list">
-			{linksList}
+			{listItems}
 			<NavbarBtn button={button} />
 		</ul>
 	);

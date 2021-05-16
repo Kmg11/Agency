@@ -1,12 +1,16 @@
 -------------------- Header Section --------------------
 ---- [ Done ] Explore Btn Scroll To Services Section
+---- Increas Space Between Text & Image In Responsive
 -------------------- Header Section --------------------
 
 -------------------- Navbar --------------------
 ---- [ Done ] Close Navbar When Change Page In Responsive
 ---- [ Done ] Change Navbar Links Active Link Main Color In Default theme In Dark theme
----- Set Body Padding Dynamic Depend On Navbar Height
----- Hide Navbar In Responsive With Display None For Accessiblity
+---- [ Done ] Big Preformance Problem With Resize
+---- [ Done ] Big Preformance Problem With Scroll
+---- [ Done ] Problem When Close Navbar When Click Any Where On The Document
+---- [ Done ] Set Body Padding Dynamic Depend On Navbar Height
+---- [ Done ] Add Close Navbar By Press ESC
 -------------------- Navbar --------------------
 
 -------------------- Services --------------------
@@ -19,7 +23,10 @@
 ---- [ Done ] Change portfoli Animation And Hide element from space
 ---- [ Done ] Fix Project Link
 ---- Background Problem When Change Type [ Handle Height ]
----- Portfolio Project Name Change In Dark Mode To Black
+---- Portfolio Project Name Change In Dark Mode To Black [ Change Name Color Or Background Color ]
+---- Use offsetWidth Instead Of getComputedStyle
+---- useDebounce To Handle Nav Line
+---- useThrottle To Handle Nav Link Click
 -------------------- Portfolio Secion --------------------
 
 -------------------- Team --------------------
@@ -41,7 +48,12 @@
 ---- Make Awesome Loading When Send Message
 ---- Use JSON Server
 ---- Create Btn For Copy Contact Details
+---- Use Axios Insted Of Fetch
 -------------------- Contact --------------------
+
+-------------------- Footer --------------------
+---- Re Write Footer Links Json File
+-------------------- Footer --------------------
 
 -------------------- Global --------------------
 ---- [ Done ] Split JSON File To Small Files
@@ -96,11 +108,16 @@
 ---- [ Done ] Accessiblity
 ---- [ Done ] Change Sass Variables Syntax
 ---- [ Done ] Split Variables Sass File In Small Files
+---- [ Done ] Cut Css Colors Variables To Index.scss To Avoid Repeat Code In Diffrent Sass Files When Import Colors Sass File
+---- [ Done ] Create useDebounce Custome Hook
+---- Create useThrottle Custome Hook
+---- Check All Components For Preformance Problems
 ---- Imporve Fetch Data By Using Catch Error & Pending
 ---- Make Loading When Change Theme To Avoid Image Change Problem
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
 ---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 ---- Lazy Load
+---- Create Reverse Color To Handle Elements On Background
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -110,13 +127,18 @@
 ---- Paralix Effect
 ---- Change Scrollbar Style
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
+---- 404 Page
 ---- Check Validation
 ---- Check Preformance
+---- addEventListener
+---- Try Waves In Header & Purple Color
 -------------------- Important Notes --------------------
 
 -------------------- Search --------------------
----- [ Done ] Search For Fieldset & Legend
+---- [ Done ] Fieldset & Legend
 ---- [ Done ] Review Forms
----- [ Done ] React Context & Hooks
+---- [ Done ] React Hooks [ useState, useEffect, useLayoutEffect, useRef, useCallback, useContext ]
+---- addEventListener & removeEventListener
 ---- Check Refs & Portail
+---- Fetch VS Axios
 -------------------- Search --------------------

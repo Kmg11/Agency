@@ -1,5 +1,46 @@
 @import "./Sass/Variables.scss";
 
+/***************************************************
+	Colors Set In This File For Two Reasons
+		1 - [ Handle Dark Mode ]
+		2 - [ To Avoid Repeat Code In Diffrent Sass Files When Import Colors Sass File ]
+***************************************************/
+
+// Start Main Colors Using Css Variables In Light Theme
+
+:root {
+	--main-color: #47aee1;
+	--second-color: #47e1ae;
+	--third-color: #262222;
+	--fourth-color: #495254;
+
+	--background-color: #fff;
+	--upper-background-color: #fff;
+
+	--box-shadow-third-color: rgba(38, 34, 34, 0.1);
+	--box-shadow-main-color: rgba(71, 174, 225, 0.2);
+	--box-shadow-white-color: rgba(255, 255, 255, 0.3);
+}
+
+// End Main Colors Using Css Variables In Light Theme
+// Start Main Colors Using Css Variables In Dark Theme
+
+.dark-theme {
+	--main-color: #3b92bd;
+	--second-color: #4cb390;
+	--third-color: #fff;
+	--fourth-color: #fff;
+
+	--background-color: #121212;
+	--upper-background-color: #232323;
+
+	--box-shadow-third-color: rgba(255, 255, 255, 0.1);
+	--box-shadow-main-color: rgba(59, 146, 189, 0.2);
+	--box-shadow-white-color: rgba(0, 0, 0, 0.3);
+}
+
+// End Main Colors Using Css Variables In Dark Theme
+
 *,
 *::before,
 *::after {
@@ -16,11 +57,6 @@ body {
 body {
 	font-family: "Raleway", sans-serif;
 	background-color: $background-color;
-	padding-top: 83px;
-
-	@media (max-width: $maxMediumScreens) {
-		padding-top: 81px;
-	}
 }
 
 .container {

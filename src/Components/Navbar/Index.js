@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 
+// Import Custome Hooks
+import useDebounce from "./../../CustomeHooks/useDebounce/useDebounce";
+
 // Import Components
 import NavbarLogo from "./Logo/Logo";
 import NavbarResponsiveBtn from "./Button/Button";
@@ -10,73 +13,96 @@ import "./Index.scss";
 
 // Mani Navbar Component
 const Navbar = () => {
+	// Custome Hooks
+	const { debounce } = useDebounce();
+
+	// States
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	const [navbarScroll, setNavbarScroll] = useState(false);
+	const [navbarHeight, setNavbarHeight] = useState();
 
 	// Refs
 	const navbar = useRef();
 
-	// Handle [Open & Close] Navbar
-	const openCloseNavbar = () => {
-		setNavbarOpen((prevValue) => !prevValue);
-	};
-
-	// Close Navbar When Click On Ant Link
-	const closeNavbar = () => {
-		if (navbarOpen) {
-			setNavbarOpen(false);
-		}
-	};
-
-	// Stop Propagation For Navbar To Handle closeNavbar Function
-	const handleNavbarClicking = (e) => {
-		e.stopPropagation();
-	};
-
-	// Handle Resize Window
+	// Handle Body Padding Top Depend On Navbar Height
 	useEffect(() => {
-		window.addEventListener("resize", () => {
+		const setBodyPadding = () => {
+			setNavbarHeight(`${navbar.current.offsetHeight}px`);
+			document.body.style.paddingTop = navbarHeight;
+		};
+
+		setBodyPadding();
+		const debounceSetBodyPadding = debounce(setBodyPadding, 1000);
+		window.addEventListener("resize", debounceSetBodyPadding);
+
+		return () => {
+			window.removeEventListener("resize", debounceSetBodyPadding);
+		};
+	}, [navbarHeight, debounce]);
+
+	// Handle Closing Navbar When Click Anywhere
+	useEffect(() => {
+		document.addEventListener("click", function eventFn(e) {
 			if (navbarOpen) {
-				setNavbarOpen(false);
+				if (e.target !== navbar.current) {
+					setNavbarOpen(false);
+					document.removeEventListener("click", eventFn);
+				}
 			}
 		});
 	}, [navbarOpen]);
 
-	// Handle Closing Navbar When Click Anywhere
+	// Handle Close Navbar When Press ESC Key
 	useEffect(() => {
-		document.addEventListener("click", (e) => {
+		window.addEventListener("keyup", function eventFn(e) {
 			if (navbarOpen) {
-				if (e.target !== navbar.current) {
+				if (e.key === "Escape" && e.code === "Escape") {
 					setNavbarOpen(false);
+					window.removeEventListener("keyup", eventFn);
 				}
+			}
+		});
+
+		return () => {};
+	}, [navbarOpen]);
+
+	// Handle Close Navbar When Resize Window
+	useEffect(() => {
+		window.addEventListener("resize", function eventFn() {
+			if (navbarOpen) {
+				setNavbarOpen(false);
+				window.removeEventListener("resize", eventFn);
 			}
 		});
 	}, [navbarOpen]);
 
 	// Handle Scrolling Function
 	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			if (window.pageYOffset > 50) {
+		window.addEventListener("scroll", function eventFn() {
+			if (window.pageYOffset > 50 && !navbarScroll) {
 				setNavbarScroll(true);
-			} else {
+				window.removeEventListener("scroll", eventFn);
+			} else if (window.pageYOffset < 50 && navbarScroll) {
 				setNavbarScroll(false);
+				window.removeEventListener("scroll", eventFn);
 			}
 		});
 	}, [navbarScroll]);
 
 	return (
 		<nav
-			className={`navbar${navbarOpen ? " open" : ""}${
-				navbarScroll ? " scroll" : ""
-			}`}
+			className={`navbar
+				${navbarOpen ? " open" : ""}
+				${navbarScroll ? " scroll" : ""}
+			`}
 			ref={navbar}
-			onClick={handleNavbarClicking}
+			onClick={(e) => e.stopPropagation()}
 		>
 			<div className="container">
 				<div className="navbar-inner">
 					<NavbarLogo />
-					<NavbarResponsiveBtn openCloseNavbar={openCloseNavbar} />
-					<NavbarList closeNavbar={closeNavbar} />
+					<NavbarResponsiveBtn setNavbarOpen={setNavbarOpen} />
+					<NavbarList setNavbarOpen={setNavbarOpen} />
 				</div>
 			</div>
 		</nav>
