@@ -15,7 +15,7 @@
 
 	&:hover {
 		box-shadow: 0 15px 20px $box-shadow-main-color;
-		background-color: $upperBackground-color;
+		background-color: $upper-background-color;
 		color: $main-color;
 	}
 }
@@ -116,7 +116,7 @@
 
 	&:hover {
 		transform: scale(1.2);
-		background-color: $upperBackground-color;
+		background-color: $upper-background-color;
 		box-shadow: 0 5px 15px $box-shadow-third-color;
 
 		.icon {

@@ -119,6 +119,7 @@
 ---- [ Done ] Cut Css Colors Variables To Index.scss To Avoid Repeat Code In Diffrent Sass Files When Import Colors Sass File
 ---- [ Done ] Create useDebounce Custome Hook
 ---- [ DOne ] Create useThrottle Custome Hook
+---- Change Upper Background Color Variable Sass Syntax
 ---- Check All Components For Preformance Problems
 ---- Imporve Fetch Data By Using Catch Error & Pending
 ---- Make Loading When Change Theme To Avoid Image Change Problem
