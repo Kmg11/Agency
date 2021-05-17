@@ -63,8 +63,15 @@ const PortfolioNav = ({ nav, type, changeType }) => {
 		};
 	}, [debounce, componentMount, handleLine, activeItem, changeType, type]);
 
-	// Throttle Handle Line For Clicking
-	const throttleHandleLine = throttle(handleLine, 500);
+	// Handle Line For Clicking
+	const handleLineClick = (index, target) => {
+		// Throttle Handle Line
+		const throttleHandleLine = throttle(handleLine, 500);
+
+		if (type !== target.textContent) {
+			throttleHandleLine(index, target);
+		}
+	};
 
 	// Get Nav List
 	const navList = nav.map((item, index) => {
@@ -74,7 +81,7 @@ const PortfolioNav = ({ nav, type, changeType }) => {
 				className={`${
 					activeItem === index ? "portfolio-item active" : "portfolio-item"
 				}`}
-				onClick={(e) => throttleHandleLine(index, e.target)}
+				onClick={(e) => handleLineClick(index, e.target)}
 				ref={activeItem === index ? selected : null}
 			>
 				{item}
