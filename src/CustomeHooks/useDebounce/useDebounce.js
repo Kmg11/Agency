@@ -1,5 +1,7 @@
+import { useCallback } from "react";
+
 const useDebounce = () => {
-	const debounce = (fn, delay) => {
+	const debounce = useCallback((fn, delay) => {
 		let timer;
 
 		return (...args) => {
@@ -9,7 +11,7 @@ const useDebounce = () => {
 				fn(...args);
 			}, delay);
 		};
-	};
+	}, []);
 
 	return { debounce };
 };

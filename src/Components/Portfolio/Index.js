@@ -23,6 +23,7 @@ const PortfolioBgDark = {
 
 // Main Portfolio Component
 const Portfolio = () => {
+	// Custome Hooks
 	const darkTheme = useDarkTheme();
 
 	// Fetch data
@@ -60,7 +61,7 @@ const Portfolio = () => {
 				<PortfolioHeader header={header} />
 
 				<section className="portfolio-body">
-					<PortfolioNav nav={nav} changeType={changeType} />
+					<PortfolioNav nav={nav} type={type} changeType={changeType} />
 					<PortfolioProjects
 						projects={projects}
 						type={type}

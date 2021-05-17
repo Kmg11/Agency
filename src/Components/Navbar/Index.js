@@ -19,7 +19,6 @@ const Navbar = () => {
 	// States
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	const [navbarScroll, setNavbarScroll] = useState(false);
-	const [navbarHeight, setNavbarHeight] = useState();
 
 	// Refs
 	const navbar = useRef();
@@ -27,8 +26,7 @@ const Navbar = () => {
 	// Handle Body Padding Top Depend On Navbar Height
 	useEffect(() => {
 		const setBodyPadding = () => {
-			setNavbarHeight(`${navbar.current.offsetHeight}px`);
-			document.body.style.paddingTop = navbarHeight;
+			document.body.style.paddingTop = `${navbar.current.offsetHeight}px`;
 		};
 
 		setBodyPadding();
@@ -38,7 +36,7 @@ const Navbar = () => {
 		return () => {
 			window.removeEventListener("resize", debounceSetBodyPadding);
 		};
-	}, [navbarHeight, debounce]);
+	}, [debounce]);
 
 	// Handle Closing Navbar When Click Anywhere
 	useEffect(() => {

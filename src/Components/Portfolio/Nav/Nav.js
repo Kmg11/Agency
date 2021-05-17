@@ -1,13 +1,22 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
+// Import Custome Hooks
+import useDebounce from "./../../../CustomeHooks/useDebounce/useDebounce";
+import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
+
 // Main Portfolio Nav Sass File
 import "./Nav.scss";
 
 // Portfolio Nav Component
-const PortfolioNav = ({ nav, changeType }) => {
+const PortfolioNav = ({ nav, type, changeType }) => {
+	// Custome Hooks
+	const { debounce } = useDebounce();
+	const { throttle } = useThrottle();
+
 	// States
-	const [lineStyle, setLineStyle] = useState({ left: "", width: "" });
+	const [lineStyle, setLineStyle] = useState({ left: 0, width: "80px" });
 	const [activeItem, setActiveItem] = useState(0);
+	const [componentMount, setComponentMount] = useState(false);
 
 	// Refs
 	const selected = useRef(0);
@@ -31,22 +40,31 @@ const PortfolioNav = ({ nav, changeType }) => {
 
 	// Handle Selected Item
 	useEffect(() => {
-		const handleLineResize = () => handleLine(activeItem, selected.current);
+		const debounceHandleLine = debounce(
+			() => handleLine(activeItem, selected.current),
+			200
+		);
 
 		if (selected.current) {
-			// Trigger Function
-			handleLine(activeItem, selected.current);
+			// Trigger Function For FIrst Time Component Mount
+			if (!componentMount) {
+				setComponentMount(true);
+				handleLine(activeItem, selected.current);
+			}
 
 			// Handle Selected Item [ Responsive ]
-			window.addEventListener("resize", handleLineResize);
+			window.addEventListener("resize", debounceHandleLine);
 		} else {
-			changeType("All Work");
+			changeType(type);
 		}
 
 		return () => {
-			window.removeEventListener("resize", handleLineResize);
+			window.removeEventListener("resize", debounceHandleLine);
 		};
-	}, [changeType, handleLine, activeItem]);
+	}, [debounce, componentMount, handleLine, activeItem, changeType, type]);
+
+	// Throttle Handle Line For Clicking
+	const throttleHandleLine = throttle(handleLine, 500);
 
 	// Get Nav List
 	const navList = nav.map((item, index) => {
@@ -54,9 +72,9 @@ const PortfolioNav = ({ nav, changeType }) => {
 			<li
 				key={index}
 				className={`${
-					activeItem === index + 1 ? "portfolio-item active" : "portfolio-item"
+					activeItem === index ? "portfolio-item active" : "portfolio-item"
 				}`}
-				onClick={(e) => handleLine(index, e.target)}
+				onClick={(e) => throttleHandleLine(index, e.target)}
 				ref={activeItem === index ? selected : null}
 			>
 				{item}

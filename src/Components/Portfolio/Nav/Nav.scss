@@ -27,7 +27,7 @@
 			}
 
 			&.active {
-				color: #fff;
+				color: $white-color;
 			}
 
 			@media (max-width: $maxSmallScreens) {
@@ -47,9 +47,12 @@
 	.list-line {
 		position: absolute;
 		bottom: -15px;
-		width: 80px;
 		height: 3px;
-		background-color: #fff;
-		transition: left 0.3s linear;
+		background-color: $white-color;
+		transition: all 0.3s linear;
+
+		@media (max-width: $maxSmallScreens) {
+			display: none;
+		}
 	}
 }

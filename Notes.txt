@@ -11,6 +11,7 @@
 ---- [ Done ] Problem When Close Navbar When Click Any Where On The Document
 ---- [ Done ] Set Body Padding Dynamic Depend On Navbar Height
 ---- [ Done ] Add Close Navbar By Press ESC
+---- [ Done ] Remove Navbar Height Becouse It No Reason To Use It
 -------------------- Navbar --------------------
 
 -------------------- Services --------------------
@@ -22,17 +23,24 @@
 ---- [ Done ] Problem In portfoli getComputedStyle [ useEffect ] for resize & first load
 ---- [ Done ] Change portfoli Animation And Hide element from space
 ---- [ Done ] Fix Project Link
+---- [ Done ] Hide Nav Line In Small Screens
+---- [ Done ] Fix Big Preformance Problem In Resize
+---- [ Done ] useDebounce To Handle Nav Line Resize
+---- [ Done ] useThrottle To Handle Nav Link Click
+---- [ Done ] Fix Active Class Problem
+---- [ Done ] Portfolio Project Name Change In Dark Mode To Black [ Change Name Color Or Background Color ]
+---- [ Done ] Change Header Title Color In Light Theme
+---- [ Done ] Fix Active Class Color Problem In Dark Theme
+---- [ Done ] Fix Line Color Problem In Dark Theme
+---- useEffect Clenup Function Review
 ---- Background Problem When Change Type [ Handle Height ]
----- Portfolio Project Name Change In Dark Mode To Black [ Change Name Color Or Background Color ]
----- Use offsetWidth Instead Of getComputedStyle
----- useDebounce To Handle Nav Line
----- useThrottle To Handle Nav Link Click
 -------------------- Portfolio Secion --------------------
 
 -------------------- Team --------------------
 ---- [ Done ] Problem In Team When Refresh
 ---- [ Done ] Fix Member Link
 ---- [ Done ] Hover With Shadow & Background Color
+---- Swiper Resize Preformance Problem
 -------------------- Team --------------------
 
 -------------------- Newslatter --------------------
@@ -105,19 +113,19 @@
 ---- [ Done ] Think About Change Portfolio Forground Color
 ---- [ Done ] Shadow Color [ Problem With Sass Should Use Sass Variable ]
 ---- [ Done ] Some Ui Changes
----- [ Done ] Accessiblity
+---- [ Done ] Accessiblity ( 97% )
 ---- [ Done ] Change Sass Variables Syntax
 ---- [ Done ] Split Variables Sass File In Small Files
 ---- [ Done ] Cut Css Colors Variables To Index.scss To Avoid Repeat Code In Diffrent Sass Files When Import Colors Sass File
 ---- [ Done ] Create useDebounce Custome Hook
----- Create useThrottle Custome Hook
+---- [ DOne ] Create useThrottle Custome Hook
 ---- Check All Components For Preformance Problems
 ---- Imporve Fetch Data By Using Catch Error & Pending
 ---- Make Loading When Change Theme To Avoid Image Change Problem
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
----- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 ---- Lazy Load
 ---- Create Reverse Color To Handle Elements On Background
+---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -138,6 +146,7 @@
 ---- [ Done ] Fieldset & Legend
 ---- [ Done ] Review Forms
 ---- [ Done ] React Hooks [ useState, useEffect, useLayoutEffect, useRef, useCallback, useContext ]
+---- useEffect Clenup Function Review
 ---- addEventListener & removeEventListener
 ---- Check Refs & Portail
 ---- Fetch VS Axios
