@@ -1,0 +1,36 @@
+@import "./../../Variables.scss";
+@import "./../reset.scss";
+@import "./../fonts.scss";
+
+// Section Title Mixin
+@mixin section-title {
+	@include first-header;
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 30px;
+	color: $third-color;
+
+	@media (max-width: $maxXSmallScreens) {
+		font-size: 2.5rem;
+	}
+}
+
+// Section Paragraph Mixin
+@mixin section-paragraph {
+	@include body-text;
+	text-align: center;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	width: 650px;
+	margin: auto;
+	color: $third-color;
+
+	@media (max-width: $maxSmallScreens) {
+		width: 100%;
+		font-size: 1.5rem;
+	}
+
+	@media (max-width: $maxXSmallScreens) {
+		font-size: 1.3rem;
+	}
+}

@@ -1,6 +1,6 @@
 -------------------- Header Section --------------------
 ---- [ Done ] Explore Btn Scroll To Services Section
----- Increas Space Between Text & Image In Responsive
+---- [ Done ] Increas Space Between Text & Image In Responsive
 -------------------- Header Section --------------------
 
 -------------------- Navbar --------------------
@@ -45,7 +45,7 @@
 -------------------- Team --------------------
 
 -------------------- Newslatter --------------------
----- Collect Newslatter Style In One Scss Component
+---- [ Done ] Collect Newslatter Style In One Scss Component
 -------------------- Newslatter --------------------
 
 -------------------- Contact --------------------
@@ -121,28 +121,43 @@
 ---- [ Done ] Create useDebounce Custome Hook
 ---- [ DOne ] Create useThrottle Custome Hook
 ---- [ Done ] Change Upper Background Color Variable Sass Syntax
----- Check All Components For Preformance Problems
+---- [ Done ] Split Sass Mixins To Small Files
+---- [ Done ] Create White Color Variable
+---- Make Add Parameters To Mixins Insted Of Override Proberty
+---- Create JSXBlock For Repeat Code Like Logo & Newslatter
 ---- Imporve Fetch Data By Using Catch Error & Pending
 ---- Make Loading When Change Theme To Avoid Image Change Problem
+---- Make Loading For Fetching Data
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
----- Lazy Load
----- Create Reverse Color To Handle Elements On Background
----- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
----- problem in pages reload the page [ put condation for checking url ]
----- Conver Font Awesome To Images Or Use Specific Files Only
----- Block Clicking On Logo When The User In Home Page
----- Paralix Effect
----- Change Scrollbar Style
+---- Add useDebounce For Option Buttons
+---- Fix Footer Links Add Everything In Json FIle
+---- Check All Components For Preformance Problems
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
----- 404 Page
----- Check Validation
----- Check Preformance
+---- problem in pages reload the page [ put condation for checking url ]
+---- Block Clicking On Logo When The User In Home Page
 ---- addEventListener
----- Try Waves In Header & Purple Color
 -------------------- Important Notes --------------------
+
+-------------------- Diffcult Problems --------------------
+---- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
+-------------------- Diffcult Problems --------------------
+
+-------------------- Last Tasks --------------------
+---- Try Waves In Header & Purple Color
+---- Conver Font Awesome To Images Or Use Specific Files Only
+---- 404 Page
+---- Lazy Load
+---- Change Scrollbar Style
+---- Paralix Effect
+-------------------- Last Tasks --------------------
+
+-------------------- Finish Tasks --------------------
+---- Check HTML Validation
+---- Check Pages Preformance
+-------------------- Finish Tasks --------------------
 
 -------------------- Search --------------------
 ---- [ Done ] Fieldset & Legend

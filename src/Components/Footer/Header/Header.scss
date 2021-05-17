@@ -21,54 +21,6 @@
 	}
 
 	.newsletter-form {
-		width: 700px;
-		margin: auto;
-		position: relative;
-
-		@media (max-width: $maxSmallScreens) {
-			width: 100%;
-		}
-
-		input {
-			@include reset-input;
-
-			&[type="text"] {
-				background-color: $upper-background-color;
-				padding: 20px 170px 20px 30px;
-				border: 1px solid #707070;
-				border-radius: 22px;
-				display: block;
-				width: 100%;
-				font-size: 1.4rem;
-				color: $third-color;
-
-				@media (max-width: $maxXSmallScreens) {
-					padding: 15px 20px;
-					border-radius: 15px;
-				}
-			}
-
-			&[type="submit"] {
-				@include main-btn(1.3rem, 20px 50px);
-				position: absolute;
-				top: 1px;
-				bottom: 1px;
-				right: 1px;
-				cursor: pointer;
-				border-radius: 22px;
-
-				&,
-				&:hover {
-					box-shadow: none;
-				}
-
-				@media (max-width: $maxXSmallScreens) {
-					position: static;
-					width: 100%;
-					border-radius: 15px;
-					margin-top: 15px;
-				}
-			}
-		}
+		@include newsletter-form;
 	}
 }

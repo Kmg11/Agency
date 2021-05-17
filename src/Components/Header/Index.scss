@@ -6,8 +6,9 @@
 
 	// Header Inner Used For Grid
 	.header-inner {
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 50px;
 		align-items: center;
 		min-height: 550px;
 
@@ -21,15 +22,13 @@
 		}
 
 		@media (max-width: $maxSmallScreens) {
-			display: block;
+			grid-template-columns: 1fr;
 			height: auto;
 			padding-top: 50px;
 			padding-bottom: 50px;
 		}
 
 		.header-desc {
-			flex: 1;
-
 			@media (max-width: $maxSmallScreens) {
 				text-align: center;
 			}
@@ -77,8 +76,6 @@
 		}
 
 		.header-image {
-			flex: 1;
-
 			img {
 				display: block;
 				width: 100%;

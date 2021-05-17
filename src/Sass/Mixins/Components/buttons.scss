@@ -1,0 +1,54 @@
+@import "./../../Variables.scss";
+@import "./../reset.scss";
+@import "./../fonts.scss";
+
+// Main Btn Mixin
+@mixin main-btn($btnFontSize, $btnPadding) {
+	font-size: $btnFontSize;
+	font-weight: 600;
+	padding: $btnPadding;
+	background-color: $main-color;
+	color: #fff;
+	border-radius: 30px;
+	box-shadow: 0 8px 15px $box-shadow-third-color;
+	transition: all 0.3s linear;
+
+	&:hover {
+		box-shadow: 0 15px 20px $box-shadow-main-color;
+		background-color: $upper-background-color;
+		color: $main-color;
+	}
+}
+
+// Option Button Mixin
+@mixin option-button {
+	@include reset-btn;
+	$wh: 50px;
+	width: $wh;
+	height: $wh;
+	display: block;
+	border-radius: 50%;
+	background-color: $main-color;
+	box-shadow: 0 3px 15px $box-shadow-third-color;
+	transition: all 0.3s linear;
+
+	&:not(:last-of-type) {
+		margin-bottom: 20px;
+	}
+
+	.icon {
+		font-size: 1.5rem;
+		color: #fff;
+		transition: all 0.3s ease;
+	}
+
+	&:hover {
+		transform: scale(1.2);
+		background-color: $upper-background-color;
+		box-shadow: 0 5px 15px $box-shadow-third-color;
+
+		.icon {
+			color: $main-color;
+		}
+	}
+}

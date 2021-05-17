@@ -1,0 +1,28 @@
+@import "./../../Variables.scss";
+@import "./../reset.scss";
+@import "./../fonts.scss";
+
+// Logo Mixin
+@mixin logo {
+	@include reset-link;
+	display: flex;
+}
+
+// Logo Image Mixin
+@mixin logo-image {
+	display: block;
+	position: relative;
+	user-select: none;
+}
+
+// Logo Text Mixin
+@mixin logo-text {
+	@include first-header;
+	font-size: 2rem;
+	color: $third-color;
+	user-select: none;
+
+	@media (max-width: $maxXSmallScreens) {
+		font-size: 1.56rem;
+	}
+}
