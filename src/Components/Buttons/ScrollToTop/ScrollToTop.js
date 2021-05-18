@@ -1,33 +1,38 @@
-// Main Scroll To Top Button Sass File
 import { useEffect, useState } from "react";
+
+// Import Custome Hooks
+import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
+
+// Main Scroll To Top Button Sass File
 import "./ScrollToTop.scss";
 
 const ScrollToTop = () => {
+	const { throttle } = useThrottle();
+
 	const [showButton, setShowButton] = useState(false);
 
 	useEffect(() => {
 		// Show Button When Scroll
-		window.addEventListener("scroll", () => {
-			if (window.pageYOffset > 700) {
+		window.addEventListener("scroll", function eventFn() {
+			if (window.pageYOffset > 700 && !showButton) {
+				console.log(1);
 				setShowButton(true);
-			} else {
+				window.removeEventListener("scroll", eventFn);
+			} else if (window.pageYOffset < 700 && showButton) {
+				console.log(2);
 				setShowButton(false);
+				window.removeEventListener("scroll", eventFn);
 			}
 		});
-
-		// Reset States When Component Unmounted
-		return () => {
-			setShowButton(false);
-		};
-	}, []);
+	}, [showButton]);
 
 	// Scroll To Top Function
-	const scrollToTop = () => {
+	const scrollToTop = throttle(() => {
 		window.scrollTo({
 			top: 0,
 			behavior: "smooth",
 		});
-	};
+	}, 1000);
 
 	return (
 		<button

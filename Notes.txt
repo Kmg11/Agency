@@ -54,6 +54,7 @@
 ---- [ Done ] Make Form Fields Required
 ---- [ Done ] Handle Submit Function
 ---- [ Done ] Save Form Value In Local Storage
+---- useDebounce When Send Data To Avoid Dublicate
 ---- Make Awesome Loading When Send Message
 ---- Use JSON Server
 ---- Create Btn For Copy Contact Details
@@ -132,9 +133,19 @@
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
----- Add useDebounce For Option Buttons
+---- [ Done ] Add useThrottle For Option Buttons
 ---- Fix Footer Links Add Everything In Json FIle
 ---- Check All Components For Preformance Problems
+				---- [ Done ] Navbar
+				---- Header
+				---- Services
+				---- About
+				---- [ Done ] Portfolio
+				---- Team
+				---- Newsletter
+				---- Contact
+				---- Footer
+				---- [ Done ] Option Buttons
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Block Clicking On Logo When The User In Home Page
@@ -146,6 +157,7 @@
 -------------------- Diffcult Problems --------------------
 
 -------------------- Last Tasks --------------------
+---- Think To Change Sass To Styled Component
 ---- Try Waves In Header & Purple Color
 ---- Conver Font Awesome To Images Or Use Specific Files Only
 ---- 404 Page

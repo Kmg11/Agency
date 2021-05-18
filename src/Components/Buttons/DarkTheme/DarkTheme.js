@@ -5,6 +5,7 @@ import {
 	useDarkTheme,
 	useToggleDarkTheme,
 } from "../../../CustomeHooks/useDarkTheme/useDarkTheme";
+import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
 
 // Main Dark Theme Sass File
 import "./DarkTheme.scss";
@@ -12,19 +13,22 @@ import "./DarkTheme.scss";
 const DarkTheme = () => {
 	const darkTheme = useDarkTheme();
 	const toggleDarkTheme = useToggleDarkTheme();
+	const { throttle } = useThrottle();
+
 	const [animate, setAnimate] = useState(false);
 
 	// Change Theme Function
-	const changeTheme = () => {
+	const changeTheme = throttle(() => {
 		// Toggle Dark Theme
 		toggleDarkTheme();
 
 		// Handle Change Button Icon
 		setAnimate(true);
+
 		setTimeout(() => {
 			setAnimate(false);
 		}, 310);
-	};
+	}, 400);
 
 	return (
 		<button
