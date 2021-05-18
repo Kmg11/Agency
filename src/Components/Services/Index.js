@@ -19,7 +19,7 @@ const servicesBgDark = {
 };
 
 // Main Services Component
-const Services = ({ services }) => {
+const Services = () => {
 	const darkTheme = useDarkTheme();
 
 	// Fetch data
@@ -31,7 +31,6 @@ const Services = ({ services }) => {
 		<section
 			className="services"
 			style={darkTheme ? servicesBgDark : servicesBg}
-			ref={services}
 		>
 			<div className="container">
 				<ServicesHeader header={header} />

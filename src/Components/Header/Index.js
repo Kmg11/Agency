@@ -1,12 +1,16 @@
+import { useRef } from "react";
+
 // Import Custome Hooks
 import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 import { useDarkTheme } from "./../../CustomeHooks/useDarkTheme/useDarkTheme";
+import useThrottle from "./../../CustomeHooks/useThrottle/useThrottle";
 
 // Main Header Sass File
 import "./Index.scss";
 
-const Header = ({ exploreFn }) => {
+const Header = () => {
 	const darkTheme = useDarkTheme();
+	const { throttle } = useThrottle();
 
 	// Fetch data
 	const {
@@ -19,15 +23,24 @@ const Header = ({ exploreFn }) => {
 		},
 	} = useAxios("./Apis/header.json", []);
 
-	const { before, word, after } = title;
+	// Scroll To Services Section Ref
+	const header = useRef();
+
+	// Scroll To Services Section Function
+	const exploreFn = throttle(() => {
+		window.scrollTo({
+			top: header.current.offsetHeight,
+			behavior: "smooth",
+		});
+	}, 1000);
 
 	return (
-		<header className="main-header">
+		<header className="main-header" ref={header}>
 			<div className="container">
 				<div className="header-inner">
 					<section className="header-desc">
 						<h1 className="header-title">
-							{before} <span>{word}</span> {after}
+							{title.before} <span>{title.word}</span> {title.after}
 						</h1>
 						<p className="header-paragraph">{body}</p>
 						<button className="header-btn" onClick={exploreFn}>

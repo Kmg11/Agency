@@ -3,6 +3,7 @@ import { useState } from "react";
 // Import Custome Hooks
 import { useDarkTheme } from "./../../../CustomeHooks/useDarkTheme/useDarkTheme";
 import useLocalStorage from "./../../../CustomeHooks/useLocalStorage/useLocalStorage";
+import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
 
 // Main Contact Form Sass File
 import "./Form.scss";
@@ -10,6 +11,8 @@ import "./Form.scss";
 // Contact Form Component
 const ContactForm = () => {
 	const darkTheme = useDarkTheme();
+	const { throttle } = useThrottle();
+
 	const [nameLS, setNameLS] = useLocalStorage("form-name", "");
 	const [emailLS, setEmailLS] = useLocalStorage("form-email", "");
 	const [messageLS, setMessageLS] = useLocalStorage("form-message", "");
@@ -19,11 +22,10 @@ const ContactForm = () => {
 	const [message, setMessage] = useState(messageLS);
 	const [isPending, setIsPending] = useState(false);
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		setIsPending(true);
-		console.log(1);
+	const throttleHandleSubmit = throttle(() => {
 		const messageDetails = { name, email, message };
+
+		setIsPending(true);
 
 		fetch("", {
 			method: "POST",
@@ -37,6 +39,11 @@ const ContactForm = () => {
 			setEmailLS("");
 			setMessageLS("");
 		});
+	}, 2000);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		throttleHandleSubmit();
 	};
 
 	return (

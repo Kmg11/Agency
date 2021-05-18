@@ -15,11 +15,9 @@ const ScrollToTop = () => {
 		// Show Button When Scroll
 		window.addEventListener("scroll", function eventFn() {
 			if (window.pageYOffset > 700 && !showButton) {
-				console.log(1);
 				setShowButton(true);
 				window.removeEventListener("scroll", eventFn);
 			} else if (window.pageYOffset < 700 && showButton) {
-				console.log(2);
 				setShowButton(false);
 				window.removeEventListener("scroll", eventFn);
 			}

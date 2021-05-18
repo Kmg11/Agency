@@ -1,4 +1,4 @@
-import { Fragment, useRef } from "react";
+import { Fragment } from "react";
 
 import Header from "./../Header/Index";
 import Services from "./../Services/Index";
@@ -10,19 +10,10 @@ import Contact from "./../Contact/Index";
 import Footer from "./../Footer/Index";
 
 const Index = () => {
-	// Explore Button
-	const services = useRef();
-	const exploreFn = () => {
-		window.scrollTo({
-			top: services.current.offsetTop,
-			behavior: "smooth",
-		});
-	};
-
 	return (
 		<Fragment>
-			<Header exploreFn={exploreFn} />
-			<Services services={services} />
+			<Header />
+			<Services />
 			<About />
 			<Portfolio />
 			<Team />

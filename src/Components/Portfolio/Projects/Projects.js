@@ -1,24 +1,31 @@
 import { useState, Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
+
+// Import Custome Hooks
+import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
 
 // Main Portfolio Projects Sass File
 import "./Projects.scss";
 
 // Portfolio Projects Component
 const PortfolioProjects = ({ projects, type, projectsContainer }) => {
+	// Custome Hooks
+	const { throttle } = useThrottle();
+	const isPathMatch = useRouteMatch().path === "/portfolio";
+
 	// Default Number Of Projects
 	const defaultNumber = 9;
 
 	// Number Of Projects State
 	const [numberOfProjects, setNumberOfProjects] = useState(defaultNumber);
 
-	const viewAllProjects = () => {
+	const viewAllProjects = throttle(() => {
 		if (numberOfProjects !== projects.length) {
 			setNumberOfProjects(projects.length);
 		} else {
 			setNumberOfProjects(defaultNumber);
 		}
-	};
+	}, 1000);
 
 	// Get Projects List
 	const projectsList = projects.map((project, index) => {
@@ -54,7 +61,7 @@ const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 				{projectsList}
 			</div>
 			<div className="portfolio-link">
-				<Link to="/portfolio" onClick={viewAllProjects}>
+				<Link to="/portfolio" onClick={isPathMatch ? viewAllProjects : null}>
 					{numberOfProjects >= projects.length ? "View Less" : "View All"}
 				</Link>
 			</div>

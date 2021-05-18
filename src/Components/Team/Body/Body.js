@@ -65,7 +65,7 @@ const TeamBody = ({ content: members }) => {
 				breakpoints={{
 					0: {
 						slidesPerView: 2,
-						spaceBetween: 15,
+						spaceBetween: 10,
 					},
 					576: {
 						slidesPerView: 2,
@@ -77,7 +77,7 @@ const TeamBody = ({ content: members }) => {
 					},
 					900: {
 						slidesPerView: 4,
-						spaceBetween: 20,
+						spaceBetween: 15,
 					},
 					1200: {
 						slidesPerView: 4,

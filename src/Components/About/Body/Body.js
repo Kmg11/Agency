@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // Import Custome Hooks
 import { useDarkTheme } from "./../../../CustomeHooks/useDarkTheme/useDarkTheme";
+import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
 
 // Main About Body Sass File
 import "./Body.scss";
@@ -9,17 +10,19 @@ import "./Body.scss";
 // About Body Component
 const AboutBody = (props) => {
 	const darkTheme = useDarkTheme();
+	const { throttle } = useThrottle();
+
 	const [readMore, setReadMore] = useState(false);
 
 	// Handle Read More Function
-	const handleReading = (e) => {
+	const handleReading = throttle((e) => {
 		e.target.parentElement.style.opacity = "0";
 
 		setTimeout(() => {
-			setReadMore(!readMore);
+			setReadMore((prevReadMore) => !prevReadMore);
 			e.target.parentElement.style.opacity = "1";
 		}, 300);
-	};
+	}, 700);
 
 	const {
 		content: {

@@ -1,8 +1,3 @@
--------------------- Header Section --------------------
----- [ Done ] Explore Btn Scroll To Services Section
----- [ Done ] Increas Space Between Text & Image In Responsive
--------------------- Header Section --------------------
-
 -------------------- Navbar --------------------
 ---- [ Done ] Close Navbar When Change Page In Responsive
 ---- [ Done ] Change Navbar Links Active Link Main Color In Default theme In Dark theme
@@ -13,6 +8,12 @@
 ---- [ Done ] Add Close Navbar By Press ESC
 ---- [ Done ] Remove Navbar Height Becouse It No Reason To Use It
 -------------------- Navbar --------------------
+
+-------------------- Header Section --------------------
+---- [ Done ] Explore Btn Scroll To Services Section
+---- [ Done ] Increas Space Between Text & Image In Responsive
+---- [ Done ] Change Explore Function
+-------------------- Header Section --------------------
 
 -------------------- Services --------------------
 ---- [ Done ] Change Hove Color
@@ -46,6 +47,7 @@
 
 -------------------- Newslatter --------------------
 ---- [ Done ] Collect Newslatter Style In One Scss Component
+---- Create Axios Function To POST Newslatter Data
 -------------------- Newslatter --------------------
 
 -------------------- Contact --------------------
@@ -137,15 +139,16 @@
 ---- Fix Footer Links Add Everything In Json FIle
 ---- Check All Components For Preformance Problems
 				---- [ Done ] Navbar
-				---- Header
-				---- Services
-				---- About
+				---- [ Done ] Header
+				---- [ Done ] Services
+				---- [ Done ] About
 				---- [ Done ] Portfolio
-				---- Team
-				---- Newsletter
-				---- Contact
-				---- Footer
+				---- Team ( Problem In Breaak Points )
+				---- [ Done ] Newsletter
+				---- [ Done ] Contact
+				---- [ Done ] Footer
 				---- [ Done ] Option Buttons
+---- Check Functions That Should Not Work In Main Page useRouteMatch react-router [ Portfolio Btn ]
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Block Clicking On Logo When The User In Home Page
@@ -157,9 +160,9 @@
 -------------------- Diffcult Problems --------------------
 
 -------------------- Last Tasks --------------------
+---- Overscroll
 ---- Think To Change Sass To Styled Component
 ---- Try Waves In Header & Purple Color
----- Conver Font Awesome To Images Or Use Specific Files Only
 ---- 404 Page
 ---- Lazy Load
 ---- Change Scrollbar Style
