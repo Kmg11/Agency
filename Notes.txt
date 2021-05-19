@@ -136,19 +136,24 @@
 
 -------------------- Important Notes --------------------
 ---- [ Done ] Add useThrottle For Option Buttons
----- Fix Footer Links Add Everything In Json FIle
----- Check All Components For Preformance Problems
+---- [ Done ] Check All Components For Preformance Problems
 				---- [ Done ] Navbar
 				---- [ Done ] Header
 				---- [ Done ] Services
 				---- [ Done ] About
 				---- [ Done ] Portfolio
-				---- Team ( Problem In Breaak Points )
+				---- [ Done ] Team
+							---- Problem In Breaak Points
+							---- Big Preformance Problem Break Website In Dev Mode
+							---- Problem In React.StrictMode
+							---- Not A Problem In Optimize Version
 				---- [ Done ] Newsletter
 				---- [ Done ] Contact
 				---- [ Done ] Footer
 				---- [ Done ] Option Buttons
+---- Fix Footer Links Add Everything In Json FIle
 ---- Check Functions That Should Not Work In Main Page useRouteMatch react-router [ Portfolio Btn ]
+---- Add onerror Attribute For Images & Add Backup Image
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Block Clicking On Logo When The User In Home Page
@@ -178,6 +183,9 @@
 ---- [ Done ] Fieldset & Legend
 ---- [ Done ] Review Forms
 ---- [ Done ] React Hooks [ useState, useEffect, useLayoutEffect, useRef, useCallback, useContext ]
+---- [ Done ] React.StrictMode
+---- Chrome Memory Tab
+---- Chrome Preformance Tab
 ---- useEffect Clenup Function Review
 ---- addEventListener & removeEventListener
 ---- Check Refs & Portail

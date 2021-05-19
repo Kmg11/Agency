@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Autoplay } from "swiper";
+import SwiperCore, { Navigation, Autoplay } from "swiper/core";
 
 // Import Swiper styles
 import "swiper/swiper.scss";
@@ -55,6 +55,8 @@ const TeamBody = ({ content: members }) => {
 	return (
 		<section className="team-body">
 			<Swiper
+				slidesPerView={1}
+				spaceBetween={10}
 				slidesPerGroup={1}
 				centeredSlides={true}
 				autoplay={{
