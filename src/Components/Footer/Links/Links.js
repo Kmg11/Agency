@@ -5,49 +5,40 @@ import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
 import "./Links.scss";
 
 // Footer Links Component
-const FooterLinks = ({ about, contact, videos }) => {
+const FooterLinks = ({ content: linksBlocks }) => {
 	// Fetch data
 	const { data: social = [] } = useAxios("./Apis/social.json", []);
 
-	// Collect Data & Add Title
-	const links = [
-		{ id: 1, title: "About Us", links: about },
-		{ id: 2, title: "Contact Us", links: contact },
-		{ id: 3, title: "Videos", links: videos },
+	const footerBlocks = [
+		...linksBlocks,
 		{ id: 4, title: "Social Media", links: social },
 	];
 
-	// Get Items List
-	const getItems = (index) => {
-		const linksItems = links[index].links.map((item) => {
-			return (
-				<li key={item.id} className="links-item">
-					<a
-						href={item.link}
-						target="_blank"
-						rel="noreferrer"
-						className="links-link"
-					>
-						{item.name}
-					</a>
-				</li>
-			);
-		});
-
-		return linksItems;
-	};
-
-	// Get Links List
-	const linksList = links.map((link, index) => {
+	const footerBlocksList = footerBlocks.map((block) => {
 		return (
-			<div key={link.id} className="links">
-				<h3 className="links-title">{link.title}</h3>
-				<ul className="links-list">{getItems(index)}</ul>
+			<div key={block.id} className="links">
+				<h3 className="links-title">{block.title}</h3>
+				<ul className="links-list">
+					{block.links.map((link) => {
+						return (
+							<li key={link.id} className="links-item">
+								<a
+									href={link.link}
+									target="_blank"
+									rel="noreferrer"
+									className="links-link"
+								>
+									{link.name}
+								</a>
+							</li>
+						);
+					})}
+				</ul>
 			</div>
 		);
 	});
 
-	return <div className="footer-links">{linksList}</div>;
+	return <div className="footer-links">{footerBlocksList}</div>;
 };
 
 export default FooterLinks;

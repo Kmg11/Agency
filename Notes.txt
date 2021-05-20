@@ -63,7 +63,7 @@
 -------------------- Contact --------------------
 
 -------------------- Footer --------------------
----- Re Write Footer Links Json File
+---- [ Done ] Fix Footer Links Add Everything In Json FIle
 -------------------- Footer --------------------
 
 -------------------- Global --------------------
@@ -151,7 +151,6 @@
 				---- [ Done ] Footer
 				---- [ Done ] Option Buttons
 ---- [ Done ] Check Functions That Should Not Work In Main Page useRouteMatch react-router [ Portfolio Btn ]
----- Fix Footer Links Add Everything In Json FIle
 ---- Add onerror Attribute For Images & Add Backup Image
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Block Clicking On Logo When The User In Home Page

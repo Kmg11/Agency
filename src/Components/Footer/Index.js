@@ -17,9 +17,23 @@ const Footer = () => {
 	const {
 		data: {
 			header = {},
-			about_us_links: about = [],
-			contact_us_links: contact = [],
-			videos_links: videos = [],
+			content = [
+				{
+					id: 1,
+					title: "About Us",
+					links: [],
+				},
+				{
+					id: 2,
+					title: "Contact Us",
+					links: [],
+				},
+				{
+					id: 3,
+					title: "Videos",
+					links: [],
+				},
+			],
 			copy_right: copyRight = [],
 		},
 	} = useAxios("./Apis/footer.json", []);
@@ -28,7 +42,7 @@ const Footer = () => {
 		<footer className="main-footer">
 			<div className="container">
 				<FooterHeader header={header} />
-				<FooterLinks about={about} contact={contact} videos={videos} />
+				<FooterLinks content={content} />
 				<FooterFooter copyRight={copyRight} />
 			</div>
 		</footer>
