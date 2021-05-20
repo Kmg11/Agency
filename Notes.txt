@@ -34,7 +34,6 @@
 ---- [ Done ] Fix Active Class Color Problem In Dark Theme
 ---- [ Done ] Fix Line Color Problem In Dark Theme
 ---- [ Done ] Fix Portfolio Nav Click On The Same Active Link
----- useEffect Clenup Function Review
 ---- Background Problem When Change Type [ Handle Height ]
 -------------------- Portfolio Secion --------------------
 
@@ -42,7 +41,7 @@
 ---- [ Done ] Problem In Team When Refresh
 ---- [ Done ] Fix Member Link
 ---- [ Done ] Hover With Shadow & Background Color
----- Swiper Resize Preformance Problem
+---- [ Done ] Swiper Resize Preformance Problem
 -------------------- Team --------------------
 
 -------------------- Newslatter --------------------
@@ -56,11 +55,11 @@
 ---- [ Done ] Make Form Fields Required
 ---- [ Done ] Handle Submit Function
 ---- [ Done ] Save Form Value In Local Storage
----- useDebounce When Send Data To Avoid Dublicate
+---- [ Done ] useThrottle When Send Data To Avoid Dublicate
+---- [ Done ] Use Axios Insted Of Fetch
 ---- Make Awesome Loading When Send Message
 ---- Use JSON Server
 ---- Create Btn For Copy Contact Details
----- Use Axios Insted Of Fetch
 -------------------- Contact --------------------
 
 -------------------- Footer --------------------
@@ -145,32 +144,40 @@
 				---- [ Done ] Team
 							---- Problem In Breaak Points
 							---- Big Preformance Problem Break Website In Dev Mode
-							---- Problem In React.StrictMode
+							---- This Problem Happend With React.StrictMode Only
 							---- Not A Problem In Optimize Version
 				---- [ Done ] Newsletter
 				---- [ Done ] Contact
 				---- [ Done ] Footer
 				---- [ Done ] Option Buttons
+---- [ Done ] Check Functions That Should Not Work In Main Page useRouteMatch react-router [ Portfolio Btn ]
 ---- Fix Footer Links Add Everything In Json FIle
----- Check Functions That Should Not Work In Main Page useRouteMatch react-router [ Portfolio Btn ]
 ---- Add onerror Attribute For Images & Add Backup Image
----- Imporve Preformance By Using [ useMemo, useCallback ]
 ---- problem in pages reload the page [ put condation for checking url ]
 ---- Block Clicking On Logo When The User In Home Page
+---- Imporve Preformance By Using [ useMemo, useCallback ]
 ---- addEventListener
+---- Reusable Component Like Buttons - Logo - Newslatter - etc..
 -------------------- Important Notes --------------------
 
 -------------------- Diffcult Problems --------------------
----- Try Fix Sass Background Images Src [ Fix Webpack Problem ]
+---- [ Done ] Try Fix Sass Background Images Src [ Fix Webpack Problem ]
+				---- FIX 1 [ Move Images To src Folder ] [ It Not Working With API ]
+				---- FIX 2 [ Change 132 Link In webpack.config.js from (options: cssOptions) to (options: {url: false}) ]
+							---- This Fix Not Working For A Long Tearm & It's Not Right To Document
+				---- FIX 3 [ Change Sass & Use Styled Component ]
+				---- FIX 4 [ Put Sass Images In Src Folder But It's Not Good To Split Images ]
+				---- FIX 5 [ Add Images As Imline Style ] - The Used Fix
+				--------------- This Problem Happend Becouse React Scripts V4 ---------------
+				--------------- This Problem Can't Fix With Right Way ---------------
 -------------------- Diffcult Problems --------------------
 
 -------------------- Last Tasks --------------------
----- Overscroll
----- Think To Change Sass To Styled Component
 ---- Try Waves In Header & Purple Color
 ---- 404 Page
----- Lazy Load
 ---- Change Scrollbar Style
+---- Overscroll
+---- Lazy Load
 ---- Paralix Effect
 -------------------- Last Tasks --------------------
 
@@ -184,10 +191,10 @@
 ---- [ Done ] Review Forms
 ---- [ Done ] React Hooks [ useState, useEffect, useLayoutEffect, useRef, useCallback, useContext ]
 ---- [ Done ] React.StrictMode
+---- [ Done ] addEventListener & removeEventListener
+---- [ Done ] useEffect Clenup Function Review
+---- [ Done ] Fetch VS Axios
 ---- Chrome Memory Tab
 ---- Chrome Preformance Tab
----- useEffect Clenup Function Review
----- addEventListener & removeEventListener
 ---- Check Refs & Portail
----- Fetch VS Axios
 -------------------- Search --------------------

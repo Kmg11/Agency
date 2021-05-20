@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 // Import Custome Hooks
@@ -23,22 +24,27 @@ const ContactForm = () => {
 	const [isPending, setIsPending] = useState(false);
 
 	const throttleHandleSubmit = throttle(() => {
-		const messageDetails = { name, email, message };
-
 		setIsPending(true);
 
-		fetch("", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(messageDetails),
-		}).then(() => {
-			console.log("New Message Added");
+		axios
+			.post("", {
+				name,
+				email,
+				message,
+			})
+			.then(
+				(response) => {
+					console.log("New Message Added");
 
-			// Empty Local Storage After Send Data
-			setNameLS("");
-			setEmailLS("");
-			setMessageLS("");
-		});
+					// Empty Local Storage After Send Data
+					setNameLS("");
+					setEmailLS("");
+					setMessageLS("");
+				},
+				(error) => {
+					console.log(error);
+				}
+			);
 	}, 2000);
 
 	const handleSubmit = (e) => {
