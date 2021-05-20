@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper/core";
 
+// Import Custome Hooks
+import usePreventRouterLinks from "./../../../CustomeHooks/usePreventRouterLinks/usePreventRouterLinks";
+
 // Import Swiper styles
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
@@ -15,12 +18,16 @@ import "./Body.scss";
 SwiperCore.use([Navigation, Autoplay]);
 
 const TeamBody = ({ content: members }) => {
+	// Custome Hooks
+	const { preventRouterLinks } = usePreventRouterLinks("/team");
+
 	const membersList = members.map((member) => {
 		return (
 			<SwiperSlide key={member.id}>
 				<div className="team-member">
 					<Link
 						to="/team"
+						onClick={preventRouterLinks}
 						className="member-link"
 						aria-label="Team Member Link"
 					></Link>

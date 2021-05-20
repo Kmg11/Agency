@@ -28,7 +28,6 @@
 	],
 
 	"button": {
-		"icon": "fas fa-arrow-right",
 		"text": "Get Quote"
 	}
 }

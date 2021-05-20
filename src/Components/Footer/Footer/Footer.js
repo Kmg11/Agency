@@ -2,12 +2,16 @@ import { Link } from "react-router-dom";
 
 // Import Custome Hooks
 import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
+import usePreventRouterLinks from "./../../../CustomeHooks/usePreventRouterLinks/usePreventRouterLinks";
 
 // Main Footer Footer Sass File
 import "./Footer.scss";
 
 // Footer Footer Component
 const FooterFooter = ({ copyRight }) => {
+	// Custome Hooks
+	const { preventRouterLinks } = usePreventRouterLinks("/");
+
 	// Fetch Logo
 	const {
 		data: { image = "", text = "" },
@@ -33,7 +37,7 @@ const FooterFooter = ({ copyRight }) => {
 
 	return (
 		<footer className="footer-footer">
-			<Link to="/" className="logo">
+			<Link to="/" onClick={preventRouterLinks} className="logo">
 				{image && (
 					<img
 						src={image}

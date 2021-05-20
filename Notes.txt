@@ -131,6 +131,9 @@
 ---- Make Loading When Change Theme To Avoid Image Change Problem
 ---- Make Loading For Fetching Data
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
+---- Change Selection Color
+---- Think About Get Quote Button
+---- Small Component To Small Peaces Every Component Should Do One Thing
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -151,12 +154,17 @@
 				---- [ Done ] Footer
 				---- [ Done ] Option Buttons
 ---- [ Done ] Check Functions That Should Not Work In Main Page useRouteMatch react-router [ Portfolio Btn ]
+---- [ Done ] Problem With Pages When Click On Any Link Using React Router The Browser Remount Components In This Page
+				---- [ Done ] Navbar
+				---- [ Done ] Services
+				---- [ Done ] Portfolio
+				---- [ Done ] Team
+				---- [ Done ] Footer
+---- [ Done ] Create usePreventRouterLinks Hook For Handling Block Links To Remount Components
 ---- Add onerror Attribute For Images & Add Backup Image
----- problem in pages reload the page [ put condation for checking url ]
----- Block Clicking On Logo When The User In Home Page
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
 ---- addEventListener
----- Reusable Component Like Buttons - Logo - Newslatter - etc..
+---- Reusable Component Like Buttons - Logo - Newslatter - Social Links - etc..
 -------------------- Important Notes --------------------
 
 -------------------- Diffcult Problems --------------------

@@ -1,8 +1,9 @@
 import { useState, Fragment } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Import Custome Hooks
 import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
+import usePreventRouterLinks from "./../../../CustomeHooks/usePreventRouterLinks/usePreventRouterLinks";
 
 // Main Portfolio Projects Sass File
 import "./Projects.scss";
@@ -11,7 +12,8 @@ import "./Projects.scss";
 const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 	// Custome Hooks
 	const { throttle } = useThrottle();
-	const isPathMatch = useRouteMatch().path === "/portfolio";
+	const { preventRouterLinks, isPathMatched } =
+		usePreventRouterLinks("/portfolio");
 
 	// Default Number Of Projects
 	const defaultNumber = 9;
@@ -19,13 +21,18 @@ const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 	// Number Of Projects State
 	const [numberOfProjects, setNumberOfProjects] = useState(defaultNumber);
 
-	const viewAllProjects = throttle(() => {
+	const throttleViewAllProjects = throttle(() => {
 		if (numberOfProjects !== projects.length) {
 			setNumberOfProjects(projects.length);
 		} else {
 			setNumberOfProjects(defaultNumber);
 		}
-	}, 1000);
+	}, 500);
+
+	const viewAllProjects = (e) => {
+		preventRouterLinks(e);
+		throttleViewAllProjects();
+	};
 
 	// Get Projects List
 	const projectsList = projects.map((project, index) => {
@@ -40,6 +47,7 @@ const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 			>
 				<Link
 					to="/portfolio"
+					onClick={preventRouterLinks}
 					className="project-link"
 					aria-label="Project Link"
 				></Link>
@@ -61,7 +69,7 @@ const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 				{projectsList}
 			</div>
 			<div className="portfolio-link">
-				<Link to="/portfolio" onClick={isPathMatch ? viewAllProjects : null}>
+				<Link to="/portfolio" onClick={isPathMatched ? viewAllProjects : null}>
 					{numberOfProjects >= projects.length ? "View Less" : "View All"}
 				</Link>
 			</div>

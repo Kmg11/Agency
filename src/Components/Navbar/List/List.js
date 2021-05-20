@@ -1,17 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 // Import Custome Hooks
 import useAxios from "./../../../CustomeHooks/useAxios/useAxios";
+import usePreventRouterLinks from "./../../../CustomeHooks/usePreventRouterLinks/usePreventRouterLinks";
 
 // Main Navbar List Sass File
 import "./List.scss";
 
 // Navbar List Component
 const NavbarList = ({ setNavbarOpen }) => {
+	// States
+	const [path, setPath] = useState("");
+
+	// Custome Hooks
+	const { preventRouterLinks } = usePreventRouterLinks(path);
+
 	// Fetch data
 	const {
 		data: { links = [], button = {} },
 	} = useAxios("./Apis/navbar.json", []);
+
+	const habdleCLick = (link, e) => {
+		preventRouterLinks(e);
+		setNavbarOpen(false);
+		setPath(link);
+	};
 
 	const listItems = links.map((link) => {
 		return (
@@ -20,7 +34,7 @@ const NavbarList = ({ setNavbarOpen }) => {
 					exact
 					to={link.link}
 					className="navbar-link"
-					onClick={() => setNavbarOpen(false)}
+					onClick={(e) => habdleCLick(link.link, e)}
 				>
 					{link.text}
 				</NavLink>
@@ -31,18 +45,18 @@ const NavbarList = ({ setNavbarOpen }) => {
 	return (
 		<ul className="navbar-list">
 			{listItems}
-			<NavbarBtn button={button} />
+			<NavbarBtn button={button} habdleCLick={habdleCLick} />
 		</ul>
 	);
 };
 
 // Navbar Btn Component
-const NavbarBtn = ({ button: { icon, text } }) => {
+const NavbarBtn = ({ button: { text }, habdleCLick }) => {
 	return (
 		<li className="navbar-item navbar-btn">
-			<NavLink to="/quote" className="navbar-link">
+			<Link to="/" onClick={(e) => habdleCLick("/", e)} className="navbar-link">
 				<span className="navbar-btn-text">{text}</span>
-			</NavLink>
+			</Link>
 		</li>
 	);
 };

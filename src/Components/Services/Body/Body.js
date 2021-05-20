@@ -2,13 +2,16 @@ import { Link } from "react-router-dom";
 
 // Import Custome Hooks
 import { useDarkTheme } from "./../../../CustomeHooks/useDarkTheme/useDarkTheme";
+import usePreventRouterLinks from "./../../../CustomeHooks/usePreventRouterLinks/usePreventRouterLinks";
 
 // Main Services Container Sass File
 import "./Body.scss";
 
 // Services Container Component
 const ServicesBody = ({ content }) => {
+	// Custome Hooks
 	const darkTheme = useDarkTheme();
+	const { preventRouterLinks } = usePreventRouterLinks("/services");
 
 	// Get Services List
 	const servicesList = content.map((serv) => {
@@ -16,6 +19,7 @@ const ServicesBody = ({ content }) => {
 			<div key={serv.id} className="services-card">
 				<Link
 					to="/services"
+					onClick={preventRouterLinks}
 					className="services-link"
 					aria-label="Service Link"
 				></Link>
