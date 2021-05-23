@@ -12,19 +12,12 @@
 	border-radius: 30px;
 	color: $third-color;
 	text-align: center;
-	font-size: 1.1rem;
-	font-weight: bold;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	line-height: 2;
 	box-shadow: 0 3px 10px $box-shadow-third-color;
 	transition: all 0.3s linear;
 
 	@media (max-width: $maxSmallScreens) {
 		width: 85%;
 		padding: 30px 15px;
-		font-size: 0.9rem;
-		letter-spacing: 1px;
 		border-radius: 20px;
 	}
 
@@ -37,7 +30,20 @@
 		}
 	}
 
-	p:first-of-type {
-		color: rgb(250, 57, 57);
+	p {
+		font-size: 1.1rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		line-height: 2;
+
+		@media (max-width: $maxSmallScreens) {
+			font-size: 0.9rem;
+			letter-spacing: 1px;
+		}
+
+		&:first-of-type {
+			color: rgb(250, 57, 57);
+		}
 	}
 }

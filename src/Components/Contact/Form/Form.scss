@@ -53,7 +53,6 @@
 			background-color: $upper-background-color;
 			border-radius: 16px;
 			box-shadow: 6px 6px 9px #0000000d;
-			margin-bottom: 15px;
 			display: block;
 			font-size: 1.2rem;
 			color: $third-color;
@@ -61,6 +60,7 @@
 			&:not([type="submit"]) {
 				width: 100%;
 				padding: 15px 20px;
+				margin-bottom: 15px;
 			}
 
 			&::placeholder {
@@ -83,5 +83,54 @@
 			height: 200px;
 			resize: none;
 		}
+
+		& > div {
+			display: grid;
+			grid-template-columns: auto 1fr;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			color: #fff;
+
+			.status {
+				.loading {
+					display: block;
+					width: 40px;
+					height: 40px;
+					background-color: transparent;
+					position: relative;
+
+					&:after {
+						content: " ";
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%) rotate(0);
+						display: block;
+						width: 32px;
+						height: 32px;
+						border-radius: 50%;
+						border-width: 4px;
+						border-style: solid;
+						border-color: #fff transparent #fff transparent;
+						animation: loading 1.2s linear infinite;
+					}
+				}
+
+				p {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+@keyframes loading {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
 	}
 }

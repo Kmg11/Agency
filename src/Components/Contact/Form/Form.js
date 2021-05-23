@@ -21,10 +21,15 @@ const ContactForm = () => {
 	const [name, setName] = useState(nameLS);
 	const [email, setEmail] = useState(emailLS);
 	const [message, setMessage] = useState(messageLS);
+
 	const [isPending, setIsPending] = useState(false);
+	const [sucess, setSucess] = useState(false);
+	const [error, setError] = useState(null);
 
 	const throttleHandleSubmit = throttle(() => {
-		setIsPending(true);
+		!isPending && setIsPending(true);
+		sucess && setSucess(false);
+		error && setError(null);
 
 		axios
 			.post("", {
@@ -36,6 +41,10 @@ const ContactForm = () => {
 				(response) => {
 					console.log("New Message Added");
 
+					setIsPending(false);
+					setSucess(true);
+					setError(null);
+
 					// Empty Local Storage After Send Data
 					setNameLS("");
 					setEmailLS("");
@@ -43,6 +52,10 @@ const ContactForm = () => {
 				},
 				(error) => {
 					console.log(error);
+
+					setIsPending(false);
+					setSucess(false);
+					setError(error.message);
 				}
 			);
 	}, 2000);
@@ -69,6 +82,7 @@ const ContactForm = () => {
 					placeholder="Full Name"
 					required
 					value={name}
+					disabled={isPending && "disabled"}
 					onChange={(e) => {
 						setName(e.target.value);
 						setNameLS(e.target.value);
@@ -79,6 +93,7 @@ const ContactForm = () => {
 					placeholder="Email Address"
 					required
 					value={email}
+					disabled={isPending && "disabled"}
 					onChange={(e) => {
 						setEmail(e.target.value);
 						setEmailLS(e.target.value);
@@ -88,15 +103,21 @@ const ContactForm = () => {
 					placeholder="Message"
 					required
 					value={message}
+					disabled={isPending && "disabled"}
 					onChange={(e) => {
 						setMessage(e.target.value);
 						setMessageLS(e.target.value);
 					}}
 				/>
-				<input
-					type="submit"
-					value={!isPending ? `Submit` : `Send Message...`}
-				/>
+				<div>
+					<input type="submit" value="Submit" />
+
+					<div className="status">
+						{isPending && <div className="loading"></div>}
+						{error && <p className="error">{error}</p>}
+						{sucess && <p className="sucess">Info Send</p>}
+					</div>
+				</div>
 			</form>
 		</div>
 	);

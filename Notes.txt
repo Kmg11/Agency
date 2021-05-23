@@ -34,7 +34,6 @@
 ---- [ Done ] Fix Active Class Color Problem In Dark Theme
 ---- [ Done ] Fix Line Color Problem In Dark Theme
 ---- [ Done ] Fix Portfolio Nav Click On The Same Active Link
----- Background Problem When Change Type [ Handle Height ]
 -------------------- Portfolio Secion --------------------
 
 -------------------- Team --------------------
@@ -47,6 +46,7 @@
 -------------------- Newslatter --------------------
 ---- [ Done ] Collect Newslatter Style In One Scss Component
 ---- Create Axios Function To POST Newslatter Data
+---- Make Field Required
 -------------------- Newslatter --------------------
 
 -------------------- Contact --------------------
@@ -57,7 +57,9 @@
 ---- [ Done ] Save Form Value In Local Storage
 ---- [ Done ] useThrottle When Send Data To Avoid Dublicate
 ---- [ Done ] Use Axios Insted Of Fetch
----- Make Awesome Loading When Send Message
+---- [ Done ] Make Awesome Loading When Send Message
+---- [ Done ] Disable Form Inputs When Data Send
+---- [ Done ] Handling Errors When Send Message
 ---- Use JSON Server
 -------------------- Contact --------------------
 
@@ -132,6 +134,7 @@
 ---- [ Done ] Create Error Component
 ---- Make Loading When Change Theme To Avoid Image Change Problem
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
+---- Check Prifixes
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -162,7 +165,6 @@
 ---- [ Done ] Change Header Section Tag To Main
 ---- [ Done ] Remove Body Padding
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
----- addEventListener
 -------------------- Important Notes --------------------
 
 -------------------- Diffcult Problems --------------------
@@ -178,7 +180,6 @@
 -------------------- Diffcult Problems --------------------
 
 -------------------- Last Tasks --------------------
----- Try Waves In Header & Purple Color
 ---- 404 Page
 ---- Change Scrollbar Style
 ---- Overscroll
