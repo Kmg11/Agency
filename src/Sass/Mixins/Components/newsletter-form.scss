@@ -31,13 +31,11 @@
 		}
 
 		&[type="submit"] {
-			@include main-btn(1.3rem, 20px 50px);
+			@include main-btn(1.3rem, 20px 50px, 22px);
 			position: absolute;
 			top: 1px;
 			bottom: 1px;
 			right: 1px;
-			cursor: pointer;
-			border-radius: 22px;
 
 			&,
 			&:hover {

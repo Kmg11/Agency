@@ -4,6 +4,8 @@
 	background-color: #1c1d30;
 	padding-top: 150px;
 	padding-bottom: 50px;
+	position: relative;
+	min-height: 400px;
 
 	@media (max-width: $maxXSmallScreens) {
 		padding-top: 100px;

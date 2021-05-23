@@ -21,8 +21,4 @@
 	font-size: 2rem;
 	color: $third-color;
 	user-select: none;
-
-	@media (max-width: $maxXSmallScreens) {
-		font-size: 1.56rem;
-	}
 }

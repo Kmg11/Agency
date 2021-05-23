@@ -3,6 +3,8 @@
 
 .main-header {
 	background-color: $background-color;
+	position: relative;
+	min-height: 600px;
 
 	// Header Inner Used For Grid
 	.header-inner {
@@ -10,22 +12,22 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: 50px;
 		align-items: center;
-		min-height: 550px;
+		min-height: 700px;
 
 		@media (min-width: $minLargeScreens) {
-			height: calc(100vh - 83px);
+			height: 100vh;
 			max-height: 700px;
 		}
 
 		@media (max-width: $maxMediumScreens) {
-			height: calc(100vh - 81px);
+			height: 100vh;
 		}
 
 		@media (max-width: $maxSmallScreens) {
 			grid-template-columns: 1fr;
 			height: auto;
-			padding-top: 50px;
-			padding-bottom: 50px;
+			padding-top: 120px;
+			padding-bottom: 70px;
 		}
 
 		.header-desc {
@@ -66,8 +68,7 @@
 			}
 
 			.header-btn {
-				@include reset-btn;
-				@include main-btn(1rem, 15px 40px);
+				@include main-btn(1rem, 15px 40px, none);
 
 				&:hover {
 					transform: translateX(7px);

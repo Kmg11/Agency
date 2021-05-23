@@ -1,0 +1,43 @@
+@import "./../../Sass/variables.scss";
+
+.error-message {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: $upper-background-color;
+	padding: 30px 50px;
+	display: block;
+	width: auto;
+	border-radius: 30px;
+	color: $third-color;
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 2;
+	box-shadow: 0 3px 10px $box-shadow-third-color;
+	transition: all 0.3s linear;
+
+	@media (max-width: $maxSmallScreens) {
+		width: 85%;
+		padding: 30px 15px;
+		font-size: 0.9rem;
+		letter-spacing: 1px;
+		border-radius: 20px;
+	}
+
+	&:hover {
+		box-shadow: 0 10px 10px -3px $box-shadow-third-color;
+		transform: translate(-50%, -50%) scale(1.15);
+
+		@media (max-width: $maxSmallScreens) {
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	p:first-of-type {
+		color: rgb(250, 57, 57);
+	}
+}

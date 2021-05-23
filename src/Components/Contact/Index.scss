@@ -3,8 +3,10 @@
 .contact {
 	background-color: $background-color;
 	padding-top: 150px;
-	padding-bottom: 150px;
+	padding-bottom: 170px;
 	overflow: hidden;
+	position: relative;
+	min-height: 400px;
 
 	@media (max-width: $maxMediumScreens) {
 		padding-top: 80px;

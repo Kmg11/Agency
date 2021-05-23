@@ -3,15 +3,22 @@
 @import "./../fonts.scss";
 
 // Main Btn Mixin
-@mixin main-btn($btnFontSize, $btnPadding) {
+@mixin main-btn($btnFontSize, $btnPadding, $borderRadius) {
+	@include reset-btn;
+	@include reset-link;
 	font-size: $btnFontSize;
 	font-weight: 600;
 	padding: $btnPadding;
 	background-color: $main-color;
 	color: #fff;
-	border-radius: 30px;
 	box-shadow: 0 8px 15px $box-shadow-third-color;
 	transition: all 0.3s linear;
+
+	@if $borderRadius != none {
+		border-radius: $borderRadius;
+	} @else {
+		border-radius: 30px;
+	}
 
 	&:hover {
 		box-shadow: 0 15px 20px $box-shadow-main-color;

@@ -7,6 +7,8 @@ import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 import FooterFooter from "./Footer/Footer";
 import FooterLinks from "./Links/Links";
 import FooterHeader from "./Header/Header";
+import Loading from "./../Loading/Index";
+import Error from "./../Error/Index";
 
 // Main Footer Sass File
 import "./Index.scss";
@@ -36,15 +38,24 @@ const Footer = () => {
 			],
 			copy_right: copyRight = [],
 		},
+		success,
+		isPending,
+		error,
 	} = useAxios("./Apis/footer.json", []);
 
 	return (
 		<footer className="main-footer">
-			<div className="container">
-				<FooterHeader header={header} />
-				<FooterLinks content={content} />
-				<FooterFooter copyRight={copyRight} />
-			</div>
+			{isPending && <Loading />}
+
+			{success && (
+				<div className="container">
+					<FooterHeader header={header} />
+					<FooterLinks content={content} />
+					<FooterFooter copyRight={copyRight} />
+				</div>
+			)}
+
+			{error && <Error message={error.message} name="Footer" />}
 		</footer>
 	);
 };

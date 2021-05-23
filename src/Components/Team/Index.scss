@@ -3,6 +3,8 @@
 .team {
 	background-color: $background-color;
 	padding-top: 120px;
+	position: relative;
+	min-height: 400px;
 
 	@media (max-width: $maxXSmallScreens) {
 		padding-top: 80px;

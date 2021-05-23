@@ -8,6 +8,8 @@ import { useDarkTheme } from "./../../CustomeHooks/useDarkTheme/useDarkTheme";
 import PortfolioProjects from "./Projects/Projects";
 import PortfolioNav from "./Nav/Nav";
 import PortfolioHeader from "./Header/Header";
+import Loading from "./../Loading/Index";
+import Error from "./../Error/Index";
 
 // Main About Sass File
 import "./Index.scss";
@@ -29,6 +31,9 @@ const Portfolio = () => {
 	// Fetch data
 	const {
 		data: { header = {}, nav = [], projects = [] },
+		success,
+		isPending,
+		error,
 	} = useAxios("./Apis/portfolio.json", []);
 
 	// Refs
@@ -55,20 +60,34 @@ const Portfolio = () => {
 	return (
 		<section
 			className="portfolio"
-			style={darkTheme ? PortfolioBgDark : PortfolioBg}
+			style={
+				darkTheme
+					? success
+						? PortfolioBgDark
+						: null
+					: success
+					? PortfolioBg
+					: null
+			}
 		>
-			<div className="container">
-				<PortfolioHeader header={header} />
+			{isPending && <Loading />}
 
-				<section className="portfolio-body">
-					<PortfolioNav nav={nav} type={type} changeType={changeType} />
-					<PortfolioProjects
-						projects={projects}
-						type={type}
-						projectsContainer={projectsContainer}
-					/>
-				</section>
-			</div>
+			{success && (
+				<div className="container">
+					<PortfolioHeader header={header} />
+
+					<section className="portfolio-body">
+						<PortfolioNav nav={nav} type={type} changeType={changeType} />
+						<PortfolioProjects
+							projects={projects}
+							type={type}
+							projectsContainer={projectsContainer}
+						/>
+					</section>
+				</div>
+			)}
+
+			{error && <Error message={error.message} name="Portfolio" />}
 		</section>
 	);
 };

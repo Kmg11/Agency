@@ -65,8 +65,8 @@
 				img {
 					width: 100%;
 					display: block;
-					transition: all 0.2s linear;
 					user-select: none;
+					transition: all 0.2s linear;
 				}
 
 				.type {
@@ -106,7 +106,7 @@
 			figure {
 				.project-image {
 					img {
-						transform: scale(1.27);
+						transform: scale(1.27) rotate(5deg);
 					}
 				}
 			}
@@ -137,12 +137,11 @@
 	}
 
 	a {
-		@include reset-link;
-		@include main-btn(1.25rem, 15px 50px);
+		@include main-btn(1.25rem, 15px 50px, none);
 		display: inline-block;
 
 		@media (max-width: $maxXSmallScreens) {
-			@include main-btn(1.1rem, 12px 30px);
+			@include main-btn(1.1rem, 12px 30px, none);
 		}
 	}
 }

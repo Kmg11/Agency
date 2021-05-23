@@ -4,8 +4,6 @@
 	@include option-button;
 
 	.icon {
-		transition: all 0.3s ease-out;
-
 		&.animate {
 			transform: scale(0.2);
 		}

@@ -59,7 +59,6 @@
 ---- [ Done ] Use Axios Insted Of Fetch
 ---- Make Awesome Loading When Send Message
 ---- Use JSON Server
----- Create Btn For Copy Contact Details
 -------------------- Contact --------------------
 
 -------------------- Footer --------------------
@@ -125,15 +124,14 @@
 ---- [ Done ] Change Upper Background Color Variable Sass Syntax
 ---- [ Done ] Split Sass Mixins To Small Files
 ---- [ Done ] Create White Color Variable
----- Make Add Parameters To Mixins Insted Of Override Proberty
----- Create JSXBlock For Repeat Code Like Logo & Newslatter
----- Imporve Fetch Data By Using Catch Error & Pending
+---- [ Done ] Change Selection Color
+---- [ Done ] Make Add Parameters To Mixins Insted Of Override Proberty
+---- [ Done ] Imporve Fetch Data By Using Catch Error & Pending
+---- [ Done ] Make Loading For Fetching Data
+---- [ Done ] Create Loading Component
+---- [ Done ] Create Error Component
 ---- Make Loading When Change Theme To Avoid Image Change Problem
----- Make Loading For Fetching Data
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
----- Change Selection Color
----- Think About Get Quote Button
----- Small Component To Small Peaces Every Component Should Do One Thing
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -161,16 +159,16 @@
 				---- [ Done ] Team
 				---- [ Done ] Footer
 ---- [ Done ] Create usePreventRouterLinks Hook For Handling Block Links To Remount Components
----- Add onerror Attribute For Images & Add Backup Image
+---- [ Done ] Change Header Section Tag To Main
+---- [ Done ] Remove Body Padding
 ---- Imporve Preformance By Using [ useMemo, useCallback ]
 ---- addEventListener
----- Reusable Component Like Buttons - Logo - Newslatter - Social Links - etc..
 -------------------- Important Notes --------------------
 
 -------------------- Diffcult Problems --------------------
 ---- [ Done ] Try Fix Sass Background Images Src [ Fix Webpack Problem ]
 				---- FIX 1 [ Move Images To src Folder ] [ It Not Working With API ]
-				---- FIX 2 [ Change 132 Link In webpack.config.js from (options: cssOptions) to (options: {url: false}) ]
+				---- FIX 2 [ Change 132 Line In webpack.config.js from (options: cssOptions) to (options: {url: false}) ]
 							---- This Fix Not Working For A Long Tearm & It's Not Right To Document
 				---- FIX 3 [ Change Sass & Use Styled Component ]
 				---- FIX 4 [ Put Sass Images In Src Folder But It's Not Good To Split Images ]
@@ -184,7 +182,6 @@
 ---- 404 Page
 ---- Change Scrollbar Style
 ---- Overscroll
----- Lazy Load
 ---- Paralix Effect
 -------------------- Last Tasks --------------------
 
@@ -201,7 +198,5 @@
 ---- [ Done ] addEventListener & removeEventListener
 ---- [ Done ] useEffect Clenup Function Review
 ---- [ Done ] Fetch VS Axios
----- Chrome Memory Tab
----- Chrome Preformance Tab
 ---- Check Refs & Portail
 -------------------- Search --------------------

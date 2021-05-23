@@ -1,11 +1,9 @@
 @import "./../../Sass/variables";
 
 .navbar {
-	$navbarPadding: 20px;
-
-	background-color: $background-color;
-	padding-top: $navbarPadding;
-	padding-bottom: $navbarPadding;
+	background-color: transparent;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -24,6 +22,8 @@
 	&.scroll {
 		background-color: $upper-background-color;
 		box-shadow: 0 2px 15px $box-shadow-third-color;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 
 	// Handle Open Navbar In Responsive Mode

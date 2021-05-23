@@ -5,6 +5,8 @@ import { useDarkTheme } from "./../../CustomeHooks/useDarkTheme/useDarkTheme";
 // Import Components
 import ServicesBody from "./Body/Body";
 import ServicesHeader from "./Header/Header";
+import Loading from "./../Loading/Index";
+import Error from "./../Error/Index";
 
 // Main Services Sass File
 import "./Index.scss";
@@ -25,17 +27,34 @@ const Services = () => {
 	// Fetch data
 	const {
 		data: { header = {}, content = [] },
+		success,
+		isPending,
+		error,
 	} = useAxios("./Apis/services.json", []);
 
 	return (
 		<section
 			className="services"
-			style={darkTheme ? servicesBgDark : servicesBg}
+			style={
+				darkTheme
+					? success
+						? servicesBgDark
+						: null
+					: success
+					? servicesBg
+					: null
+			}
 		>
-			<div className="container">
-				<ServicesHeader header={header} />
-				<ServicesBody content={content} />
-			</div>
+			{isPending && <Loading />}
+
+			{success && (
+				<div className="container">
+					<ServicesHeader header={header} />
+					<ServicesBody content={content} />
+				</div>
+			)}
+
+			{error && <Error message={error.message} name="Services" />}
 		</section>
 	);
 };

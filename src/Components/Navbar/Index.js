@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 
-// Import Custome Hooks
-import useDebounce from "./../../CustomeHooks/useDebounce/useDebounce";
-
 // Import Components
 import NavbarLogo from "./Logo/Logo";
 import NavbarResponsiveBtn from "./Button/Button";
@@ -13,30 +10,12 @@ import "./Index.scss";
 
 // Mani Navbar Component
 const Navbar = () => {
-	// Custome Hooks
-	const { debounce } = useDebounce();
-
 	// States
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	const [navbarScroll, setNavbarScroll] = useState(false);
 
 	// Refs
 	const navbar = useRef();
-
-	// Handle Body Padding Top Depend On Navbar Height
-	useEffect(() => {
-		const setBodyPadding = () => {
-			document.body.style.paddingTop = `${navbar.current.offsetHeight}px`;
-		};
-
-		setBodyPadding();
-		const debounceSetBodyPadding = debounce(setBodyPadding, 1000);
-		window.addEventListener("resize", debounceSetBodyPadding);
-
-		return () => {
-			window.removeEventListener("resize", debounceSetBodyPadding);
-		};
-	}, [debounce]);
 
 	// Handle Closing Navbar When Click Anywhere
 	useEffect(() => {
