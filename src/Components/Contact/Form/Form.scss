@@ -67,6 +67,13 @@
 				color: $third-color;
 				opacity: 0.7;
 				font-size: 1rem;
+				transition: all 0.2s linear;
+			}
+
+			&:focus {
+				&::placeholder {
+					opacity: 0;
+				}
 			}
 		}
 

@@ -1,5 +1,14 @@
 {
 	"name": "agency",
+	"description": "Agency Website Created Using React With Hight Level Of Preformance",
+	"keywords": [
+		"Agency",
+		"React",
+		"Sass",
+		"Multi Page Website",
+		"Hight Level Of Preformance"
+	],
+	"author": "Kirolos Mahfouz",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {

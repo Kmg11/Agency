@@ -26,24 +26,40 @@ const ContactForm = () => {
 	const [sucess, setSucess] = useState(false);
 	const [error, setError] = useState(null);
 
+	/*
+	 ** Page Refresh When Using json-server Because Api Is Placed In Public Folder
+	 ** This Problem Happend Because React Save The File In Public Folder
+	 ** Every File Saved In Public Folder Effect On The Hole Page
+	 ** So The Refresh Happen
+	 */
+
 	const throttleHandleSubmit = throttle(() => {
 		!isPending && setIsPending(true);
 		sucess && setSucess(false);
 		error && setError(null);
 
 		axios
-			.post("", {
+			.post("http://localhost:3000/messages", {
 				name,
 				email,
 				message,
 			})
 			.then(
 				(response) => {
-					console.log("New Message Added");
-
+					// Set States Values
 					setIsPending(false);
 					setSucess(true);
-					setError(null);
+					error && setError(null);
+
+					// Hide Error Message After Timeout
+					setTimeout(() => {
+						setSucess(false);
+					}, 1000);
+
+					// Empty States After Send Data
+					setName("");
+					setEmail("");
+					setMessage("");
 
 					// Empty Local Storage After Send Data
 					setNameLS("");
@@ -51,11 +67,15 @@ const ContactForm = () => {
 					setMessageLS("");
 				},
 				(error) => {
-					console.log(error);
-
+					// Set States Values
 					setIsPending(false);
-					setSucess(false);
+					sucess && setSucess(false);
 					setError(error.message);
+
+					// Hide Error Message After Timeout
+					setTimeout(() => {
+						setError(null);
+					}, 3000);
 				}
 			);
 	}, 2000);
@@ -115,7 +135,7 @@ const ContactForm = () => {
 					<div className="status">
 						{isPending && <div className="loading"></div>}
 						{error && <p className="error">{error}</p>}
-						{sucess && <p className="sucess">Info Send</p>}
+						{sucess && <p className="sucess">Message Send</p>}
 					</div>
 				</div>
 			</form>

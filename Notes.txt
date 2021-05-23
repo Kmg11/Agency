@@ -60,7 +60,10 @@
 ---- [ Done ] Make Awesome Loading When Send Message
 ---- [ Done ] Disable Form Inputs When Data Send
 ---- [ Done ] Handling Errors When Send Message
----- Use JSON Server
+---- [ Done ] Use JSON Server
+---- [ Done ] Hide Messages After Seconds
+---- [ Done ] Create Messages Api
+---- Cancel Axios Request When Unmount Component
 -------------------- Contact --------------------
 
 -------------------- Footer --------------------
