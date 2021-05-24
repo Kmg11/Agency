@@ -63,7 +63,8 @@
 ---- [ Done ] Use JSON Server
 ---- [ Done ] Hide Messages After Seconds
 ---- [ Done ] Create Messages Api
----- Cancel Axios Request When Unmount Component
+---- [ Done ] Cancel Axios Request When Unmount Component
+---- [ Done ] Problem With Timeout When Click A Lot
 -------------------- Contact --------------------
 
 -------------------- Footer --------------------
@@ -138,6 +139,8 @@
 ---- Make Loading When Change Theme To Avoid Image Change Problem
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
 ---- Check Prifixes
+---- Navbar First Click Problem
+---- Navbar Active Color Problem In Portfolio
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -192,6 +195,7 @@
 -------------------- Finish Tasks --------------------
 ---- Check HTML Validation
 ---- Check Pages Preformance
+---- Check Contact Send Problem When Change Page
 -------------------- Finish Tasks --------------------
 
 -------------------- Search --------------------

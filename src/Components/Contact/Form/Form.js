@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Import Custome Hooks
 import { useDarkTheme } from "./../../../CustomeHooks/useDarkTheme/useDarkTheme";
@@ -26,6 +26,14 @@ const ContactForm = () => {
 	const [sucess, setSucess] = useState(false);
 	const [error, setError] = useState(null);
 
+	// Check Component Mounted
+	const [mount, setMount] = useState(true);
+
+	// Axios Cancel Token Source
+	const [cancelTokenSource, setCancelTokenSource] = useState(
+		axios.CancelToken.source()
+	);
+
 	/*
 	 ** Page Refresh When Using json-server Because Api Is Placed In Public Folder
 	 ** This Problem Happend Because React Save The File In Public Folder
@@ -33,57 +41,86 @@ const ContactForm = () => {
 	 ** So The Refresh Happen
 	 */
 
+	let hideMessage;
+	let throttleHideMessageTimeout = 3000;
+
 	const throttleHandleSubmit = throttle(() => {
+		// Reset States To Avoid Problems
 		!isPending && setIsPending(true);
 		sucess && setSucess(false);
 		error && setError(null);
 
+		// Clear Timeout When Click Again
+		hideMessage && clearTimeout(hideMessage);
+
 		axios
-			.post("http://localhost:3000/messages", {
-				name,
-				email,
-				message,
-			})
+			.post(
+				"http://localhost:3000/messages",
+				{
+					name,
+					email,
+					message,
+				},
+				{
+					cancelToken: cancelTokenSource.token,
+				}
+			)
 			.then(
 				(response) => {
-					// Set States Values
-					setIsPending(false);
-					setSucess(true);
-					error && setError(null);
+					if (mount) {
+						// Set States Values
+						setIsPending(false);
+						setSucess(true);
+						error && setError(null);
 
-					// Hide Error Message After Timeout
-					setTimeout(() => {
-						setSucess(false);
-					}, 1000);
+						// Clear Timeout When Click Again
+						hideMessage && clearTimeout(hideMessage);
 
-					// Empty States After Send Data
-					setName("");
-					setEmail("");
-					setMessage("");
+						// Hide Error Message After Timeout
+						hideMessage = setTimeout(() => {
+							setSucess(false);
+						}, 1000);
 
-					// Empty Local Storage After Send Data
-					setNameLS("");
-					setEmailLS("");
-					setMessageLS("");
+						// Empty States After Send Data
+						setName("");
+						setEmail("");
+						setMessage("");
+
+						// Empty Local Storage After Send Data
+						setNameLS("");
+						setEmailLS("");
+						setMessageLS("");
+					}
 				},
 				(error) => {
-					// Set States Values
-					setIsPending(false);
-					sucess && setSucess(false);
-					setError(error.message);
+					if (mount) {
+						// Set States Values
+						setIsPending(false);
+						sucess && setSucess(false);
+						setError(error.message);
 
-					// Hide Error Message After Timeout
-					setTimeout(() => {
-						setError(null);
-					}, 3000);
+						// Hide Error Message After Timeout
+						hideMessage = setTimeout(() => {
+							setError(null);
+						}, throttleHideMessageTimeout);
+					}
 				}
 			);
-	}, 2000);
+	}, throttleHideMessageTimeout);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		throttleHandleSubmit();
 	};
+
+	useEffect(() => {
+		return () => {
+			// Cancel Request
+			setMount(false);
+			cancelTokenSource.cancel();
+			setCancelTokenSource(null);
+		};
+	}, [cancelTokenSource]);
 
 	return (
 		<div className="send-message">
