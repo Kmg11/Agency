@@ -117,8 +117,7 @@ const ContactForm = () => {
 		return () => {
 			// Cancel Request
 			setMount(false);
-			cancelTokenSource.cancel();
-			setCancelTokenSource(null);
+			cancelTokenSource.cancel("Cancel Cleanup");
 		};
 	}, [cancelTokenSource]);
 
