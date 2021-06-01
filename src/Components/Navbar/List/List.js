@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
 // Import Custome Hooks
@@ -10,21 +9,17 @@ import "./List.scss";
 
 // Navbar List Component
 const NavbarList = ({ setNavbarOpen }) => {
-	// States
-	const [path, setPath] = useState("");
-
 	// Custome Hooks
-	const { preventRouterLinks } = usePreventRouterLinks(path);
+	const { preventRouterLinks } = usePreventRouterLinks();
 
 	// Fetch data
 	const {
 		data: { links = [], button = {} },
 	} = useAxios("./Apis/navbar.json", []);
 
-	const habdleCLick = (link, e) => {
-		preventRouterLinks(e);
+	const habdleCLick = (e, link) => {
+		preventRouterLinks(e, link);
 		setNavbarOpen(false);
-		setPath(link);
 	};
 
 	const listItems = links.map((link) => {
@@ -34,7 +29,7 @@ const NavbarList = ({ setNavbarOpen }) => {
 					exact
 					to={link.link}
 					className="navbar-link"
-					onClick={(e) => habdleCLick(link.link, e)}
+					onClick={(e) => habdleCLick(e, link.link)}
 				>
 					{link.text}
 				</NavLink>
@@ -54,7 +49,7 @@ const NavbarList = ({ setNavbarOpen }) => {
 const NavbarBtn = ({ button: { text }, habdleCLick }) => {
 	return (
 		<li className="navbar-item navbar-btn">
-			<Link to="/" onClick={(e) => habdleCLick("/", e)} className="navbar-link">
+			<Link to="/" onClick={(e) => habdleCLick(e, "/")} className="navbar-link">
 				<span className="navbar-btn-text">{text}</span>
 			</Link>
 		</li>

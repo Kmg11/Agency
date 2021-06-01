@@ -30,9 +30,7 @@ const ContactForm = () => {
 	const [mount, setMount] = useState(true);
 
 	// Axios Cancel Token Source
-	const [cancelTokenSource, setCancelTokenSource] = useState(
-		axios.CancelToken.source()
-	);
+	const [cancelTokenSource] = useState(axios.CancelToken.source());
 
 	/*
 	 ** Page Refresh When Using json-server Because Api Is Placed In Public Folder

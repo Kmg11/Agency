@@ -140,8 +140,14 @@
 ---- Make Loading When Change Theme To Avoid Image Change Problem
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
 ---- Check Prifixes
----- Navbar First Click Problem
+---- [ Done ] Navbar First Click Problem
 ---- Navbar Active Color Problem In Portfolio
+---- Handling Useable Components By Using Data Attribute To Handle Colors 
+---- Make Router Fade When Change Page
+---- Check Pages For Padding
+---- Split Pages In Diffrent Folder For Handling Pages
+---- Remount Navbar From App Add Navbar In Pages Individual
+---- Add Footer In Pages
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
