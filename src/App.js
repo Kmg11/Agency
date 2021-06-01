@@ -1,5 +1,6 @@
 // import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 // Import Custome Hooks
 import { DarkThemeProvider } from "./CustomeHooks/useDarkTheme/useDarkTheme";
@@ -13,17 +14,31 @@ import Team from "./Components/Team/Index";
 import Contact from "./Components/Contact/Index";
 import Buttons from "./Components/Buttons/Index";
 
+// Import App Main Sass File
+import "./App.scss";
+
 function App() {
 	return (
 		<DarkThemeProvider>
 			<Router>
 				<Navbar />
 				<Buttons />
-				<Route exact path="/" component={Index} />
-				<Route path="/services" component={Services} />
-				<Route path="/portfolio" component={Portfolio} />
-				<Route path="/team" component={Team} />
-				<Route path="/contact" component={Contact} />
+
+				<Route
+					render={({ location }) => (
+						<TransitionGroup>
+							<CSSTransition key={location.key} timeout={450} classNames="fade">
+								<Switch location={location}>
+									<Route exact path="/" component={Index} />
+									<Route path="/services" component={Services} />
+									<Route path="/portfolio" component={Portfolio} />
+									<Route path="/team" component={Team} />
+									<Route path="/contact" component={Contact} />
+								</Switch>
+							</CSSTransition>
+						</TransitionGroup>
+					)}
+				/>
 			</Router>
 		</DarkThemeProvider>
 	);

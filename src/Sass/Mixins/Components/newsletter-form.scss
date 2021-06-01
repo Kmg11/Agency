@@ -14,7 +14,7 @@
 	input {
 		@include reset-input;
 
-		&[type="text"] {
+		&[type="email"] {
 			background-color: $upper-background-color;
 			padding: 20px 170px 20px 30px;
 			border: 1px solid #707070;

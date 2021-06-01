@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // Import Custome Hooks
 import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 
@@ -9,6 +11,8 @@ import Error from "./../Error/Index";
 import "./Index.scss";
 
 const Newsletter = () => {
+	const [email, setEmail] = useState("");
+
 	// Fetch data
 	const {
 		data: { title = "", body = "" },
@@ -28,7 +32,13 @@ const Newsletter = () => {
 						<p className="newsletter-paragraph">{body}</p>
 					</header>
 					<form className="newsletter-form">
-						<input type="text" placeholder="Email" />
+						<input
+							type="email"
+							placeholder="Email"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							required
+						/>
 						<input type="submit" value="JOIN" />
 					</form>
 				</div>

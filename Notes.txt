@@ -45,8 +45,8 @@
 
 -------------------- Newslatter --------------------
 ---- [ Done ] Collect Newslatter Style In One Scss Component
----- Create Axios Function To POST Newslatter Data
----- Make Field Required
+---- [ Done ] Make Field Required
+---- [ Done ] Controlled Component
 -------------------- Newslatter --------------------
 
 -------------------- Contact --------------------
@@ -137,17 +137,14 @@
 ---- [ Done ] Make Loading For Fetching Data
 ---- [ Done ] Create Loading Component
 ---- [ Done ] Create Error Component
----- Make Loading When Change Theme To Avoid Image Change Problem
+---- [ Done ] Navbar First Click Problem
+---- [ Done ] Make Router Fade When Change Page
+---- [ Done ] Error In Console When Change Page Cause StrictMode
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
 ---- Check Prifixes
----- [ Done ] Navbar First Click Problem
 ---- Navbar Active Color Problem In Portfolio
 ---- Handling Useable Components By Using Data Attribute To Handle Colors 
----- Make Router Fade When Change Page
 ---- Check Pages For Padding
----- Split Pages In Diffrent Folder For Handling Pages
----- Remount Navbar From App Add Navbar In Pages Individual
----- Add Footer In Pages
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -214,4 +211,5 @@
 ---- [ Done ] useEffect Clenup Function Review
 ---- [ Done ] Fetch VS Axios
 ---- Check Refs & Portail
+---- React Router
 -------------------- Search --------------------
