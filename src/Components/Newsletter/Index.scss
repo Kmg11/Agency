@@ -9,6 +9,10 @@
 	position: relative;
 	min-height: 400px;
 
+	@media (max-width: $maxXSmallScreens) {
+		padding-bottom: 20px;
+	}
+
 	.newsletter-header {
 		margin-bottom: 50px;
 
