@@ -1,0 +1,93 @@
+{
+	"header": {
+		"title": "Join our exclusive membership to receive the latest news and trends"
+	},
+
+	"content": [
+		{
+			"id": 1,
+			"title": "About Us",
+			"links": [
+				{
+					"id": 1,
+					"name": "How it works",
+					"link": "/"
+				},
+				{
+					"id": 2,
+					"name": "Testimonials",
+					"link": "/"
+				},
+				{
+					"id": 3,
+					"name": "Careers",
+					"link": "/"
+				},
+				{
+					"id": 4,
+					"name": "Investors",
+					"link": "/"
+				},
+				{
+					"id": 5,
+					"name": "Terms of Service",
+					"link": "/"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"title": "Contact Us",
+			"links": [
+				{
+					"id": 1,
+					"name": "Contact",
+					"link": "/"
+				},
+				{
+					"id": 2,
+					"name": "Support",
+					"link": "/"
+				},
+				{
+					"id": 3,
+					"name": "Destinations",
+					"link": "/"
+				},
+				{
+					"id": 4,
+					"name": "Sponsorships",
+					"link": "/"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"title": "Videos",
+			"links": [
+				{
+					"id": 1,
+					"name": "Submit Video",
+					"link": "/"
+				},
+				{
+					"id": 2,
+					"name": "Ambassadors",
+					"link": "/"
+				},
+				{
+					"id": 3,
+					"name": "Agency",
+					"link": "/"
+				},
+				{
+					"id": 4,
+					"name": "Influencer",
+					"link": "/"
+				}
+			]
+		}
+	],
+
+	"copy_right": "© 2021 | designed by we3solutions.ca"
+}

@@ -1,0 +1,216 @@
+{
+	"header": {
+		"title": "Our Team",
+		"body": "Our wonderful team makes it possible for us to do the things we do."
+	},
+
+	"content": [
+		{
+			"id": 1,
+			"image": "./Images/Team/img-1.jpg",
+			"name": "Samantha J.",
+			"role": "Art Director",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"image": "./Images/Team/img-2.jpg",
+			"name": "Mark Simon",
+			"role": "Vice President",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"image": "./Images/Team/img-3.jpg",
+			"name": "Jessica Green",
+			"role": "Social Media Manager",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		},
+		{
+			"id": 4,
+			"image": "./Images/Team/img-1.jpg",
+			"name": "Samantha J.",
+			"role": "Art Director",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		},
+		{
+			"id": 5,
+			"image": "./Images/Team/img-2.jpg",
+			"name": "Mark Simon",
+			"role": "Vice President",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		},
+		{
+			"id": 6,
+			"image": "./Images/Team/img-3.jpg",
+			"name": "Jessica Green",
+			"role": "Social Media Manager",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		},
+		{
+			"id": 7,
+			"image": "./Images/Team/img-1.jpg",
+			"name": "Samantha J.",
+			"role": "Art Director",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		},
+		{
+			"id": 8,
+			"image": "./Images/Team/img-2.jpg",
+			"name": "Mark Simon",
+			"role": "Vice President",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		},
+		{
+			"id": 9,
+			"image": "./Images/Team/img-3.jpg",
+			"name": "Jessica Green",
+			"role": "Social Media Manager",
+			"social": [
+				{
+					"id": 1,
+					"icon": "fab fa-instagram",
+					"link": "https://www.instagram.com/kirolosmahfouz/"
+				},
+				{
+					"id": 2,
+					"icon": "fab fa-facebook-square",
+					"link": "https://www.facebook.com/KirolosMahfouz/"
+				},
+				{
+					"id": 3,
+					"icon": "fab fa-twitter",
+					"link": "https://twitter.com/KirolosMahfouz1"
+				}
+			]
+		}
+	]
+}
