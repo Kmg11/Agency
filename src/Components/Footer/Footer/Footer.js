@@ -10,7 +10,9 @@ import "./Footer.scss";
 // Footer Footer Component
 const FooterFooter = ({ copyRight }) => {
 	// Custome Hooks
-	const { preventRouterLinks } = usePreventRouterLinks("/");
+	const { preventRouterLinks } = usePreventRouterLinks(
+		`${process.env.PUBLIC_URL}/`
+	);
 
 	// Fetch Logo
 	const {
@@ -37,7 +39,11 @@ const FooterFooter = ({ copyRight }) => {
 
 	return (
 		<footer className="footer-footer">
-			<Link to="/" onClick={preventRouterLinks} className="logo">
+			<Link
+				to={`${process.env.PUBLIC_URL}/`}
+				onClick={preventRouterLinks}
+				className="logo"
+			>
 				{image && (
 					<img
 						src={image}

@@ -19,14 +19,16 @@ SwiperCore.use([Navigation, Autoplay]);
 
 const TeamBody = ({ content: members }) => {
 	// Custome Hooks
-	const { preventRouterLinks } = usePreventRouterLinks("/team");
+	const { preventRouterLinks } = usePreventRouterLinks(
+		`${process.env.PUBLIC_URL}/team`
+	);
 
 	const membersList = members.map((member) => {
 		return (
 			<SwiperSlide key={member.id}>
 				<div className="team-member">
 					<Link
-						to="/team"
+						to={`${process.env.PUBLIC_URL}/team`}
 						onClick={preventRouterLinks}
 						className="member-link"
 						aria-label="Team Member Link"

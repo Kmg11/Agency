@@ -11,14 +11,16 @@ import "./Body.scss";
 const ServicesBody = ({ content }) => {
 	// Custome Hooks
 	const darkTheme = useDarkTheme();
-	const { preventRouterLinks } = usePreventRouterLinks("/services");
+	const { preventRouterLinks } = usePreventRouterLinks(
+		`${process.env.PUBLIC_URL}/services`
+	);
 
 	// Get Services List
 	const servicesList = content.map((serv) => {
 		return (
 			<div key={serv.id} className="services-card">
 				<Link
-					to="/services"
+					to={`${process.env.PUBLIC_URL}/services`}
 					onClick={preventRouterLinks}
 					className="services-link"
 					aria-label="Service Link"

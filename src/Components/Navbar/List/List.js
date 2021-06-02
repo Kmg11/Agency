@@ -27,9 +27,11 @@ const NavbarList = ({ setNavbarOpen }) => {
 			<li key={link.id} className="navbar-item">
 				<NavLink
 					exact
-					to={link.link}
+					to={`${process.env.PUBLIC_URL}${link.link}`}
 					className="navbar-link"
-					onClick={(e) => habdleCLick(e, link.link)}
+					onClick={(e) =>
+						habdleCLick(e, `${process.env.PUBLIC_URL}${link.link}`)
+					}
 				>
 					{link.text}
 				</NavLink>
@@ -49,7 +51,11 @@ const NavbarList = ({ setNavbarOpen }) => {
 const NavbarBtn = ({ button: { text }, habdleCLick }) => {
 	return (
 		<li className="navbar-item navbar-btn">
-			<Link to="/" onClick={(e) => habdleCLick(e, "/")} className="navbar-link">
+			<Link
+				to={`${process.env.PUBLIC_URL}/`}
+				onClick={(e) => habdleCLick(e, process.env.PUBLIC_URL + "/")}
+				className="navbar-link"
+			>
 				<span className="navbar-btn-text">{text}</span>
 			</Link>
 		</li>

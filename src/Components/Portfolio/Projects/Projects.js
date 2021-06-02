@@ -12,8 +12,9 @@ import "./Projects.scss";
 const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 	// Custome Hooks
 	const { throttle } = useThrottle();
-	const { preventRouterLinks, isPathMatched } =
-		usePreventRouterLinks("/portfolio");
+	const { preventRouterLinks, isPathMatched } = usePreventRouterLinks(
+		`${process.env.PUBLIC_URL}/portfolio`
+	);
 
 	// Default Number Of Projects
 	const defaultNumber = 9;
@@ -46,7 +47,7 @@ const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 				}`}
 			>
 				<Link
-					to="/portfolio"
+					to={`${process.env.PUBLIC_URL}/portfolio`}
 					onClick={preventRouterLinks}
 					className="project-link"
 					aria-label="Project Link"
@@ -69,7 +70,10 @@ const PortfolioProjects = ({ projects, type, projectsContainer }) => {
 				{projectsList}
 			</div>
 			<div className="portfolio-link">
-				<Link to="/portfolio" onClick={isPathMatched ? viewAllProjects : null}>
+				<Link
+					to={`${process.env.PUBLIC_URL}/portfolio`}
+					onClick={isPathMatched ? viewAllProjects : null}
+				>
 					{numberOfProjects >= projects.length ? "View Less" : "View All"}
 				</Link>
 			</div>

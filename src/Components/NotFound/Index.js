@@ -9,7 +9,7 @@ function NotFound() {
 		<div className="not-found">
 			<h2>404</h2>
 			<p>Sorry We Can't Find This Page</p>
-			<Link to="/">Back To Home Page</Link>
+			<Link to={`${process.env.PUBLIC_URL}/`}>Back To Home Page</Link>
 		</div>
 	);
 }
