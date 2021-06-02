@@ -1,0 +1,52 @@
+@import "./../../Sass/variables.scss";
+@import "./../../Sass/mixins.scss";
+
+.not-found {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	z-index: 1000;
+	color: $main-color;
+	text-align: center;
+
+	h2 {
+		font-size: 18rem;
+		font-weight: 700;
+		text-shadow: 0 0 15px $main-color;
+		margin-bottom: 20px;
+		user-select: none;
+
+		@media (max-width: $maxSmallScreens) {
+			font-size: 12rem;
+		}
+
+		@media (max-width: $maxXSmallScreens) {
+			font-size: 10.3rem;
+		}
+	}
+
+	p {
+		font-size: 2rem;
+		font-weight: 600;
+		margin-bottom: 50px;
+
+		@media (max-width: $maxSmallScreens) {
+			font-size: 1.5rem;
+		}
+
+		@media (max-width: $maxXSmallScreens) {
+			font-size: 1.3rem;
+			margin-bottom: 40px;
+		}
+	}
+
+	a {
+		@include main-btn(1.1rem, 12px 25px, 30px);
+
+		@media (max-width: $maxXSmallScreens) {
+			@include main-btn(1rem, 12px 25px, 30px);
+		}
+	}
+}

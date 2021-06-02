@@ -143,8 +143,6 @@
 ---- [ Done ] Check Pages For Padding
 ---- [ Done ] Navbar Background Color When Open In Responsive
 ---- Resize Images For Handle Preformance & Create Small Images For Mobile
----- Check Prifixes
----- Handling Useable Components By Using Data Attribute To Handle Colors
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -189,7 +187,8 @@
 -------------------- Diffcult Problems --------------------
 
 -------------------- Last Tasks --------------------
----- 404 Page
+---- [ Done ] 404 Page
+---- Check Prifixes
 -------------------- Last Tasks --------------------
 
 -------------------- Finish Tasks --------------------
@@ -205,7 +204,7 @@
 ---- [ Done ] addEventListener & removeEventListener
 ---- [ Done ] useEffect Clenup Function Review
 ---- [ Done ] Fetch VS Axios
+---- [ Done ] React Router
 ---- React Transition Group
 ---- Check Refs & Portail
----- React Router
 -------------------- Search --------------------
