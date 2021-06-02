@@ -142,7 +142,6 @@
 ---- [ Done ] Error In Console When Change Page Cause StrictMode
 ---- [ Done ] Check Pages For Padding
 ---- [ Done ] Navbar Background Color When Open In Responsive
----- Resize Images For Handle Preformance & Create Small Images For Mobile
 -------------------- Global --------------------
 
 -------------------- Important Notes --------------------
@@ -172,6 +171,7 @@
 ---- [ Done ] Create usePreventRouterLinks Hook For Handling Block Links To Remount Components
 ---- [ Done ] Change Header Section Tag To Main
 ---- [ Done ] Remove Body Padding
+---- Resize Images For Handle Preformance & Create Small Images For Mobile
 -------------------- Important Notes --------------------
 
 -------------------- Diffcult Problems --------------------
@@ -199,7 +199,8 @@
 -------------------- Search --------------------
 ---- [ Done ] Fieldset & Legend
 ---- [ Done ] Review Forms
----- [ Done ] React Hooks [ useState, useEffect, useLayoutEffect, useRef, useCallback, useContext, useMemo ]
+---- [ Done ] React Hooks
+				---- [ useState, useEffect, useLayoutEffect, useRef, useCallback, useContext, useMemo ]
 ---- [ Done ] React.StrictMode
 ---- [ Done ] addEventListener & removeEventListener
 ---- [ Done ] useEffect Clenup Function Review
