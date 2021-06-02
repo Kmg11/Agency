@@ -30,11 +30,27 @@ function App() {
 						<TransitionGroup>
 							<CSSTransition key={location.key} timeout={450} classNames="fade">
 								<Switch location={location}>
-									<Route exact path="/" component={Index} />
-									<Route path="/services" component={Services} />
-									<Route path="/portfolio" component={Portfolio} />
-									<Route path="/team" component={Team} />
-									<Route path="/contact" component={Contact} />
+									<Route
+										exact
+										path={`${process.env.PUBLIC_URL}/`}
+										component={Index}
+									/>
+									<Route
+										path={`${process.env.PUBLIC_URL}/services`}
+										component={Services}
+									/>
+									<Route
+										path={`${process.env.PUBLIC_URL}/portfolio`}
+										component={Portfolio}
+									/>
+									<Route
+										path={`${process.env.PUBLIC_URL}/team`}
+										component={Team}
+									/>
+									<Route
+										path={`${process.env.PUBLIC_URL}/contact`}
+										component={Contact}
+									/>
 									<Route path="*" component={NotFound} />
 								</Switch>
 							</CSSTransition>
