@@ -171,8 +171,7 @@
 ---- [ Done ] Create usePreventRouterLinks Hook For Handling Block Links To Remount Components
 ---- [ Done ] Change Header Section Tag To Main
 ---- [ Done ] Remove Body Padding
----- Resize Images For Handle Preformance & Create Small Images For Mobile
----- Problem With Animating Switch Pages In Services & Portfolio & Team
+---- [ Done ] Remove React Transition Group & Fade [ Not Good All The Time ]
 -------------------- Important Notes --------------------
 
 -------------------- Diffcult Problems --------------------
@@ -194,7 +193,7 @@
 
 -------------------- Finish Tasks --------------------
 ---- [ Done ] Check Preformance
----- Check HTML Validation [ HMTL Markup Validation Website Down  ]
+---- [ Done ] Check HTML Validation
 -------------------- Finish Tasks --------------------
 
 -------------------- Search --------------------
@@ -208,5 +207,4 @@
 ---- [ Done ] Fetch VS Axios
 ---- [ Done ] React Router
 ---- [ Done ] Check Refs & Portail
----- React Transition Group
 -------------------- Search --------------------
