@@ -1,3 +1,51 @@
+# Optimized Demo:-
+
+[https://kmg11.github.io/Agency/]
+
+# File For Check The Developing Process
+
+[https://github.com/Kmg11/Agency/blob/v1.0.0/Notes.txt]
+
+# Performance Test On GTmetris
+
+[https://gtmetrix.com/reports/kmg11.github.io/OwIgXunI/]
+
+# Notes About Website:-
+
+This Website Is My First React SPA Website That I Created With My Self.
+It Is a Hight Level Frontend Website That Have A Lot Of Features & Advantages.
+
+# Some Of Features & Advantages:-
+
+- Using Modern Technologys Like [ React - React Hooks - JSX - ES6 - Sass - Grid - Flex ]
+- Hight Level Of Performance
+- Hight Level Of Quality In Every Small Peace Of The Website
+- Hight Level Of Accessibility
+- Hight Level Of SEO Friendly
+- HTML5 Markup Validation [ No Errors - No Problems ]
+- Modern Design
+- Have Two Themes Of Colors [ Light Theme & Dark Theme ]
+- Every Thing In Website Is Dynamic By Using An Restful API ( Application Programming Interface )
+- Contact Form For Sending Messages
+- Navbar With Modern Features Like [ Close When Click On Any Place Of The Screen - Close With ESC Button - etc... ]
+- Full Support For Responsive In Different Screen Sizes
+- SVGs Images That Have A Good Quality & Low Size
+- Very Powerful Slider For Team Section [ Swiper.js ]
+- Scroll To Top Button
+- Newsletter Form
+
+# The Next File Attached Is Contain The Life Of Version v1.0.0:-
+
+- Features
+- Problems Appear While Developing
+- Errors Appear While Developing
+- Features Added
+- Features Removed
+
+[https://github.com/Kmg11/Agency/blob/v1.0.0/Notes.txt]
+
+# The Next Text From React To Learn How To Use This App
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
