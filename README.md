@@ -2,7 +2,7 @@
 
 ### Description
 
-textResponsive SPA website with high level of performance, simple design, using React, React router, Sass.
+Responsive SPA website with high level of performance, simple design, using React, React router, Sass.
 
 ---
 
