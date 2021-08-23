@@ -15,10 +15,7 @@ Responsive SPA website with high level of performance, simple design, using Reac
 
 ### Features
 
-- Compatible with all devices such as mobile
-- Compatible with all browsers such as Chrome and Firefox
-- Compatible with search engines
-- Compatible with screen readers
+- Compatible with all devices, browsers, search engines and screen readers
 - Hight level of quality in every small peace of the website
 - HTML validation [ no Errors - no Problems ]
 - Modern design
@@ -42,9 +39,6 @@ Responsive SPA website with high level of performance, simple design, using Reac
 - Sass
 - Json
 - Axios
-- Html
-- Css
-- Javascript
 
 ---
 
