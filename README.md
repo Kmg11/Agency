@@ -72,6 +72,6 @@ Responsive SPA website with high level of performance, simple design, using Reac
 
 ### My Links
 
-- [Linkedin](https://www.linkedin.com/in/kirolos-m-a29134165/)
+- [Linkedin](https://www.linkedin.com/in/kirolos-mahfouz/)
 - [Github](https://github.com/Kmg11)
 - [Facebook](https://www.facebook.com/KirolosMahfouz/)
